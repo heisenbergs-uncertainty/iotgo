@@ -1,0 +1,1300 @@
+2025/04/09 08:49:34.541  [D] [router.go:1305]  |      127.0.0.1|[97;42m 200 [0m|   9.301292ms|   match|[97;44m GET     [0m /login   r:/login
+2025/04/09 08:49:34.573  [D] [router.go:1305]  |      127.0.0.1|[90;47m 302 [0m|    474.209µs| nomatch|[97;44m GET     [0m /static/images/iot-login-hero.png
+2025/04/09 08:49:34.581  [D] [router.go:1305]  |      127.0.0.1|[97;42m 200 [0m|   3.611291ms|   match|[97;44m GET     [0m /login   r:/login
+2025/04/09 08:49:34.637  [D] [router.go:1305]  |      127.0.0.1|[90;47m 302 [0m|     516.25µs| nomatch|[97;44m GET     [0m /static/images/iot-login-hero.png
+2025/04/09 08:49:34.646  [D] [router.go:1305]  |      127.0.0.1|[97;42m 200 [0m|   3.638917ms|   match|[97;44m GET     [0m /login   r:/login
+2025/04/09 08:49:49.927  [D] [router.go:1305]  |      127.0.0.1|[97;42m 200 [0m|   1.353291ms|   match|[97;44m GET     [0m /login   r:/login
+2025/04/09 08:49:49.947  [D] [router.go:1305]  |      127.0.0.1|[90;47m 302 [0m|     51.458µs| nomatch|[97;44m GET     [0m /static/img/iot-login-hero.png
+2025/04/09 08:49:49.957  [D] [router.go:1305]  |      127.0.0.1|[97;42m 200 [0m|   2.060542ms|   match|[97;44m GET     [0m /login   r:/login
+2025/04/09 08:49:50.883  [D] [router.go:1305]  |      127.0.0.1|[97;42m 200 [0m|    1.46425ms|   match|[97;44m GET     [0m /login   r:/login
+2025/04/09 08:49:50.905  [D] [router.go:1305]  |      127.0.0.1|[90;47m 302 [0m|     31.709µs| nomatch|[97;44m GET     [0m /static/img/iot-login-hero.png
+2025/04/09 08:49:50.913  [D] [router.go:1305]  |      127.0.0.1|[97;42m 200 [0m|   2.185292ms|   match|[97;44m GET     [0m /login   r:/login
+2025/04/09 08:50:04.530  [D] [router.go:1305]  |      127.0.0.1|[97;42m 200 [0m|   1.245667ms|   match|[97;44m GET     [0m /login   r:/login
+2025/04/09 08:50:04.573  [D] [router.go:1305]  |      127.0.0.1|[90;47m 304 [0m|     102.75µs|   match|[97;44m GET     [0m /static/img/iot-login-hero.jpg
+2025/04/09 08:52:19.420  [D] [router.go:1305]  |      127.0.0.1|[97;42m 200 [0m|   5.532541ms|   match|[97;44m GET     [0m /login   r:/login
+2025/04/09 08:52:26.550  [D] [router.go:1305]  |      127.0.0.1|[97;42m 200 [0m|   1.035917ms|   match|[97;44m GET     [0m /login   r:/login
+2025/04/09 08:52:37.306  [D] [router.go:1305]  |      127.0.0.1|[90;47m 302 [0m|  96.352375ms|   match|[97;46m POST    [0m /login   r:/login
+2025/04/09 08:52:37.317  [C] [config.go:500]  the request url is  /
+2025/04/09 08:52:37.317  [C] [config.go:501]  Handler crashed with error can't find templatefile in the path:views/index.html
+2025/04/09 08:52:37.317  [C] [config.go:507]  /opt/homebrew/Cellar/go/1.24.2/libexec/src/runtime/panic.go:792
+2025/04/09 08:52:37.317  [C] [config.go:507]  /Users/matthewholden/Code/go/pkg/mod/github.com/beego/beego/v2@v2.1.0/server/web/template.go:75
+2025/04/09 08:52:37.317  [C] [config.go:507]  /Users/matthewholden/Code/go/pkg/mod/github.com/beego/beego/v2@v2.1.0/server/web/controller.go:359
+2025/04/09 08:52:37.317  [C] [config.go:507]  /Users/matthewholden/Code/go/pkg/mod/github.com/beego/beego/v2@v2.1.0/server/web/controller.go:310
+2025/04/09 08:52:37.317  [C] [config.go:507]  /Users/matthewholden/Code/go/pkg/mod/github.com/beego/beego/v2@v2.1.0/server/web/controller.go:287
+2025/04/09 08:52:37.317  [C] [config.go:507]  /Users/matthewholden/Code/go/pkg/mod/github.com/beego/beego/v2@v2.1.0/server/web/router.go:1245
+2025/04/09 08:52:37.317  [C] [config.go:507]  /Users/matthewholden/Code/go/pkg/mod/github.com/beego/beego/v2@v2.1.0/server/web/filter.go:83
+2025/04/09 08:52:37.317  [C] [config.go:507]  /Users/matthewholden/Code/go/pkg/mod/github.com/beego/beego/v2@v2.1.0/server/web/router.go:1002
+2025/04/09 08:52:37.317  [C] [config.go:507]  /opt/homebrew/Cellar/go/1.24.2/libexec/src/net/http/server.go:3301
+2025/04/09 08:52:37.317  [C] [config.go:507]  /opt/homebrew/Cellar/go/1.24.2/libexec/src/net/http/server.go:2102
+2025/04/09 08:52:37.317  [C] [config.go:507]  /opt/homebrew/Cellar/go/1.24.2/libexec/src/runtime/asm_arm64.s:1223
+2025/04/09 08:52:56.163  [E] [template.go:225]  parse template err: index.html template: index.html:114: template: multiple definition of template "index.html"
+2025/04/09 08:52:56.163  [C] [config.go:500]  the request url is  /
+2025/04/09 08:52:56.163  [C] [config.go:501]  Handler crashed with error can't find templatefile in the path:views/index.html
+2025/04/09 08:52:56.163  [C] [config.go:507]  /opt/homebrew/Cellar/go/1.24.2/libexec/src/runtime/panic.go:792
+2025/04/09 08:52:56.163  [C] [config.go:507]  /Users/matthewholden/Code/go/pkg/mod/github.com/beego/beego/v2@v2.1.0/server/web/template.go:75
+2025/04/09 08:52:56.163  [C] [config.go:507]  /Users/matthewholden/Code/go/pkg/mod/github.com/beego/beego/v2@v2.1.0/server/web/controller.go:359
+2025/04/09 08:52:56.164  [C] [config.go:507]  /Users/matthewholden/Code/go/pkg/mod/github.com/beego/beego/v2@v2.1.0/server/web/controller.go:310
+2025/04/09 08:52:56.164  [C] [config.go:507]  /Users/matthewholden/Code/go/pkg/mod/github.com/beego/beego/v2@v2.1.0/server/web/controller.go:287
+2025/04/09 08:52:56.164  [C] [config.go:507]  /Users/matthewholden/Code/go/pkg/mod/github.com/beego/beego/v2@v2.1.0/server/web/router.go:1245
+2025/04/09 08:52:56.164  [C] [config.go:507]  /Users/matthewholden/Code/go/pkg/mod/github.com/beego/beego/v2@v2.1.0/server/web/filter.go:83
+2025/04/09 08:52:56.164  [C] [config.go:507]  /Users/matthewholden/Code/go/pkg/mod/github.com/beego/beego/v2@v2.1.0/server/web/router.go:1002
+2025/04/09 08:52:56.164  [C] [config.go:507]  /opt/homebrew/Cellar/go/1.24.2/libexec/src/net/http/server.go:3301
+2025/04/09 08:52:56.164  [C] [config.go:507]  /opt/homebrew/Cellar/go/1.24.2/libexec/src/net/http/server.go:2102
+2025/04/09 08:52:56.164  [C] [config.go:507]  /opt/homebrew/Cellar/go/1.24.2/libexec/src/runtime/asm_arm64.s:1223
+2025/04/09 08:52:56.964  [E] [template.go:225]  parse template err: index.html template: index.html:114: template: multiple definition of template "index.html"
+2025/04/09 08:52:56.964  [C] [config.go:500]  the request url is  /
+2025/04/09 08:52:56.964  [C] [config.go:501]  Handler crashed with error can't find templatefile in the path:views/index.html
+2025/04/09 08:52:56.964  [C] [config.go:507]  /opt/homebrew/Cellar/go/1.24.2/libexec/src/runtime/panic.go:792
+2025/04/09 08:52:56.964  [C] [config.go:507]  /Users/matthewholden/Code/go/pkg/mod/github.com/beego/beego/v2@v2.1.0/server/web/template.go:75
+2025/04/09 08:52:56.964  [C] [config.go:507]  /Users/matthewholden/Code/go/pkg/mod/github.com/beego/beego/v2@v2.1.0/server/web/controller.go:359
+2025/04/09 08:52:56.964  [C] [config.go:507]  /Users/matthewholden/Code/go/pkg/mod/github.com/beego/beego/v2@v2.1.0/server/web/controller.go:310
+2025/04/09 08:52:56.964  [C] [config.go:507]  /Users/matthewholden/Code/go/pkg/mod/github.com/beego/beego/v2@v2.1.0/server/web/controller.go:287
+2025/04/09 08:52:56.965  [C] [config.go:507]  /Users/matthewholden/Code/go/pkg/mod/github.com/beego/beego/v2@v2.1.0/server/web/router.go:1245
+2025/04/09 08:52:56.965  [C] [config.go:507]  /Users/matthewholden/Code/go/pkg/mod/github.com/beego/beego/v2@v2.1.0/server/web/filter.go:83
+2025/04/09 08:52:56.965  [C] [config.go:507]  /Users/matthewholden/Code/go/pkg/mod/github.com/beego/beego/v2@v2.1.0/server/web/router.go:1002
+2025/04/09 08:52:56.965  [C] [config.go:507]  /opt/homebrew/Cellar/go/1.24.2/libexec/src/net/http/server.go:3301
+2025/04/09 08:52:56.965  [C] [config.go:507]  /opt/homebrew/Cellar/go/1.24.2/libexec/src/net/http/server.go:2102
+2025/04/09 08:52:56.965  [C] [config.go:507]  /opt/homebrew/Cellar/go/1.24.2/libexec/src/runtime/asm_arm64.s:1223
+2025/04/09 08:53:01.937  [E] [template.go:225]  parse template err: index.html template: index.html:114: template: multiple definition of template "index.html"
+2025/04/09 08:53:01.938  [W] [hooks.go:83]  template: index.html:114: template: multiple definition of template "index.html"
+2025/04/09 08:54:53.588  [E] [template.go:225]  parse template err: index.tpl template: index.tpl:1: unexpected "index" in define clause
+2025/04/09 08:54:53.588  [W] [hooks.go:83]  template: index.tpl:1: unexpected "index" in define clause
+2025/04/09 08:55:42.845  [I] [server.go:281]  http server Running on http://:8080
+2025/04/09 08:55:46.135  [D] [router.go:1305]  |      127.0.0.1|[90;47m 302 [0m|    108.291µs| nomatch|[97;44m GET     [0m /  
+2025/04/09 08:55:46.144  [D] [router.go:1305]  |      127.0.0.1|[97;42m 200 [0m|      2.987ms|   match|[97;44m GET     [0m /login   r:/login
+2025/04/09 08:55:50.355  [D] [router.go:1305]  |      127.0.0.1|[90;47m 302 [0m|  71.636792ms|   match|[97;46m POST    [0m /login   r:/login
+2025/04/09 08:55:50.364  [D] [router.go:1305]  |      127.0.0.1|[97;42m 200 [0m|   3.023791ms|   match|[97;44m GET     [0m /     r:/
+2025/04/09 13:31:31.952  [D] [router.go:1305]  |      127.0.0.1|[90;47m 302 [0m|     223.75µs| nomatch|[97;44m GET     [0m /  
+2025/04/09 13:31:31.969  [D] [router.go:1305]  |      127.0.0.1|[97;42m 200 [0m|   7.683583ms|   match|[97;44m GET     [0m /login   r:/login
+2025/04/09 13:31:32.011  [D] [router.go:1305]  |      127.0.0.1|[97;42m 200 [0m|   1.433625ms|   match|[97;44m GET     [0m /static/img/iot-login-hero.jpg
+2025/04/09 13:31:32.476  [D] [router.go:1305]  |      127.0.0.1|[90;47m 302 [0m|     99.875µs| nomatch|[97;44m GET     [0m /favicon.ico
+2025/04/09 13:31:44.966  [D] [router.go:1305]  |      127.0.0.1|[90;47m 302 [0m|     67.852ms|   match|[97;46m POST    [0m /login   r:/login
+2025/04/09 13:31:44.973  [D] [router.go:1305]  |      127.0.0.1|[97;42m 200 [0m|    3.75525ms|   match|[97;44m GET     [0m /     r:/
+2025/04/09 13:35:50.361  [D] [template.go:71]  template Execute err: template: layout.html:144:17: executing "layout.html" at <eq .Role "admin">: error calling eq: invalid type for comparison
+2025/04/09 13:35:50.361  [E] [router.go:1246]  template: layout.html:144:17: executing "layout.html" at <eq .Role "admin">: error calling eq: invalid type for comparison
+2025/04/09 13:35:50.361  [D] [router.go:1305]  |      127.0.0.1|[97;42m 200 [0m|      3.898ms|   match|[97;44m GET     [0m /     r:/
+2025/04/09 13:36:11.880  [E] [template.go:225]  parse template err: layout.html template: layout.html:144: function "UserRole" not defined
+2025/04/09 13:36:11.880  [D] [template.go:71]  template Execute err: template: layout.html:144:17: executing "layout.html" at <eq .Role "admin">: error calling eq: invalid type for comparison
+2025/04/09 13:36:11.880  [E] [router.go:1246]  template: layout.html:144:17: executing "layout.html" at <eq .Role "admin">: error calling eq: invalid type for comparison
+2025/04/09 13:36:11.880  [D] [router.go:1305]  |      127.0.0.1|[97;42m 200 [0m|   2.665416ms|   match|[97;44m GET     [0m /     r:/
+2025/04/09 13:36:13.332  [E] [template.go:225]  parse template err: layout.html template: layout.html:144: function "UserRole" not defined
+2025/04/09 13:36:13.332  [D] [template.go:71]  template Execute err: template: layout.html:144:17: executing "layout.html" at <eq .Role "admin">: error calling eq: invalid type for comparison
+2025/04/09 13:36:13.332  [E] [router.go:1246]  template: layout.html:144:17: executing "layout.html" at <eq .Role "admin">: error calling eq: invalid type for comparison
+2025/04/09 13:36:13.332  [D] [router.go:1305]  |      127.0.0.1|[97;42m 200 [0m|   3.803542ms|   match|[97;44m GET     [0m /     r:/
+2025/04/09 13:36:17.513  [D] [router.go:1305]  |      127.0.0.1|[97;42m 200 [0m|      2.557ms|   match|[97;44m GET     [0m /     r:/
+2025/04/09 13:38:54.275  [D] [router.go:1305]  |      127.0.0.1|[97;42m 200 [0m|   6.475708ms|   match|[97;44m GET     [0m /     r:/
+2025/04/09 13:39:15.309  [D] [template.go:71]  template Execute err: template: layout.html:133:17: executing "layout.html" at <eq .Role "admin">: error calling eq: invalid type for comparison
+2025/04/09 13:39:15.309  [E] [router.go:1246]  template: layout.html:133:17: executing "layout.html" at <eq .Role "admin">: error calling eq: invalid type for comparison
+2025/04/09 13:39:15.309  [D] [router.go:1305]  |      127.0.0.1|[97;42m 200 [0m|   1.977875ms|   match|[97;44m GET     [0m /     r:/
+2025/04/09 13:39:22.537  [D] [template.go:71]  template Execute err: template: layout.html:133:17: executing "layout.html" at <eq .Role "admin">: error calling eq: invalid type for comparison
+2025/04/09 13:39:22.537  [E] [router.go:1246]  template: layout.html:133:17: executing "layout.html" at <eq .Role "admin">: error calling eq: invalid type for comparison
+2025/04/09 13:39:22.537  [D] [router.go:1305]  |      127.0.0.1|[97;42m 200 [0m|   2.314417ms|   match|[97;44m GET     [0m /     r:/
+2025/04/09 13:39:23.812  [D] [template.go:71]  template Execute err: template: layout.html:133:17: executing "layout.html" at <eq .Role "admin">: error calling eq: invalid type for comparison
+2025/04/09 13:39:23.812  [E] [router.go:1246]  template: layout.html:133:17: executing "layout.html" at <eq .Role "admin">: error calling eq: invalid type for comparison
+2025/04/09 13:39:23.812  [D] [router.go:1305]  |      127.0.0.1|[97;42m 200 [0m|     2.3785ms|   match|[97;44m GET     [0m /     r:/
+2025/04/09 13:49:55.673  [D] [template.go:71]  template Execute err: html/template:layout.html: "=" in unquoted attr: "Inter:wght@400;600&display=swap\""
+2025/04/09 13:49:55.674  [E] [router.go:1246]  html/template:layout.html: "=" in unquoted attr: "Inter:wght@400;600&display=swap\""
+2025/04/09 13:49:55.674  [D] [router.go:1305]  |      127.0.0.1|[97;42m 200 [0m|   4.153875ms|   match|[97;44m GET     [0m /     r:/
+2025/04/09 13:49:55.735  [D] [router.go:1305]  |      127.0.0.1|[97;43m 404 [0m|    390.125µs| nomatch|[97;44m GET     [0m /favicon.ico
+2025/04/09 13:51:57.703  [D] [template.go:71]  template Execute err: html/template:layout.html: "\"" in attribute name: "navbar-expand-lg\">\n        <div "
+2025/04/09 13:51:57.703  [E] [router.go:1246]  html/template:layout.html: "\"" in attribute name: "navbar-expand-lg\">\n        <div "
+2025/04/09 13:51:57.703  [D] [router.go:1305]  |      127.0.0.1|[97;42m 200 [0m|   4.657875ms|   match|[97;44m GET     [0m /     r:/
+2025/04/09 13:52:36.120  [D] [template.go:71]  template Execute err: html/template:layout.html: "\"" in attribute name: "navbar-expand-lg\">\n        <div "
+2025/04/09 13:52:36.120  [E] [router.go:1246]  html/template:layout.html: "\"" in attribute name: "navbar-expand-lg\">\n        <div "
+2025/04/09 13:52:36.120  [D] [router.go:1305]  |      127.0.0.1|[97;42m 200 [0m|   2.871667ms|   match|[97;44m GET     [0m /     r:/
+2025/04/09 13:53:38.650  [D] [router.go:1305]  |      127.0.0.1|[97;42m 200 [0m|     2.3855ms|   match|[97;44m GET     [0m /     r:/
+2025/04/09 13:53:41.943  [D] [router.go:1305]  |      127.0.0.1|[90;47m 302 [0m|     49.459µs|   match|[97;44m GET     [0m /logout   r:/logout
+2025/04/09 13:53:41.956  [D] [router.go:1305]  |      127.0.0.1|[97;42m 200 [0m|   2.462291ms|   match|[97;44m GET     [0m /login   r:/login
+2025/04/09 13:54:04.600  [D] [router.go:1305]  |      127.0.0.1|[90;47m 302 [0m|     29.875µs| nomatch|[97;44m GET     [0m /  
+2025/04/09 13:54:04.608  [D] [router.go:1305]  |      127.0.0.1|[97;42m 200 [0m|    1.38325ms|   match|[97;44m GET     [0m /login   r:/login
+2025/04/09 13:54:12.428  [D] [router.go:1305]  |      127.0.0.1|[90;47m 302 [0m|  66.978084ms|   match|[97;46m POST    [0m /login   r:/login
+2025/04/09 13:54:12.433  [D] [router.go:1305]  |      127.0.0.1|[97;42m 200 [0m|   1.533666ms|   match|[97;44m GET     [0m /     r:/
+2025/04/09 13:57:40.585  [D] [router.go:1305]  |      127.0.0.1|[97;42m 200 [0m|    3.34525ms|   match|[97;44m GET     [0m /     r:/
+2025/04/09 14:00:21.166  [D] [router.go:1305]  |      127.0.0.1|[90;47m 302 [0m|     46.042µs|   match|[97;44m GET     [0m /login   r:/login
+2025/04/09 14:00:21.177  [D] [router.go:1305]  |      127.0.0.1|[97;42m 200 [0m|   2.325916ms|   match|[97;44m GET     [0m /     r:/
+2025/04/09 14:00:31.595  [D] [router.go:1305]  |      127.0.0.1|[90;47m 302 [0m|     55.042µs|   match|[97;44m GET     [0m /login   r:/login
+2025/04/09 14:00:31.605  [D] [router.go:1305]  |      127.0.0.1|[97;42m 200 [0m|   2.893417ms|   match|[97;44m GET     [0m /     r:/
+2025/04/09 14:00:33.110  [D] [router.go:1305]  |      127.0.0.1|[97;42m 200 [0m|   2.493333ms|   match|[97;44m GET     [0m /     r:/
+2025/04/09 14:00:49.091  [D] [router.go:1305]  |      127.0.0.1|[90;47m 302 [0m|     93.084µs|   match|[97;44m GET     [0m /logout   r:/logout
+2025/04/09 14:00:49.101  [D] [router.go:1305]  |      127.0.0.1|[97;42m 200 [0m|   2.134584ms|   match|[97;44m GET     [0m /login   r:/login
+2025/04/09 14:00:50.433  [D] [router.go:1305]  |      127.0.0.1|[97;42m 200 [0m|      2.334ms|   match|[97;44m GET     [0m /login   r:/login
+2025/04/09 14:01:05.605  [D] [router.go:1305]  |      127.0.0.1|[90;47m 302 [0m|     41.958µs| nomatch|[97;44m GET     [0m /  
+2025/04/09 14:01:05.615  [D] [router.go:1305]  |      127.0.0.1|[97;42m 200 [0m|   3.955375ms|   match|[97;44m GET     [0m /login   r:/login
+2025/04/09 14:01:54.742  [D] [router.go:1305]  |      127.0.0.1|[97;42m 200 [0m|   1.520417ms|   match|[97;44m GET     [0m /login   r:/login
+2025/04/09 14:02:00.446  [D] [router.go:1305]  |      127.0.0.1|[90;47m 302 [0m|  70.539584ms|   match|[97;46m POST    [0m /login   r:/login
+2025/04/09 14:02:00.452  [D] [router.go:1305]  |      127.0.0.1|[97;42m 200 [0m|   1.819625ms|   match|[97;44m GET     [0m /     r:/
+2025/04/09 14:02:24.962  [D] [router.go:1305]  |      127.0.0.1|[97;42m 200 [0m|   4.714834ms|   match|[97;44m GET     [0m /     r:/
+2025/04/09 14:03:30.400  [D] [router.go:1305]  |      127.0.0.1|[97;42m 200 [0m|   5.059625ms|   match|[97;44m GET     [0m /     r:/
+2025/04/09 14:07:29.492  [D] [template.go:71]  template Execute err: html/template:layout.html: ends in a non-text context: {stateAttr delimDoubleQuote urlPartNone jsCtxRegexp attrNone elementNone <nil>}
+2025/04/09 14:07:29.492  [E] [router.go:1246]  html/template:layout.html: ends in a non-text context: {stateAttr delimDoubleQuote urlPartNone jsCtxRegexp attrNone elementNone <nil>}
+2025/04/09 14:07:29.492  [D] [router.go:1305]  |      127.0.0.1|[97;42m 200 [0m|   2.009917ms|   match|[97;44m GET     [0m /     r:/
+2025/04/09 14:07:29.543  [D] [router.go:1305]  |      127.0.0.1|[97;43m 404 [0m|    126.666µs| nomatch|[97;44m GET     [0m /favicon.ico
+2025/04/09 14:07:40.718  [D] [router.go:1305]  |      127.0.0.1|[97;42m 200 [0m|   2.131125ms|   match|[97;44m GET     [0m /     r:/
+2025/04/09 14:08:09.766  [D] [router.go:1305]  |      127.0.0.1|[97;42m 200 [0m|    2.41175ms|   match|[97;44m GET     [0m /     r:/
+2025/04/09 14:08:43.193  [D] [router.go:1305]  |      127.0.0.1|[97;42m 200 [0m|   5.540958ms|   match|[97;44m GET     [0m /     r:/
+2025/04/09 14:09:32.147  [D] [router.go:1305]  |      127.0.0.1|[97;42m 200 [0m|   3.450334ms|   match|[97;44m GET     [0m /     r:/
+2025/04/09 14:09:42.404  [D] [router.go:1305]  |      127.0.0.1|[97;42m 200 [0m|     3.0495ms|   match|[97;44m GET     [0m /     r:/
+2025/04/09 14:10:59.736  [D] [router.go:1305]  |      127.0.0.1|[97;42m 200 [0m|   3.011875ms|   match|[97;44m GET     [0m /     r:/
+2025/04/09 14:11:20.279  [D] [template.go:71]  template Execute err: template: layout.html:140:17: executing "layout.html" at <eq .Role "admin">: error calling eq: invalid type for comparison
+2025/04/09 14:11:20.279  [E] [router.go:1246]  template: layout.html:140:17: executing "layout.html" at <eq .Role "admin">: error calling eq: invalid type for comparison
+2025/04/09 14:11:20.279  [D] [router.go:1305]  |      127.0.0.1|[97;42m 200 [0m|   3.824083ms|   match|[97;44m GET     [0m /     r:/
+2025/04/09 14:11:25.610  [D] [template.go:71]  template Execute err: template: layout.html:140:17: executing "layout.html" at <eq .Role "admin">: error calling eq: invalid type for comparison
+2025/04/09 14:11:25.610  [E] [router.go:1246]  template: layout.html:140:17: executing "layout.html" at <eq .Role "admin">: error calling eq: invalid type for comparison
+2025/04/09 14:11:25.610  [D] [router.go:1305]  |      127.0.0.1|[97;42m 200 [0m|     4.1205ms|   match|[97;44m GET     [0m /     r:/
+2025/04/09 14:11:39.228  [D] [router.go:1305]  |      127.0.0.1|[97;42m 200 [0m|   2.132458ms|   match|[97;44m GET     [0m /     r:/
+2025/04/09 14:12:19.985  [D] [router.go:1305]  |      127.0.0.1|[97;42m 200 [0m|   3.248292ms|   match|[97;44m GET     [0m /     r:/
+2025/04/09 14:12:27.887  [D] [router.go:1305]  |      127.0.0.1|[97;42m 200 [0m|   1.918625ms|   match|[97;44m GET     [0m /     r:/
+2025/04/09 14:12:49.106  [D] [router.go:1305]  |      127.0.0.1|[97;42m 200 [0m|   3.031708ms|   match|[97;44m GET     [0m /     r:/
+2025/04/09 14:12:56.826  [D] [router.go:1305]  |      127.0.0.1|[97;42m 200 [0m|   2.526958ms|   match|[97;44m GET     [0m /     r:/
+2025/04/09 14:13:01.204  [D] [router.go:1305]  |      127.0.0.1|[97;42m 200 [0m|   2.040291ms|   match|[97;44m GET     [0m /     r:/
+2025/04/09 14:13:11.469  [D] [router.go:1305]  |      127.0.0.1|[97;42m 200 [0m|     4.8115ms|   match|[97;44m GET     [0m /     r:/
+2025/04/09 14:13:35.174  [D] [router.go:1305]  |      127.0.0.1|[97;42m 200 [0m|    3.80125ms|   match|[97;44m GET     [0m /     r:/
+2025/04/09 14:14:21.849  [D] [router.go:1305]  |      127.0.0.1|[97;42m 200 [0m|    2.85975ms|   match|[97;44m GET     [0m /     r:/
+2025/04/09 14:14:42.874  [D] [router.go:1305]  |      127.0.0.1|[97;42m 200 [0m|   2.741834ms|   match|[97;44m GET     [0m /     r:/
+2025/04/09 14:14:53.675  [D] [router.go:1305]  |      127.0.0.1|[97;42m 200 [0m|   1.670667ms|   match|[97;44m GET     [0m /     r:/
+2025/04/09 14:14:59.581  [D] [router.go:1305]  |      127.0.0.1|[97;42m 200 [0m|   2.264167ms|   match|[97;44m GET     [0m /     r:/
+2025/04/09 14:15:08.516  [D] [router.go:1305]  |      127.0.0.1|[97;42m 200 [0m|   3.117041ms|   match|[97;44m GET     [0m /     r:/
+2025/04/09 14:15:24.342  [D] [router.go:1305]  |      127.0.0.1|[97;42m 200 [0m|   5.007959ms|   match|[97;44m GET     [0m /     r:/
+2025/04/09 14:15:39.357  [D] [router.go:1305]  |      127.0.0.1|[97;42m 200 [0m|   2.240042ms|   match|[97;44m GET     [0m /     r:/
+2025/04/09 14:15:47.701  [D] [router.go:1305]  |      127.0.0.1|[97;42m 200 [0m|   1.720917ms|   match|[97;44m GET     [0m /     r:/
+2025/04/09 14:15:54.529  [C] [config.go:500]  the request url is  /devices
+2025/04/09 14:15:54.530  [C] [config.go:501]  Handler crashed with error can't find templatefile in the path:views/base.tpl
+2025/04/09 14:15:54.530  [C] [config.go:507]  /opt/homebrew/Cellar/go/1.24.2/libexec/src/runtime/panic.go:792
+2025/04/09 14:15:54.530  [C] [config.go:507]  /Users/matthewholden/Code/go/pkg/mod/github.com/beego/beego/v2@v2.1.0/server/web/template.go:75
+2025/04/09 14:15:54.530  [C] [config.go:507]  /Users/matthewholden/Code/go/pkg/mod/github.com/beego/beego/v2@v2.1.0/server/web/controller.go:331
+2025/04/09 14:15:54.530  [C] [config.go:507]  /Users/matthewholden/Code/go/pkg/mod/github.com/beego/beego/v2@v2.1.0/server/web/controller.go:287
+2025/04/09 14:15:54.530  [C] [config.go:507]  /Users/matthewholden/Code/go/pkg/mod/github.com/beego/beego/v2@v2.1.0/server/web/router.go:1245
+2025/04/09 14:15:54.530  [C] [config.go:507]  /Users/matthewholden/Code/go/pkg/mod/github.com/beego/beego/v2@v2.1.0/server/web/filter.go:83
+2025/04/09 14:15:54.530  [C] [config.go:507]  /Users/matthewholden/Code/go/pkg/mod/github.com/beego/beego/v2@v2.1.0/server/web/router.go:1002
+2025/04/09 14:15:54.530  [C] [config.go:507]  /opt/homebrew/Cellar/go/1.24.2/libexec/src/net/http/server.go:3301
+2025/04/09 14:15:54.530  [C] [config.go:507]  /opt/homebrew/Cellar/go/1.24.2/libexec/src/net/http/server.go:2102
+2025/04/09 14:15:54.531  [C] [config.go:507]  /opt/homebrew/Cellar/go/1.24.2/libexec/src/runtime/asm_arm64.s:1223
+2025/04/09 14:17:21.036  [I] [server.go:281]  http server Running on http://:8080
+2025/04/09 14:17:45.897  [I] [server.go:281]  http server Running on http://:8080
+2025/04/09 14:18:25.081  [I] [server.go:281]  http server Running on http://:8080
+2025/04/09 14:18:33.520  [I] [server.go:281]  http server Running on http://:8080
+2025/04/09 14:18:52.926  [I] [server.go:281]  http server Running on http://:8080
+2025/04/09 14:19:24.652  [I] [server.go:281]  http server Running on http://:8080
+2025/04/09 14:19:48.187  [D] [router.go:1305]  |      127.0.0.1|[90;47m 302 [0m|     92.542µs| nomatch|[97;44m GET     [0m /devices
+2025/04/09 14:19:48.193  [D] [router.go:1305]  |      127.0.0.1|[97;42m 200 [0m|     812.75µs|   match|[97;44m GET     [0m /login   r:/login
+2025/04/09 14:19:48.818  [I] [server.go:281]  http server Running on http://:8080
+2025/04/09 14:19:52.296  [D] [router.go:1305]  |      127.0.0.1|[90;47m 302 [0m|  68.521041ms|   match|[97;46m POST    [0m /login   r:/login
+2025/04/09 14:19:52.303  [D] [router.go:1305]  |      127.0.0.1|[97;42m 200 [0m|   2.750167ms|   match|[97;44m GET     [0m /     r:/
+2025/04/09 14:19:53.869  [D] [template.go:71]  template Execute err: template: layout.html:142:17: executing "layout.html" at <eq .UserRole "admin">: error calling eq: invalid type for comparison
+2025/04/09 14:19:53.869  [E] [router.go:1246]  template: layout.html:142:17: executing "layout.html" at <eq .UserRole "admin">: error calling eq: invalid type for comparison
+2025/04/09 14:19:53.869  [D] [router.go:1305]  |      127.0.0.1|[97;42m 200 [0m|   3.027041ms|   match|[97;44m GET     [0m /devices   r:/devices
+2025/04/09 14:21:28.534  [I] [server.go:281]  http server Running on http://:8080
+2025/04/09 14:21:50.239  [I] [server.go:281]  http server Running on http://:8080
+2025/04/09 14:21:52.899  [D] [router.go:1305]  |      127.0.0.1|[90;47m 302 [0m|      99.75µs| nomatch|[97;44m GET     [0m /devices
+2025/04/09 14:21:52.908  [D] [router.go:1305]  |      127.0.0.1|[97;42m 200 [0m|   1.793292ms|   match|[97;44m GET     [0m /login   r:/login
+2025/04/09 14:21:57.468  [D] [router.go:1305]  |      127.0.0.1|[90;47m 302 [0m|  89.480958ms|   match|[97;46m POST    [0m /login   r:/login
+2025/04/09 14:21:57.475  [D] [router.go:1305]  |      127.0.0.1|[97;42m 200 [0m|   2.157167ms|   match|[97;44m GET     [0m /     r:/
+2025/04/09 14:21:58.998  [D] [router.go:1305]  |      127.0.0.1|[97;42m 200 [0m|   3.961542ms|   match|[97;44m GET     [0m /devices   r:/devices
+2025/04/09 14:27:16.320  [D] [router.go:1305]  |      127.0.0.1|[97;42m 200 [0m|    5.04375ms|   match|[97;44m GET     [0m /devices   r:/devices
+2025/04/09 14:27:17.420  [D] [router.go:1305]  |      127.0.0.1|[97;42m 200 [0m|   3.511541ms|   match|[97;44m GET     [0m /admin   r:/admin
+2025/04/09 14:27:18.112  [D] [router.go:1305]  |      127.0.0.1|[97;42m 200 [0m|   4.043083ms|   match|[97;44m GET     [0m /devices   r:/devices
+2025/04/09 14:30:28.736  [D] [router.go:1305]  |      127.0.0.1|[97;42m 200 [0m|   3.429125ms|   match|[97;44m GET     [0m /devices   r:/devices
+2025/04/09 14:31:28.558  [D] [router.go:1305]  |      127.0.0.1|[97;42m 200 [0m|    5.14825ms|   match|[97;44m GET     [0m /devices   r:/devices
+2025/04/09 14:31:29.572  [D] [router.go:1305]  |      127.0.0.1|[97;42m 200 [0m|   1.798084ms|   match|[97;44m GET     [0m /devices/new   r:/devices/new
+2025/04/09 14:31:40.722  [I] [web_device.go:65]  Device added: MC1
+2025/04/09 14:31:40.723  [D] [router.go:1305]  |      127.0.0.1|[90;47m 302 [0m|   5.237291ms|   match|[97;46m POST    [0m /devices   r:/devices
+2025/04/09 14:31:40.731  [D] [router.go:1305]  |      127.0.0.1|[97;42m 200 [0m|   2.825833ms|   match|[97;44m GET     [0m /devices   r:/devices
+2025/04/09 14:31:58.325  [D] [router.go:1305]  |      127.0.0.1|[97;42m 200 [0m|   3.216292ms|   match|[97;44m GET     [0m /devices   r:/devices
+2025/04/09 14:32:27.516  [D] [router.go:1305]  |      127.0.0.1|[97;42m 200 [0m|   6.960334ms|   match|[97;44m GET     [0m /devices/1   r:/devices/:id
+2025/04/09 14:33:06.482  [D] [template.go:71]  template Execute err: template: devices/list.html:35:14: executing "devices/list.html" at <.xsrfdata>: can't evaluate field xsrfdata in type *models.Device
+2025/04/09 14:33:06.482  [E] [router.go:1246]  template: devices/list.html:35:14: executing "devices/list.html" at <.xsrfdata>: can't evaluate field xsrfdata in type *models.Device
+2025/04/09 14:33:06.482  [D] [router.go:1305]  |      127.0.0.1|[97;42m 200 [0m|   2.743875ms|   match|[97;44m GET     [0m /devices   r:/devices
+2025/04/09 14:33:43.122  [D] [template.go:71]  template Execute err: template: devices/list.html:35:14: executing "devices/list.html" at <.xsrfdata>: can't evaluate field xsrfdata in type *models.Device
+2025/04/09 14:33:43.122  [E] [router.go:1246]  template: devices/list.html:35:14: executing "devices/list.html" at <.xsrfdata>: can't evaluate field xsrfdata in type *models.Device
+2025/04/09 14:33:43.122  [D] [router.go:1305]  |      127.0.0.1|[97;42m 200 [0m|    1.40925ms|   match|[97;44m GET     [0m /devices   r:/devices
+2025/04/09 14:33:44.193  [I] [server.go:281]  http server Running on http://:8080
+2025/04/09 14:33:47.827  [D] [router.go:1305]  |      127.0.0.1|[90;47m 302 [0m|    302.041µs| nomatch|[97;44m GET     [0m /devices
+2025/04/09 14:33:47.838  [D] [router.go:1305]  |      127.0.0.1|[97;42m 200 [0m|     2.1065ms|   match|[97;44m GET     [0m /login   r:/login
+2025/04/09 14:33:51.585  [D] [router.go:1305]  |      127.0.0.1|[90;47m 302 [0m|  70.281167ms|   match|[97;46m POST    [0m /login   r:/login
+2025/04/09 14:33:51.595  [D] [router.go:1305]  |      127.0.0.1|[97;42m 200 [0m|   5.898625ms|   match|[97;44m GET     [0m /     r:/
+2025/04/09 14:33:52.875  [D] [template.go:71]  template Execute err: template: devices/list.html:35:14: executing "devices/list.html" at <.xsrfdata>: can't evaluate field xsrfdata in type *models.Device
+2025/04/09 14:33:52.875  [E] [router.go:1246]  template: devices/list.html:35:14: executing "devices/list.html" at <.xsrfdata>: can't evaluate field xsrfdata in type *models.Device
+2025/04/09 14:33:52.875  [D] [router.go:1305]  |      127.0.0.1|[97;42m 200 [0m|   4.036291ms|   match|[97;44m GET     [0m /devices   r:/devices
+2025/04/09 14:34:45.615  [D] [template.go:71]  template Execute err: template: devices/list.html:35:14: executing "devices/list.html" at <.xsrfdata>: can't evaluate field xsrfdata in type *models.Device
+2025/04/09 14:34:45.615  [E] [router.go:1246]  template: devices/list.html:35:14: executing "devices/list.html" at <.xsrfdata>: can't evaluate field xsrfdata in type *models.Device
+2025/04/09 14:34:45.615  [D] [router.go:1305]  |      127.0.0.1|[97;42m 200 [0m|   1.404834ms|   match|[97;44m GET     [0m /devices   r:/devices
+2025/04/09 14:34:46.580  [I] [server.go:281]  http server Running on http://:8080
+2025/04/09 14:34:53.827  [D] [router.go:1305]  |      127.0.0.1|[90;47m 302 [0m|    182.833µs| nomatch|[97;44m GET     [0m /devices
+2025/04/09 14:34:53.843  [D] [router.go:1305]  |      127.0.0.1|[97;42m 200 [0m|   5.500625ms|   match|[97;44m GET     [0m /login   r:/login
+2025/04/09 14:34:57.467  [D] [router.go:1305]  |      127.0.0.1|[90;47m 302 [0m|     77.281ms|   match|[97;46m POST    [0m /login   r:/login
+2025/04/09 14:34:57.475  [D] [router.go:1305]  |      127.0.0.1|[97;42m 200 [0m|   3.500041ms|   match|[97;44m GET     [0m /     r:/
+2025/04/09 14:34:58.738  [D] [template.go:71]  template Execute err: template: devices/list.html:35:14: executing "devices/list.html" at <.xsrfdata>: can't evaluate field xsrfdata in type *models.Device
+2025/04/09 14:34:58.738  [E] [router.go:1246]  template: devices/list.html:35:14: executing "devices/list.html" at <.xsrfdata>: can't evaluate field xsrfdata in type *models.Device
+2025/04/09 14:34:58.738  [D] [router.go:1305]  |      127.0.0.1|[97;42m 200 [0m|   6.062458ms|   match|[97;44m GET     [0m /devices   r:/devices
+2025/04/09 14:35:45.810  [I] [server.go:281]  http server Running on http://:8080
+2025/04/09 14:35:59.188  [I] [server.go:281]  http server Running on http://:8080
+2025/04/09 14:36:00.063  [D] [router.go:1305]  |      127.0.0.1|[90;47m 302 [0m|    183.042µs| nomatch|[97;44m GET     [0m /devices
+2025/04/09 14:36:00.075  [D] [router.go:1305]  |      127.0.0.1|[97;42m 200 [0m|   2.444333ms|   match|[97;44m GET     [0m /login   r:/login
+2025/04/09 14:36:04.477  [D] [router.go:1305]  |      127.0.0.1|[90;47m 302 [0m|  82.822084ms|   match|[97;46m POST    [0m /login   r:/login
+2025/04/09 14:36:04.483  [D] [router.go:1305]  |      127.0.0.1|[97;42m 200 [0m|   2.998375ms|   match|[97;44m GET     [0m /     r:/
+2025/04/09 14:36:05.625  [D] [template.go:71]  template Execute err: template: devices/list.html:35:14: executing "devices/list.html" at <.xsrfdata>: can't evaluate field xsrfdata in type *models.Device
+2025/04/09 14:36:05.626  [E] [router.go:1246]  template: devices/list.html:35:14: executing "devices/list.html" at <.xsrfdata>: can't evaluate field xsrfdata in type *models.Device
+2025/04/09 14:36:05.626  [D] [router.go:1305]  |      127.0.0.1|[97;42m 200 [0m|    4.03725ms|   match|[97;44m GET     [0m /devices   r:/devices
+2025/04/09 14:36:29.497  [D] [template.go:71]  template Execute err: template: devices/list.html:35:14: executing "devices/list.html" at <.xsrfdata>: can't evaluate field xsrfdata in type *models.Device
+2025/04/09 14:36:29.498  [E] [router.go:1246]  template: devices/list.html:35:14: executing "devices/list.html" at <.xsrfdata>: can't evaluate field xsrfdata in type *models.Device
+2025/04/09 14:36:29.498  [D] [router.go:1305]  |      127.0.0.1|[97;42m 200 [0m|   1.960958ms|   match|[97;44m GET     [0m /devices   r:/devices
+2025/04/09 14:36:30.235  [D] [template.go:71]  template Execute err: template: devices/list.html:35:14: executing "devices/list.html" at <.xsrfdata>: can't evaluate field xsrfdata in type *models.Device
+2025/04/09 14:36:30.235  [E] [router.go:1246]  template: devices/list.html:35:14: executing "devices/list.html" at <.xsrfdata>: can't evaluate field xsrfdata in type *models.Device
+2025/04/09 14:36:30.235  [D] [router.go:1305]  |      127.0.0.1|[97;42m 200 [0m|   2.952541ms|   match|[97;44m GET     [0m /devices   r:/devices
+2025/04/09 14:36:31.294  [D] [template.go:71]  template Execute err: template: devices/list.html:35:14: executing "devices/list.html" at <.xsrfdata>: can't evaluate field xsrfdata in type *models.Device
+2025/04/09 14:36:31.294  [E] [router.go:1246]  template: devices/list.html:35:14: executing "devices/list.html" at <.xsrfdata>: can't evaluate field xsrfdata in type *models.Device
+2025/04/09 14:36:31.294  [D] [router.go:1305]  |      127.0.0.1|[97;42m 200 [0m|    2.23875ms|   match|[97;44m GET     [0m /devices   r:/devices
+2025/04/09 14:36:31.860  [D] [template.go:71]  template Execute err: template: devices/list.html:35:14: executing "devices/list.html" at <.xsrfdata>: can't evaluate field xsrfdata in type *models.Device
+2025/04/09 14:36:31.860  [E] [router.go:1246]  template: devices/list.html:35:14: executing "devices/list.html" at <.xsrfdata>: can't evaluate field xsrfdata in type *models.Device
+2025/04/09 14:36:31.860  [D] [router.go:1305]  |      127.0.0.1|[97;42m 200 [0m|   5.025125ms|   match|[97;44m GET     [0m /devices   r:/devices
+2025/04/09 14:36:35.932  [D] [template.go:71]  template Execute err: template: devices/list.html:35:14: executing "devices/list.html" at <.xsrfdata>: can't evaluate field xsrfdata in type *models.Device
+2025/04/09 14:36:35.932  [E] [router.go:1246]  template: devices/list.html:35:14: executing "devices/list.html" at <.xsrfdata>: can't evaluate field xsrfdata in type *models.Device
+2025/04/09 14:36:35.933  [D] [router.go:1305]  |      127.0.0.1|[97;42m 200 [0m|   3.067542ms|   match|[97;44m GET     [0m /devices   r:/devices
+2025/04/09 14:36:43.593  [I] [server.go:281]  http server Running on http://:8080
+2025/04/09 14:36:44.969  [D] [router.go:1305]  |      127.0.0.1|[90;47m 302 [0m|    570.042µs| nomatch|[97;44m GET     [0m /devices
+2025/04/09 14:36:44.982  [D] [router.go:1305]  |      127.0.0.1|[97;42m 200 [0m|   1.643333ms|   match|[97;44m GET     [0m /login   r:/login
+2025/04/09 14:36:49.583  [D] [router.go:1305]  |      127.0.0.1|[90;47m 302 [0m|  92.617834ms|   match|[97;46m POST    [0m /login   r:/login
+2025/04/09 14:36:49.593  [D] [router.go:1305]  |      127.0.0.1|[97;42m 200 [0m|   2.323208ms|   match|[97;44m GET     [0m /     r:/
+2025/04/09 14:36:50.592  [D] [template.go:71]  template Execute err: template: devices/list.html:35:14: executing "devices/list.html" at <.xsrfdata>: can't evaluate field xsrfdata in type *models.Device
+2025/04/09 14:36:50.592  [E] [router.go:1246]  template: devices/list.html:35:14: executing "devices/list.html" at <.xsrfdata>: can't evaluate field xsrfdata in type *models.Device
+2025/04/09 14:36:50.592  [D] [router.go:1305]  |      127.0.0.1|[97;42m 200 [0m|   4.265209ms|   match|[97;44m GET     [0m /devices   r:/devices
+2025/04/09 14:37:10.645  [D] [template.go:71]  template Execute err: template: devices/list.html:35:19: executing "devices/list.html" at <.xsrfdata>: can't evaluate field xsrfdata in type *models.Device
+2025/04/09 14:37:10.645  [E] [router.go:1246]  template: devices/list.html:35:19: executing "devices/list.html" at <.xsrfdata>: can't evaluate field xsrfdata in type *models.Device
+2025/04/09 14:37:10.645  [D] [router.go:1305]  |      127.0.0.1|[97;42m 200 [0m|   1.413833ms|   match|[97;44m GET     [0m /devices   r:/devices
+2025/04/09 14:37:11.901  [D] [template.go:71]  template Execute err: template: devices/list.html:35:19: executing "devices/list.html" at <.xsrfdata>: can't evaluate field xsrfdata in type *models.Device
+2025/04/09 14:37:11.901  [E] [router.go:1246]  template: devices/list.html:35:19: executing "devices/list.html" at <.xsrfdata>: can't evaluate field xsrfdata in type *models.Device
+2025/04/09 14:37:11.901  [D] [router.go:1305]  |      127.0.0.1|[97;42m 200 [0m|    1.91625ms|   match|[97;44m GET     [0m /devices   r:/devices
+2025/04/09 14:37:23.882  [I] [server.go:281]  http server Running on http://:8080
+2025/04/09 14:37:26.400  [D] [router.go:1305]  |      127.0.0.1|[90;47m 302 [0m|    105.708µs| nomatch|[97;44m GET     [0m /devices
+2025/04/09 14:37:26.408  [D] [router.go:1305]  |      127.0.0.1|[97;42m 200 [0m|   1.270375ms|   match|[97;44m GET     [0m /login   r:/login
+2025/04/09 14:37:29.703  [D] [router.go:1305]  |      127.0.0.1|[90;47m 302 [0m|  78.648583ms|   match|[97;46m POST    [0m /login   r:/login
+2025/04/09 14:37:29.711  [D] [router.go:1305]  |      127.0.0.1|[97;42m 200 [0m|   2.566292ms|   match|[97;44m GET     [0m /     r:/
+2025/04/09 14:37:30.933  [D] [template.go:71]  template Execute err: template: devices/list.html:35:19: executing "devices/list.html" at <.xsrfdata>: can't evaluate field xsrfdata in type *models.Device
+2025/04/09 14:37:30.933  [E] [router.go:1246]  template: devices/list.html:35:19: executing "devices/list.html" at <.xsrfdata>: can't evaluate field xsrfdata in type *models.Device
+2025/04/09 14:37:30.933  [D] [router.go:1305]  |      127.0.0.1|[97;42m 200 [0m|   4.312334ms|   match|[97;44m GET     [0m /devices   r:/devices
+2025/04/09 14:40:05.952  [E] [template.go:225]  parse template err: devices/list.html template: devices/list.html:35: undefined variable "$xsrfdata"
+2025/04/09 14:40:05.953  [D] [template.go:71]  template Execute err: template: devices/list.html:35:19: executing "devices/list.html" at <.xsrfdata>: can't evaluate field xsrfdata in type *models.Device
+2025/04/09 14:40:05.953  [E] [router.go:1246]  template: devices/list.html:35:19: executing "devices/list.html" at <.xsrfdata>: can't evaluate field xsrfdata in type *models.Device
+2025/04/09 14:40:05.953  [D] [router.go:1305]  |      127.0.0.1|[97;42m 200 [0m|   3.145834ms|   match|[97;44m GET     [0m /devices   r:/devices
+2025/04/09 14:40:06.002  [D] [router.go:1305]  |      127.0.0.1|[97;43m 404 [0m|    221.666µs| nomatch|[97;44m GET     [0m /favicon.ico
+2025/04/09 14:40:10.251  [E] [template.go:225]  parse template err: devices/list.html template: devices/list.html:35: undefined variable "$xsrfdata"
+2025/04/09 14:40:10.251  [D] [template.go:71]  template Execute err: template: devices/list.html:35:19: executing "devices/list.html" at <.xsrfdata>: can't evaluate field xsrfdata in type *models.Device
+2025/04/09 14:40:10.251  [E] [router.go:1246]  template: devices/list.html:35:19: executing "devices/list.html" at <.xsrfdata>: can't evaluate field xsrfdata in type *models.Device
+2025/04/09 14:40:10.251  [D] [router.go:1305]  |      127.0.0.1|[97;42m 200 [0m|   2.637625ms|   match|[97;44m GET     [0m /devices   r:/devices
+2025/04/09 14:41:06.072  [E] [template.go:225]  parse template err: devices/list.html template: devices/list.html:35: undefined variable "$xsrfdata"
+2025/04/09 14:41:06.072  [D] [template.go:71]  template Execute err: template: devices/list.html:35:19: executing "devices/list.html" at <.xsrfdata>: can't evaluate field xsrfdata in type *models.Device
+2025/04/09 14:41:06.072  [E] [router.go:1246]  template: devices/list.html:35:19: executing "devices/list.html" at <.xsrfdata>: can't evaluate field xsrfdata in type *models.Device
+2025/04/09 14:41:06.072  [D] [router.go:1305]  |      127.0.0.1|[97;42m 200 [0m|   1.149292ms|   match|[97;44m GET     [0m /devices   r:/devices
+2025/04/09 14:41:06.639  [E] [template.go:225]  parse template err: devices/list.html template: devices/list.html:35: undefined variable "$xsrfdata"
+2025/04/09 14:41:06.640  [W] [hooks.go:83]  template: devices/list.html:35: undefined variable "$xsrfdata"
+2025/04/09 14:41:21.864  [E] [template.go:225]  parse template err: devices/list.html template: devices/list.html:35: undefined variable "$xsrfdata"
+2025/04/09 14:41:21.864  [W] [hooks.go:83]  template: devices/list.html:35: undefined variable "$xsrfdata"
+2025/04/09 14:42:01.714  [I] [server.go:281]  http server Running on http://:8080
+2025/04/09 14:42:03.670  [D] [router.go:1305]  |      127.0.0.1|[90;47m 302 [0m|    438.959µs| nomatch|[97;44m GET     [0m /devices
+2025/04/09 14:42:03.679  [D] [router.go:1305]  |      127.0.0.1|[97;42m 200 [0m|   2.212708ms|   match|[97;44m GET     [0m /login   r:/login
+2025/04/09 14:42:06.964  [D] [router.go:1305]  |      127.0.0.1|[90;47m 302 [0m|  84.847125ms|   match|[97;46m POST    [0m /login   r:/login
+2025/04/09 14:42:06.971  [D] [router.go:1305]  |      127.0.0.1|[97;42m 200 [0m|   2.614083ms|   match|[97;44m GET     [0m /     r:/
+2025/04/09 14:42:10.783  [D] [template.go:71]  template Execute err: template: devices/list.html:35:14: executing "devices/list.html" at <.xsrfdata>: can't evaluate field xsrfdata in type *models.Device
+2025/04/09 14:42:10.784  [E] [router.go:1246]  template: devices/list.html:35:14: executing "devices/list.html" at <.xsrfdata>: can't evaluate field xsrfdata in type *models.Device
+2025/04/09 14:42:10.784  [D] [router.go:1305]  |      127.0.0.1|[97;42m 200 [0m|   4.154792ms|   match|[97;44m GET     [0m /devices   r:/devices
+2025/04/09 14:54:23.766  [I] [server.go:281]  http server Running on http://:8080
+2025/04/09 14:54:53.067  [I] [server.go:281]  http server Running on http://:8080
+2025/04/09 14:54:57.964  [I] [server.go:281]  http server Running on http://:8080
+2025/04/09 14:55:02.384  [I] [server.go:281]  http server Running on http://:8080
+2025/04/09 14:56:04.539  [I] [server.go:281]  http server Running on http://:8080
+2025/04/09 14:56:08.719  [D] [router.go:1305]  |      127.0.0.1|[90;47m 302 [0m|     95.875µs| nomatch|[97;44m GET     [0m /devices
+2025/04/09 14:56:08.726  [D] [router.go:1305]  |      127.0.0.1|[97;42m 200 [0m|   1.562209ms|   match|[97;44m GET     [0m /login   r:/login
+2025/04/09 14:56:49.141  [I] [server.go:281]  http server Running on http://:8080
+2025/04/09 14:56:51.922  [D] [router.go:1305]  |      127.0.0.1|[90;47m 302 [0m|     76.293ms|   match|[97;46m POST    [0m /login   r:/login
+2025/04/09 14:56:51.931  [D] [router.go:1305]  |      127.0.0.1|[97;42m 200 [0m|   3.765709ms|   match|[97;44m GET     [0m /     r:/
+2025/04/09 14:56:53.804  [D] [template.go:71]  template Execute err: template: devices/list.html:35:14: executing "devices/list.html" at <.xsrfdata>: can't evaluate field xsrfdata in type *models.Device
+2025/04/09 14:56:53.804  [E] [router.go:1246]  template: devices/list.html:35:14: executing "devices/list.html" at <.xsrfdata>: can't evaluate field xsrfdata in type *models.Device
+2025/04/09 14:56:53.804  [D] [router.go:1305]  |      127.0.0.1|[97;42m 200 [0m|   3.177125ms|   match|[97;44m GET     [0m /devices   r:/devices
+2025/04/09 14:57:32.947  [I] [server.go:281]  http server Running on http://:8080
+2025/04/09 14:57:34.099  [D] [router.go:1305]  |      127.0.0.1|[90;47m 302 [0m|     90.417µs| nomatch|[97;44m GET     [0m /devices
+2025/04/09 14:57:34.106  [D] [router.go:1305]  |      127.0.0.1|[97;42m 200 [0m|   3.120709ms|   match|[97;44m GET     [0m /login   r:/login
+2025/04/09 14:57:37.468  [D] [router.go:1305]  |      127.0.0.1|[90;47m 302 [0m|  71.097458ms|   match|[97;46m POST    [0m /login   r:/login
+2025/04/09 14:57:37.475  [D] [router.go:1305]  |      127.0.0.1|[97;42m 200 [0m|   2.115333ms|   match|[97;44m GET     [0m /     r:/
+2025/04/09 14:57:38.951  [D] [template.go:71]  template Execute err: template: devices/list.html:35:14: executing "devices/list.html" at <.xsrfdata>: can't evaluate field xsrfdata in type *models.Device
+2025/04/09 14:57:38.951  [E] [router.go:1246]  template: devices/list.html:35:14: executing "devices/list.html" at <.xsrfdata>: can't evaluate field xsrfdata in type *models.Device
+2025/04/09 14:57:38.951  [D] [router.go:1305]  |      127.0.0.1|[97;42m 200 [0m|   2.693791ms|   match|[97;44m GET     [0m /devices   r:/devices
+2025/04/09 14:57:51.196  [D] [template.go:71]  template Execute err: template: devices/list.html:35:14: executing "devices/list.html" at <.xsrfdata>: can't evaluate field xsrfdata in type *models.Device
+2025/04/09 14:57:51.196  [E] [router.go:1246]  template: devices/list.html:35:14: executing "devices/list.html" at <.xsrfdata>: can't evaluate field xsrfdata in type *models.Device
+2025/04/09 14:57:51.196  [D] [router.go:1305]  |      127.0.0.1|[97;42m 200 [0m|    3.25325ms|   match|[97;44m GET     [0m /devices   r:/devices
+2025/04/09 14:57:51.884  [I] [server.go:281]  http server Running on http://:8080
+2025/04/09 14:57:52.027  [D] [router.go:1305]  |      127.0.0.1|[90;47m 302 [0m|     58.333µs| nomatch|[97;44m GET     [0m /devices
+2025/04/09 14:57:52.035  [D] [router.go:1305]  |      127.0.0.1|[97;42m 200 [0m|     724.25µs|   match|[97;44m GET     [0m /login   r:/login
+2025/04/09 14:59:00.151  [I] [server.go:281]  http server Running on http://:8080
+2025/04/09 14:59:01.179  [I] [server.go:281]  http server Running on http://:8080
+2025/04/09 14:59:12.779  [D] [router.go:1305]  |      127.0.0.1|[90;47m 302 [0m|     56.375µs| nomatch|[97;44m GET     [0m /  
+2025/04/09 14:59:12.790  [D] [router.go:1305]  |      127.0.0.1|[97;42m 200 [0m|   2.014208ms|   match|[97;44m GET     [0m /login   r:/login
+2025/04/09 14:59:15.910  [D] [router.go:1305]  |      127.0.0.1|[90;47m 302 [0m|  68.646625ms|   match|[97;46m POST    [0m /login   r:/login
+2025/04/09 14:59:15.916  [D] [router.go:1305]  |      127.0.0.1|[97;42m 200 [0m|   2.126625ms|   match|[97;44m GET     [0m /     r:/
+2025/04/09 14:59:19.064  [D] [template.go:71]  template Execute err: template: devices/list.html:35:14: executing "devices/list.html" at <.xsrfdata>: can't evaluate field xsrfdata in type *models.Device
+2025/04/09 14:59:19.064  [E] [router.go:1246]  template: devices/list.html:35:14: executing "devices/list.html" at <.xsrfdata>: can't evaluate field xsrfdata in type *models.Device
+2025/04/09 14:59:19.064  [D] [router.go:1305]  |      127.0.0.1|[97;42m 200 [0m|   4.009541ms|   match|[97;44m GET     [0m /devices   r:/devices
+2025/04/09 14:59:43.868  [D] [template.go:71]  template Execute err: template: devices/list.html:35:14: executing "devices/list.html" at <.xsrfdata>: can't evaluate field xsrfdata in type *models.Device
+2025/04/09 14:59:43.868  [E] [router.go:1246]  template: devices/list.html:35:14: executing "devices/list.html" at <.xsrfdata>: can't evaluate field xsrfdata in type *models.Device
+2025/04/09 14:59:43.868  [D] [router.go:1305]  |      127.0.0.1|[97;42m 200 [0m|  12.328042ms|   match|[97;44m GET     [0m /devices   r:/devices
+2025/04/09 14:59:44.860  [I] [server.go:281]  http server Running on http://:8080
+2025/04/09 14:59:45.783  [D] [router.go:1305]  |      127.0.0.1|[90;47m 302 [0m|        124µs| nomatch|[97;44m GET     [0m /  
+2025/04/09 14:59:45.797  [D] [router.go:1305]  |      127.0.0.1|[97;42m 200 [0m|   2.530416ms|   match|[97;44m GET     [0m /login   r:/login
+2025/04/09 15:02:50.767  [I] [server.go:281]  http server Running on http://:8080
+2025/04/09 15:03:14.813  [I] [server.go:281]  http server Running on http://:8080
+2025/04/09 15:03:31.764  [I] [server.go:281]  http server Running on http://:8080
+2025/04/09 15:03:35.352  [D] [router.go:1305]  |      127.0.0.1|[90;47m 302 [0m|  72.804083ms|   match|[97;46m POST    [0m /login   r:/login
+2025/04/09 15:03:35.362  [D] [router.go:1305]  |      127.0.0.1|[97;42m 200 [0m|   3.090667ms|   match|[97;44m GET     [0m /     r:/
+2025/04/09 15:03:36.996  [D] [template.go:71]  template Execute err: template: devices/list.html:35:14: executing "devices/list.html" at <.xsrfdata>: can't evaluate field xsrfdata in type *models.Device
+2025/04/09 15:03:36.996  [E] [router.go:1246]  template: devices/list.html:35:14: executing "devices/list.html" at <.xsrfdata>: can't evaluate field xsrfdata in type *models.Device
+2025/04/09 15:03:36.996  [D] [router.go:1305]  |      127.0.0.1|[97;42m 200 [0m|   2.672416ms|   match|[97;44m GET     [0m /devices   r:/devices
+2025/04/09 15:04:15.733  [I] [server.go:281]  http server Running on http://:8080
+2025/04/09 15:04:54.656  [I] [server.go:281]  http server Running on http://:8080
+2025/04/09 15:05:03.985  [I] [server.go:281]  http server Running on http://:8080
+2025/04/09 15:06:20.776  [I] [server.go:281]  http server Running on http://:8080
+2025/04/09 15:06:21.269  [D] [router.go:1305]  |      127.0.0.1|[90;47m 302 [0m|    137.667µs| nomatch|[97;44m GET     [0m /devices
+2025/04/09 15:06:21.279  [D] [router.go:1305]  |      127.0.0.1|[97;42m 200 [0m|   1.896667ms|   match|[97;44m GET     [0m /login   r:/login
+2025/04/09 15:06:24.420  [D] [router.go:1305]  |      127.0.0.1|[90;47m 302 [0m|  86.713334ms|   match|[97;46m POST    [0m /login   r:/login
+2025/04/09 15:06:24.430  [D] [router.go:1305]  |      127.0.0.1|[97;42m 200 [0m|   2.449333ms|   match|[97;44m GET     [0m /     r:/
+2025/04/09 15:06:25.676  [D] [template.go:71]  template Execute err: template: devices/list.html:35:14: executing "devices/list.html" at <.xsrfdata>: can't evaluate field xsrfdata in type *models.Device
+2025/04/09 15:06:25.676  [E] [router.go:1246]  template: devices/list.html:35:14: executing "devices/list.html" at <.xsrfdata>: can't evaluate field xsrfdata in type *models.Device
+2025/04/09 15:06:25.676  [D] [router.go:1305]  |      127.0.0.1|[97;42m 200 [0m|   5.997416ms|   match|[97;44m GET     [0m /devices   r:/devices
+2025/04/09 15:07:01.796  [D] [router.go:1305]  |      127.0.0.1|[97;42m 200 [0m|   2.057917ms|   match|[97;44m GET     [0m /devices   r:/devices
+2025/04/09 15:07:32.026  [D] [router.go:1305]  |      127.0.0.1|[97;42m 200 [0m|     3.7085ms|   match|[97;44m GET     [0m /devices   r:/devices
+2025/04/09 15:07:52.219  [D] [router.go:1305]  |      127.0.0.1|[97;42m 200 [0m|   2.537042ms|   match|[97;44m GET     [0m /devices   r:/devices
+2025/04/09 15:07:53.696  [D] [router.go:1305]  |      127.0.0.1|[97;42m 200 [0m|   4.225875ms|   match|[97;44m GET     [0m /devices/new   r:/devices/new
+2025/04/09 15:08:11.457  [D] [router.go:1305]  |      127.0.0.1|[97;42m 200 [0m|   2.116375ms|   match|[97;44m GET     [0m /devices   r:/devices
+2025/04/09 15:08:28.659  [D] [router.go:1305]  |      127.0.0.1|[97;42m 200 [0m|   2.294083ms|   match|[97;44m GET     [0m /devices   r:/devices
+2025/04/09 15:08:40.701  [D] [router.go:1305]  |      127.0.0.1|[97;42m 200 [0m|   2.336333ms|   match|[97;44m GET     [0m /devices   r:/devices
+2025/04/09 15:08:46.804  [D] [router.go:1305]  |      127.0.0.1|[97;42m 200 [0m|   2.161458ms|   match|[97;44m GET     [0m /devices   r:/devices
+2025/04/09 15:08:47.591  [D] [router.go:1305]  |      127.0.0.1|[97;42m 200 [0m|   3.186083ms|   match|[97;44m GET     [0m /devices   r:/devices
+2025/04/09 15:08:55.162  [D] [router.go:1305]  |      127.0.0.1|[97;42m 200 [0m|   1.983083ms|   match|[97;44m GET     [0m /devices   r:/devices
+2025/04/09 15:09:05.409  [D] [router.go:1305]  |      127.0.0.1|[97;42m 200 [0m|   2.000542ms|   match|[97;44m GET     [0m /devices   r:/devices
+2025/04/09 15:09:07.252  [D] [router.go:1305]  |      127.0.0.1|[97;42m 200 [0m|   3.577166ms|   match|[97;44m GET     [0m /     r:/
+2025/04/09 15:10:38.475  [I] [server.go:281]  http server Running on http://:8080
+2025/04/09 15:14:48.184  [I] [server.go:281]  http server Running on http://:8080
+2025/04/09 15:15:18.315  [I] [server.go:281]  http server Running on http://:8080
+2025/04/09 15:15:18.315  [D] [admin.go:86]  now we don't start tasks here, if you use task module, please invoke task.StartTask, or task will not be executed
+2025/04/09 15:15:18.315  [I] [admin.go:92]  Admin server Running on localhost:8088
+2025/04/09 15:15:18.315  [I] [server.go:281]  http server Running on http://localhost:8088
+2025/04/09 15:15:21.655  [D] [router.go:1305]  |      127.0.0.1|[97;42m 200 [0m|     658.75µs|   match|[97;44m GET     [0m /     r:/
+2025/04/09 15:15:21.844  [D] [router.go:1305]  |      127.0.0.1|[97;43m 404 [0m|   1.165208ms| nomatch|[97;44m GET     [0m /favicon.ico
+2025/04/09 15:15:26.699  [D] [router.go:1305]  |      127.0.0.1|[97;42m 200 [0m|    797.667µs|   match|[97;44m GET     [0m /qps   r:/qps
+2025/04/09 15:15:31.053  [D] [router.go:1305]  |      127.0.0.1|[97;42m 200 [0m|   1.050709ms|   match|[97;44m GET     [0m /prof   r:/prof
+2025/04/09 15:15:36.536  [D] [router.go:1305]  |      127.0.0.1|[97;42m 200 [0m|     377.25µs|   match|[97;44m GET     [0m /healthcheck   r:/healthcheck
+2025/04/09 15:15:38.172  [C] [config.go:500]  the request url is  /task
+2025/04/09 15:15:38.172  [C] [config.go:501]  Handler crashed with error interface conversion: interface {} is nil, not [][]string
+2025/04/09 15:15:38.172  [C] [config.go:507]  /opt/homebrew/Cellar/go/1.24.2/libexec/src/runtime/panic.go:792
+2025/04/09 15:15:38.172  [C] [config.go:507]  /opt/homebrew/Cellar/go/1.24.2/libexec/src/runtime/iface.go:275
+2025/04/09 15:15:38.172  [C] [config.go:507]  /Users/matthewholden/Code/go/pkg/mod/github.com/beego/beego/v2@v2.1.0/server/web/admin_controller.go:105
+2025/04/09 15:15:38.172  [C] [config.go:507]  /opt/homebrew/Cellar/go/1.24.2/libexec/src/reflect/value.go:584
+2025/04/09 15:15:38.172  [C] [config.go:507]  /opt/homebrew/Cellar/go/1.24.2/libexec/src/reflect/value.go:368
+2025/04/09 15:15:38.172  [C] [config.go:507]  /Users/matthewholden/Code/go/pkg/mod/github.com/beego/beego/v2@v2.1.0/server/web/router.go:1233
+2025/04/09 15:15:38.172  [C] [config.go:507]  /Users/matthewholden/Code/go/pkg/mod/github.com/beego/beego/v2@v2.1.0/server/web/filter.go:83
+2025/04/09 15:15:38.172  [C] [config.go:507]  /Users/matthewholden/Code/go/pkg/mod/github.com/beego/beego/v2@v2.1.0/server/web/router.go:1002
+2025/04/09 15:15:38.172  [C] [config.go:507]  /opt/homebrew/Cellar/go/1.24.2/libexec/src/net/http/server.go:3301
+2025/04/09 15:15:38.172  [C] [config.go:507]  /opt/homebrew/Cellar/go/1.24.2/libexec/src/net/http/server.go:2102
+2025/04/09 15:15:38.172  [C] [config.go:507]  /opt/homebrew/Cellar/go/1.24.2/libexec/src/runtime/asm_arm64.s:1223
+2025/04/09 15:15:57.083  [D] [router.go:1305]  |      127.0.0.1|[97;42m 200 [0m|     809.25µs|   match|[97;44m GET     [0m /qps   r:/qps
+2025/04/09 15:17:04.601  [I] [server.go:281]  http server Running on http://:8080
+2025/04/09 15:17:04.601  [D] [admin.go:86]  now we don't start tasks here, if you use task module, please invoke task.StartTask, or task will not be executed
+2025/04/09 15:17:04.601  [I] [admin.go:92]  Admin server Running on localhost:8088
+2025/04/09 15:17:04.601  [I] [server.go:281]  http server Running on http://localhost:8088
+2025/04/09 15:19:27.006  [D] [router.go:1305]  |      127.0.0.1|[97;42m 200 [0m|   1.088667ms|   match|[97;44m GET     [0m /qps   r:/qps
+2025/04/09 15:19:28.478  [D] [router.go:1305]  |      127.0.0.1|[97;42m 200 [0m|    387.416µs|   match|[97;44m GET     [0m /qps   r:/qps
+2025/04/09 15:19:29.684  [D] [router.go:1305]  |      127.0.0.1|[97;42m 200 [0m|    707.417µs|   match|[97;44m GET     [0m /qps   r:/qps
+2025/04/09 15:19:30.289  [D] [router.go:1305]  |      127.0.0.1|[97;42m 200 [0m|    610.417µs|   match|[97;44m GET     [0m /qps   r:/qps
+2025/04/09 15:19:32.138  [D] [router.go:1305]  |      127.0.0.1|[97;42m 200 [0m|    616.334µs|   match|[97;44m GET     [0m /prof   r:/prof
+2025/04/09 15:19:34.113  [D] [router.go:1305]  |      127.0.0.1|[97;42m 200 [0m|    190.083µs|   match|[97;44m GET     [0m /healthcheck   r:/healthcheck
+2025/04/09 15:19:35.544  [C] [config.go:500]  the request url is  /task
+2025/04/09 15:19:35.544  [C] [config.go:501]  Handler crashed with error interface conversion: interface {} is nil, not [][]string
+2025/04/09 15:19:35.544  [C] [config.go:507]  /opt/homebrew/Cellar/go/1.24.2/libexec/src/runtime/panic.go:792
+2025/04/09 15:19:35.544  [C] [config.go:507]  /opt/homebrew/Cellar/go/1.24.2/libexec/src/runtime/iface.go:275
+2025/04/09 15:19:35.544  [C] [config.go:507]  /Users/matthewholden/Code/go/pkg/mod/github.com/beego/beego/v2@v2.1.0/server/web/admin_controller.go:105
+2025/04/09 15:19:35.544  [C] [config.go:507]  /opt/homebrew/Cellar/go/1.24.2/libexec/src/reflect/value.go:584
+2025/04/09 15:19:35.545  [C] [config.go:507]  /opt/homebrew/Cellar/go/1.24.2/libexec/src/reflect/value.go:368
+2025/04/09 15:19:35.545  [C] [config.go:507]  /Users/matthewholden/Code/go/pkg/mod/github.com/beego/beego/v2@v2.1.0/server/web/router.go:1233
+2025/04/09 15:19:35.545  [C] [config.go:507]  /Users/matthewholden/Code/go/pkg/mod/github.com/beego/beego/v2@v2.1.0/server/web/filter.go:83
+2025/04/09 15:19:35.545  [C] [config.go:507]  /Users/matthewholden/Code/go/pkg/mod/github.com/beego/beego/v2@v2.1.0/server/web/router.go:1002
+2025/04/09 15:19:35.545  [C] [config.go:507]  /opt/homebrew/Cellar/go/1.24.2/libexec/src/net/http/server.go:3301
+2025/04/09 15:19:35.545  [C] [config.go:507]  /opt/homebrew/Cellar/go/1.24.2/libexec/src/net/http/server.go:2102
+2025/04/09 15:19:35.545  [C] [config.go:507]  /opt/homebrew/Cellar/go/1.24.2/libexec/src/runtime/asm_arm64.s:1223
+2025/04/09 15:19:37.971  [D] [router.go:1305]  |      127.0.0.1|[97;42m 200 [0m|    681.541µs|   match|[97;44m GET     [0m /listconf   r:/listconf
+2025/04/09 15:19:40.663  [D] [router.go:1305]  |      127.0.0.1|[97;42m 200 [0m|    384.083µs|   match|[97;44m GET     [0m /listconf   r:/listconf
+2025/04/09 15:19:50.923  [D] [router.go:1305]  |      127.0.0.1|[97;42m 200 [0m|    411.833µs|   match|[97;44m GET     [0m /qps   r:/qps
+2025/04/09 15:27:20.960  [I] [server.go:280]  http server Running on http://:8080
+2025/04/09 15:27:20.960  [D] [admin.go:87]  now we don't start tasks here, if you use task module, please invoke task.StartTask, or task will not be executed
+2025/04/09 15:27:20.960  [I] [admin.go:93]  Admin server Running on localhost:8088
+2025/04/09 15:27:20.960  [I] [server.go:280]  http server Running on http://localhost:8088
+2025/04/09 15:27:22.505  [D] [router.go:1306]  |      127.0.0.1|[97;42m 200 [0m|    617.333µs|   match|[97;44m GET     [0m /     r:/
+2025/04/09 15:27:52.350  [D] [router.go:1306]  |      127.0.0.1|[97;42m 200 [0m|    387.667µs|   match|[97;44m GET     [0m /qps   r:/qps
+2025/04/09 15:28:13.224  [D] [router.go:1306]  |      127.0.0.1|[97;42m 200 [0m|      337.5µs|   match|[97;44m GET     [0m /     r:/
+2025/04/09 15:28:20.485  [D] [router.go:1306]  |      127.0.0.1|[90;47m 302 [0m|     38.833µs| nomatch|[97;44m GET     [0m /  
+2025/04/09 15:28:20.497  [D] [router.go:1306]  |      127.0.0.1|[97;42m 200 [0m|    2.80675ms|   match|[97;44m GET     [0m /login   r:/login
+2025/04/09 15:28:23.509  [D] [router.go:1306]  |      127.0.0.1|[97;42m 200 [0m|    617.209µs|   match|[97;44m GET     [0m /qps   r:/qps
+2025/04/09 15:28:31.042  [D] [router.go:1306]  |      127.0.0.1|[90;47m 302 [0m|  67.066417ms|   match|[97;46m POST    [0m /login   r:/login
+2025/04/09 15:28:31.049  [D] [router.go:1306]  |      127.0.0.1|[97;42m 200 [0m|   2.793125ms|   match|[97;44m GET     [0m /     r:/
+2025/04/09 15:28:34.327  [D] [router.go:1306]  |      127.0.0.1|[97;42m 200 [0m|    262.417µs|   match|[97;44m GET     [0m /qps   r:/qps
+2025/04/09 15:28:46.441  [D] [router.go:1306]  |      127.0.0.1|[97;42m 200 [0m|   2.389666ms|   match|[97;44m GET     [0m /devices   r:/devices
+2025/04/09 15:28:49.602  [D] [router.go:1306]  |      127.0.0.1|[97;42m 200 [0m|    251.542µs|   match|[97;44m GET     [0m /healthcheck   r:/healthcheck
+2025/04/09 15:28:51.588  [C] [config.go:500]  the request url is  /task
+2025/04/09 15:28:51.588  [C] [config.go:501]  Handler crashed with error interface conversion: interface {} is nil, not [][]string
+2025/04/09 15:28:51.588  [C] [config.go:507]  /opt/homebrew/Cellar/go/1.24.2/libexec/src/runtime/panic.go:792
+2025/04/09 15:28:51.588  [C] [config.go:507]  /opt/homebrew/Cellar/go/1.24.2/libexec/src/runtime/iface.go:275
+2025/04/09 15:28:51.588  [C] [config.go:507]  /Users/matthewholden/Code/go/pkg/mod/github.com/beego/beego/v2@v2.3.7/server/web/admin_controller.go:105
+2025/04/09 15:28:51.588  [C] [config.go:507]  /opt/homebrew/Cellar/go/1.24.2/libexec/src/reflect/value.go:584
+2025/04/09 15:28:51.588  [C] [config.go:507]  /opt/homebrew/Cellar/go/1.24.2/libexec/src/reflect/value.go:368
+2025/04/09 15:28:51.588  [C] [config.go:507]  /Users/matthewholden/Code/go/pkg/mod/github.com/beego/beego/v2@v2.3.7/server/web/router.go:1234
+2025/04/09 15:28:51.588  [C] [config.go:507]  /Users/matthewholden/Code/go/pkg/mod/github.com/beego/beego/v2@v2.3.7/server/web/filter.go:83
+2025/04/09 15:28:51.588  [C] [config.go:507]  /Users/matthewholden/Code/go/pkg/mod/github.com/beego/beego/v2@v2.3.7/server/web/router.go:1003
+2025/04/09 15:28:51.588  [C] [config.go:507]  /opt/homebrew/Cellar/go/1.24.2/libexec/src/net/http/server.go:3301
+2025/04/09 15:28:51.588  [C] [config.go:507]  /opt/homebrew/Cellar/go/1.24.2/libexec/src/net/http/server.go:2102
+2025/04/09 15:28:51.588  [C] [config.go:507]  /opt/homebrew/Cellar/go/1.24.2/libexec/src/runtime/asm_arm64.s:1223
+2025/04/09 15:33:34.220  [I] [server.go:280]  http server Running on http://:8080
+2025/04/09 15:33:34.220  [D] [admin.go:87]  now we don't start tasks here, if you use task module, please invoke task.StartTask, or task will not be executed
+2025/04/09 15:33:34.220  [I] [admin.go:93]  Admin server Running on localhost:8088
+2025/04/09 15:33:34.220  [I] [server.go:280]  http server Running on http://localhost:8088
+2025/04/09 15:35:51.884  [I] [server.go:280]  http server Running on http://:8080
+2025/04/09 15:35:51.884  [D] [admin.go:87]  now we don't start tasks here, if you use task module, please invoke task.StartTask, or task will not be executed
+2025/04/09 15:35:51.884  [I] [admin.go:93]  Admin server Running on localhost:8088
+2025/04/09 15:35:51.884  [I] [server.go:280]  http server Running on http://localhost:8088
+2025/04/09 15:36:08.685  [I] [server.go:280]  http server Running on http://:8080
+2025/04/09 15:36:08.685  [D] [admin.go:87]  now we don't start tasks here, if you use task module, please invoke task.StartTask, or task will not be executed
+2025/04/09 15:36:08.685  [I] [admin.go:93]  Admin server Running on localhost:8088
+2025/04/09 15:36:08.685  [I] [server.go:280]  http server Running on http://localhost:8088
+2025/04/09 15:36:55.985  [I] [server.go:280]  http server Running on http://:8080
+2025/04/09 15:36:55.985  [D] [admin.go:87]  now we don't start tasks here, if you use task module, please invoke task.StartTask, or task will not be executed
+2025/04/09 15:36:55.985  [I] [admin.go:93]  Admin server Running on localhost:8088
+2025/04/09 15:36:55.985  [I] [server.go:280]  http server Running on http://localhost:8088
+2025/04/09 15:37:21.172  [I] [server.go:280]  http server Running on http://:8080
+2025/04/09 15:37:21.172  [D] [admin.go:87]  now we don't start tasks here, if you use task module, please invoke task.StartTask, or task will not be executed
+2025/04/09 15:37:21.172  [I] [admin.go:93]  Admin server Running on localhost:8088
+2025/04/09 15:37:21.172  [I] [server.go:280]  http server Running on http://localhost:8088
+2025/04/09 15:37:36.733  [I] [server.go:280]  http server Running on http://:8080
+2025/04/09 15:37:36.733  [D] [admin.go:87]  now we don't start tasks here, if you use task module, please invoke task.StartTask, or task will not be executed
+2025/04/09 15:37:36.733  [I] [admin.go:93]  Admin server Running on localhost:8088
+2025/04/09 15:37:36.733  [I] [server.go:280]  http server Running on http://localhost:8088
+2025/04/09 15:37:41.158  [D] [router.go:1306]  |      127.0.0.1|[90;47m 302 [0m|    104.958µs| nomatch|[97;44m GET     [0m /devices
+2025/04/09 15:37:41.166  [D] [router.go:1306]  |      127.0.0.1|[97;42m 200 [0m|   2.119416ms|   match|[97;44m GET     [0m /login   r:/login
+2025/04/09 15:37:44.346  [D] [router.go:1306]  |      127.0.0.1|[90;47m 302 [0m|  71.743791ms|   match|[97;46m POST    [0m /login   r:/login
+2025/04/09 15:37:44.353  [D] [router.go:1306]  |      127.0.0.1|[97;42m 200 [0m|   2.251542ms|   match|[97;44m GET     [0m /     r:/
+2025/04/09 15:37:45.730  [D] [router.go:1306]  |      127.0.0.1|[97;42m 200 [0m|   4.322167ms|   match|[97;44m GET     [0m /devices   r:/devices
+2025/04/09 15:37:51.501  [D] [router.go:1306]  |      127.0.0.1|[97;42m 200 [0m|   2.220959ms|   match|[97;44m GET     [0m /admin   r:/admin
+2025/04/09 15:38:28.933  [D] [admin.go:87]  now we don't start tasks here, if you use task module, please invoke task.StartTask, or task will not be executed
+2025/04/09 15:38:28.933  [I] [admin.go:93]  Admin server Running on localhost:8088
+2025/04/09 15:38:28.933  [I] [server.go:280]  http server Running on http://:8080
+2025/04/09 15:38:28.933  [I] [server.go:280]  http server Running on http://localhost:8088
+2025/04/09 15:38:47.262  [I] [server.go:280]  http server Running on http://:8080
+2025/04/09 15:38:47.262  [D] [admin.go:87]  now we don't start tasks here, if you use task module, please invoke task.StartTask, or task will not be executed
+2025/04/09 15:38:47.262  [I] [admin.go:93]  Admin server Running on localhost:8088
+2025/04/09 15:38:47.262  [I] [server.go:280]  http server Running on http://localhost:8088
+2025/04/09 15:39:12.400  [I] [server.go:280]  http server Running on http://:8080
+2025/04/09 15:39:12.400  [D] [admin.go:87]  now we don't start tasks here, if you use task module, please invoke task.StartTask, or task will not be executed
+2025/04/09 15:39:12.400  [I] [admin.go:93]  Admin server Running on localhost:8088
+2025/04/09 15:39:12.400  [I] [server.go:280]  http server Running on http://localhost:8088
+2025/04/09 15:39:13.376  [D] [router.go:1306]  |      127.0.0.1|[90;47m 302 [0m|        292µs| nomatch|[97;44m GET     [0m /admin
+2025/04/09 15:39:13.386  [D] [router.go:1306]  |      127.0.0.1|[97;42m 200 [0m|   2.541833ms|   match|[97;44m GET     [0m /login   r:/login
+2025/04/09 15:39:18.105  [D] [router.go:1306]  |      127.0.0.1|[90;47m 302 [0m|   68.74025ms|   match|[97;46m POST    [0m /login   r:/login
+2025/04/09 15:39:18.111  [D] [router.go:1306]  |      127.0.0.1|[97;42m 200 [0m|   2.124208ms|   match|[97;44m GET     [0m /     r:/
+2025/04/09 15:39:19.256  [D] [router.go:1306]  |      127.0.0.1|[97;42m 200 [0m|   6.083542ms|   match|[97;44m GET     [0m /devices   r:/devices
+2025/04/09 15:39:21.691  [D] [router.go:1306]  |      127.0.0.1|[97;42m 200 [0m|   3.590167ms|   match|[97;44m GET     [0m /admin/users   r:/admin/users
+2025/04/09 15:40:48.364  [I] [server.go:280]  http server Running on http://:8080
+2025/04/09 15:40:48.364  [D] [admin.go:87]  now we don't start tasks here, if you use task module, please invoke task.StartTask, or task will not be executed
+2025/04/09 15:40:48.364  [I] [admin.go:93]  Admin server Running on localhost:8088
+2025/04/09 15:40:48.364  [I] [server.go:280]  http server Running on http://localhost:8088
+2025/04/09 15:40:50.796  [I] [server.go:280]  http server Running on http://:8080
+2025/04/09 15:40:50.796  [D] [admin.go:87]  now we don't start tasks here, if you use task module, please invoke task.StartTask, or task will not be executed
+2025/04/09 15:40:50.796  [I] [admin.go:93]  Admin server Running on localhost:8088
+2025/04/09 15:40:50.796  [I] [server.go:280]  http server Running on http://localhost:8088
+2025/04/09 15:42:47.540  [I] [server.go:280]  http server Running on http://:8080
+2025/04/09 15:42:47.540  [D] [admin.go:87]  now we don't start tasks here, if you use task module, please invoke task.StartTask, or task will not be executed
+2025/04/09 15:42:47.540  [I] [admin.go:93]  Admin server Running on localhost:8088
+2025/04/09 15:42:47.540  [I] [server.go:280]  http server Running on http://localhost:8088
+2025/04/09 15:42:49.969  [I] [server.go:280]  http server Running on http://:8080
+2025/04/09 15:42:49.969  [D] [admin.go:87]  now we don't start tasks here, if you use task module, please invoke task.StartTask, or task will not be executed
+2025/04/09 15:42:49.969  [I] [admin.go:93]  Admin server Running on localhost:8088
+2025/04/09 15:42:49.969  [I] [server.go:280]  http server Running on http://localhost:8088
+2025/04/09 15:43:56.301  [I] [server.go:280]  http server Running on http://:8080
+2025/04/09 15:43:56.301  [D] [admin.go:87]  now we don't start tasks here, if you use task module, please invoke task.StartTask, or task will not be executed
+2025/04/09 15:43:56.301  [I] [admin.go:93]  Admin server Running on localhost:8088
+2025/04/09 15:43:56.301  [I] [server.go:280]  http server Running on http://localhost:8088
+2025/04/09 15:44:06.382  [I] [server.go:280]  http server Running on http://:8080
+2025/04/09 15:44:06.382  [D] [admin.go:87]  now we don't start tasks here, if you use task module, please invoke task.StartTask, or task will not be executed
+2025/04/09 15:44:06.382  [I] [admin.go:93]  Admin server Running on localhost:8088
+2025/04/09 15:44:06.382  [I] [server.go:280]  http server Running on http://localhost:8088
+2025/04/09 16:24:21.089  [I] [server.go:280]  http server Running on http://:8080
+2025/04/09 16:24:21.089  [D] [admin.go:87]  now we don't start tasks here, if you use task module, please invoke task.StartTask, or task will not be executed
+2025/04/09 16:24:21.089  [I] [admin.go:93]  Admin server Running on localhost:8088
+2025/04/09 16:24:21.089  [I] [server.go:280]  http server Running on http://localhost:8088
+2025/04/09 16:24:35.453  [D] [admin.go:87]  now we don't start tasks here, if you use task module, please invoke task.StartTask, or task will not be executed
+2025/04/09 16:24:35.454  [I] [admin.go:93]  Admin server Running on localhost:8088
+2025/04/09 16:24:35.453  [I] [server.go:280]  http server Running on http://:8080
+2025/04/09 16:24:35.454  [I] [server.go:280]  http server Running on http://localhost:8088
+2025/04/09 16:25:04.854  [I] [server.go:280]  http server Running on http://:8080
+2025/04/09 16:25:04.854  [D] [admin.go:87]  now we don't start tasks here, if you use task module, please invoke task.StartTask, or task will not be executed
+2025/04/09 16:25:04.854  [I] [admin.go:93]  Admin server Running on localhost:8088
+2025/04/09 16:25:04.854  [I] [server.go:280]  http server Running on http://localhost:8088
+2025/04/09 16:25:16.210  [I] [server.go:280]  http server Running on http://:8080
+2025/04/09 16:25:16.210  [D] [admin.go:87]  now we don't start tasks here, if you use task module, please invoke task.StartTask, or task will not be executed
+2025/04/09 16:25:16.210  [I] [admin.go:93]  Admin server Running on localhost:8088
+2025/04/09 16:25:16.210  [I] [server.go:280]  http server Running on http://localhost:8088
+2025/04/09 16:25:22.207  [I] [server.go:280]  http server Running on http://:8080
+2025/04/09 16:25:22.207  [D] [admin.go:87]  now we don't start tasks here, if you use task module, please invoke task.StartTask, or task will not be executed
+2025/04/09 16:25:22.207  [I] [admin.go:93]  Admin server Running on localhost:8088
+2025/04/09 16:25:22.207  [I] [server.go:280]  http server Running on http://localhost:8088
+2025/04/09 16:25:47.960  [D] [admin.go:87]  now we don't start tasks here, if you use task module, please invoke task.StartTask, or task will not be executed
+2025/04/09 16:25:47.960  [I] [server.go:280]  http server Running on http://:8080
+2025/04/09 16:25:47.960  [I] [admin.go:93]  Admin server Running on localhost:8088
+2025/04/09 16:25:47.960  [I] [server.go:280]  http server Running on http://localhost:8088
+2025/04/09 16:26:28.281  [D] [admin.go:87]  now we don't start tasks here, if you use task module, please invoke task.StartTask, or task will not be executed
+2025/04/09 16:26:28.281  [I] [server.go:280]  http server Running on http://:8080
+2025/04/09 16:26:28.281  [I] [admin.go:93]  Admin server Running on localhost:8088
+2025/04/09 16:26:28.281  [I] [server.go:280]  http server Running on http://localhost:8088
+2025/04/09 16:26:39.666  [D] [admin.go:87]  now we don't start tasks here, if you use task module, please invoke task.StartTask, or task will not be executed
+2025/04/09 16:26:39.666  [I] [server.go:280]  http server Running on http://:8080
+2025/04/09 16:26:39.666  [I] [admin.go:93]  Admin server Running on localhost:8088
+2025/04/09 16:26:39.666  [I] [server.go:280]  http server Running on http://localhost:8088
+2025/04/09 16:26:55.808  [I] [server.go:280]  http server Running on http://:8080
+2025/04/09 16:26:55.808  [D] [admin.go:87]  now we don't start tasks here, if you use task module, please invoke task.StartTask, or task will not be executed
+2025/04/09 16:26:55.808  [I] [admin.go:93]  Admin server Running on localhost:8088
+2025/04/09 16:26:55.809  [I] [server.go:280]  http server Running on http://localhost:8088
+2025/04/09 16:27:15.174  [I] [server.go:280]  http server Running on http://:8080
+2025/04/09 16:27:15.174  [D] [admin.go:87]  now we don't start tasks here, if you use task module, please invoke task.StartTask, or task will not be executed
+2025/04/09 16:27:15.174  [I] [admin.go:93]  Admin server Running on localhost:8088
+2025/04/09 16:27:15.174  [I] [server.go:280]  http server Running on http://localhost:8088
+2025/04/09 16:27:23.077  [I] [server.go:280]  http server Running on http://:8080
+2025/04/09 16:27:23.077  [D] [admin.go:87]  now we don't start tasks here, if you use task module, please invoke task.StartTask, or task will not be executed
+2025/04/09 16:27:23.077  [I] [admin.go:93]  Admin server Running on localhost:8088
+2025/04/09 16:27:23.077  [I] [server.go:280]  http server Running on http://localhost:8088
+2025/04/09 16:27:35.603  [I] [server.go:280]  http server Running on http://:8080
+2025/04/09 16:27:35.603  [D] [admin.go:87]  now we don't start tasks here, if you use task module, please invoke task.StartTask, or task will not be executed
+2025/04/09 16:27:35.603  [I] [admin.go:93]  Admin server Running on localhost:8088
+2025/04/09 16:27:35.603  [I] [server.go:280]  http server Running on http://localhost:8088
+2025/04/09 16:27:44.166  [D] [admin.go:87]  now we don't start tasks here, if you use task module, please invoke task.StartTask, or task will not be executed
+2025/04/09 16:27:44.166  [I] [admin.go:93]  Admin server Running on localhost:8088
+2025/04/09 16:27:44.166  [I] [server.go:280]  http server Running on http://:8080
+2025/04/09 16:27:44.166  [I] [server.go:280]  http server Running on http://localhost:8088
+2025/04/09 16:27:50.596  [I] [server.go:280]  http server Running on http://:8080
+2025/04/09 16:27:50.596  [D] [admin.go:87]  now we don't start tasks here, if you use task module, please invoke task.StartTask, or task will not be executed
+2025/04/09 16:27:50.596  [I] [admin.go:93]  Admin server Running on localhost:8088
+2025/04/09 16:27:50.596  [I] [server.go:280]  http server Running on http://localhost:8088
+2025/04/09 16:28:08.721  [I] [server.go:280]  http server Running on http://:8080
+2025/04/09 16:28:08.721  [D] [admin.go:87]  now we don't start tasks here, if you use task module, please invoke task.StartTask, or task will not be executed
+2025/04/09 16:28:08.721  [I] [admin.go:93]  Admin server Running on localhost:8088
+2025/04/09 16:28:08.721  [I] [server.go:280]  http server Running on http://localhost:8088
+2025/04/09 16:41:32.032  [I] [server.go:280]  http server Running on http://:8080
+2025/04/09 16:41:32.032  [D] [admin.go:87]  now we don't start tasks here, if you use task module, please invoke task.StartTask, or task will not be executed
+2025/04/09 16:41:32.032  [I] [admin.go:93]  Admin server Running on localhost:8088
+2025/04/09 16:41:32.032  [I] [server.go:280]  http server Running on http://localhost:8088
+2025/04/09 16:42:48.534  [I] [server.go:280]  http server Running on http://:8080
+2025/04/09 16:42:48.534  [D] [admin.go:87]  now we don't start tasks here, if you use task module, please invoke task.StartTask, or task will not be executed
+2025/04/09 16:42:48.534  [I] [admin.go:93]  Admin server Running on localhost:8088
+2025/04/09 16:42:48.534  [I] [server.go:280]  http server Running on http://localhost:8088
+2025/04/09 16:43:25.564  [I] [server.go:280]  http server Running on http://:8080
+2025/04/09 16:43:25.564  [D] [admin.go:87]  now we don't start tasks here, if you use task module, please invoke task.StartTask, or task will not be executed
+2025/04/09 16:43:25.564  [I] [admin.go:93]  Admin server Running on localhost:8088
+2025/04/09 16:43:25.564  [I] [server.go:280]  http server Running on http://localhost:8088
+2025/04/09 16:47:29.669  [I] [server.go:280]  http server Running on http://:8080
+2025/04/09 16:47:29.669  [D] [admin.go:87]  now we don't start tasks here, if you use task module, please invoke task.StartTask, or task will not be executed
+2025/04/09 16:47:29.669  [I] [admin.go:93]  Admin server Running on localhost:8088
+2025/04/09 16:47:29.669  [I] [server.go:280]  http server Running on http://localhost:8088
+2025/04/09 16:47:57.577  [I] [server.go:280]  http server Running on http://:8080
+2025/04/09 16:47:57.577  [D] [admin.go:87]  now we don't start tasks here, if you use task module, please invoke task.StartTask, or task will not be executed
+2025/04/09 16:47:57.577  [I] [admin.go:93]  Admin server Running on localhost:8088
+2025/04/09 16:47:57.577  [I] [server.go:280]  http server Running on http://localhost:8088
+2025/04/09 16:48:41.491  [D] [admin.go:87]  now we don't start tasks here, if you use task module, please invoke task.StartTask, or task will not be executed
+2025/04/09 16:48:41.491  [I] [admin.go:93]  Admin server Running on localhost:8088
+2025/04/09 16:48:41.491  [I] [server.go:280]  http server Running on http://:8080
+2025/04/09 16:48:41.491  [I] [server.go:280]  http server Running on http://localhost:8088
+2025/04/09 16:48:52.612  [I] [server.go:280]  http server Running on http://:8080
+2025/04/09 16:48:52.612  [D] [admin.go:87]  now we don't start tasks here, if you use task module, please invoke task.StartTask, or task will not be executed
+2025/04/09 16:48:52.612  [I] [admin.go:93]  Admin server Running on localhost:8088
+2025/04/09 16:48:52.612  [I] [server.go:280]  http server Running on http://localhost:8088
+2025/04/09 16:48:58.762  [I] [server.go:280]  http server Running on http://:8080
+2025/04/09 16:48:58.762  [D] [admin.go:87]  now we don't start tasks here, if you use task module, please invoke task.StartTask, or task will not be executed
+2025/04/09 16:48:58.762  [I] [admin.go:93]  Admin server Running on localhost:8088
+2025/04/09 16:48:58.762  [I] [server.go:280]  http server Running on http://localhost:8088
+2025/04/09 16:49:17.511  [I] [server.go:280]  http server Running on http://:8080
+2025/04/09 16:49:17.511  [D] [admin.go:87]  now we don't start tasks here, if you use task module, please invoke task.StartTask, or task will not be executed
+2025/04/09 16:49:17.511  [I] [admin.go:93]  Admin server Running on localhost:8088
+2025/04/09 16:49:17.511  [I] [server.go:280]  http server Running on http://localhost:8088
+2025/04/09 16:49:28.340  [I] [server.go:280]  http server Running on http://:8080
+2025/04/09 16:49:28.340  [D] [admin.go:87]  now we don't start tasks here, if you use task module, please invoke task.StartTask, or task will not be executed
+2025/04/09 16:49:28.340  [I] [admin.go:93]  Admin server Running on localhost:8088
+2025/04/09 16:49:28.340  [I] [server.go:280]  http server Running on http://localhost:8088
+2025/04/09 16:50:08.159  [I] [server.go:280]  http server Running on http://:8080
+2025/04/09 16:50:08.159  [D] [admin.go:87]  now we don't start tasks here, if you use task module, please invoke task.StartTask, or task will not be executed
+2025/04/09 16:50:08.159  [I] [admin.go:93]  Admin server Running on localhost:8088
+2025/04/09 16:50:08.159  [I] [server.go:280]  http server Running on http://localhost:8088
+2025/04/09 16:50:27.417  [I] [server.go:280]  http server Running on http://:8080
+2025/04/09 16:50:27.417  [D] [admin.go:87]  now we don't start tasks here, if you use task module, please invoke task.StartTask, or task will not be executed
+2025/04/09 16:50:27.417  [I] [admin.go:93]  Admin server Running on localhost:8088
+2025/04/09 16:50:27.417  [I] [server.go:280]  http server Running on http://localhost:8088
+2025/04/09 16:50:29.672  [D] [admin.go:87]  now we don't start tasks here, if you use task module, please invoke task.StartTask, or task will not be executed
+2025/04/09 16:50:29.672  [I] [admin.go:93]  Admin server Running on localhost:8088
+2025/04/09 16:50:29.672  [I] [server.go:280]  http server Running on http://:8080
+2025/04/09 16:50:29.672  [I] [server.go:280]  http server Running on http://localhost:8088
+2025/04/09 16:50:55.712  [I] [server.go:280]  http server Running on http://:8080
+2025/04/09 16:50:55.712  [D] [admin.go:87]  now we don't start tasks here, if you use task module, please invoke task.StartTask, or task will not be executed
+2025/04/09 16:50:55.712  [I] [admin.go:93]  Admin server Running on localhost:8088
+2025/04/09 16:50:55.712  [I] [server.go:280]  http server Running on http://localhost:8088
+2025/04/09 16:51:07.753  [D] [admin.go:87]  now we don't start tasks here, if you use task module, please invoke task.StartTask, or task will not be executed
+2025/04/09 16:51:07.753  [I] [admin.go:93]  Admin server Running on localhost:8088
+2025/04/09 16:51:07.753  [I] [server.go:280]  http server Running on http://:8080
+2025/04/09 16:51:07.753  [I] [server.go:280]  http server Running on http://localhost:8088
+2025/04/09 16:51:20.441  [I] [server.go:280]  http server Running on http://:8080
+2025/04/09 16:51:20.441  [D] [admin.go:87]  now we don't start tasks here, if you use task module, please invoke task.StartTask, or task will not be executed
+2025/04/09 16:51:20.441  [I] [admin.go:93]  Admin server Running on localhost:8088
+2025/04/09 16:51:20.441  [I] [server.go:280]  http server Running on http://localhost:8088
+2025/04/09 16:53:53.585  [E] [template.go:224]  parse template err: admin/users.html template: admin/users.html:52: undefined variable "$xsrfdata"
+2025/04/09 16:53:53.585  [W] [hooks.go:83]  template: admin/users.html:52: undefined variable "$xsrfdata"
+2025/04/09 16:54:40.387  [E] [template.go:224]  parse template err: admin/users.html template: admin/users.html:67: function "sub" not defined
+2025/04/09 16:54:40.387  [W] [hooks.go:83]  template: admin/users.html:67: function "sub" not defined
+2025/04/09 22:31:50.471  [E] [template.go:224]  parse template err: admin/users.html template: admin/users.html:67: function "sub" not defined
+2025/04/09 22:31:50.471  [W] [hooks.go:83]  template: admin/users.html:67: function "sub" not defined
+2025/04/09 22:33:53.802  [E] [template.go:224]  parse template err: admin/users.html template: admin/users.html:67: function "i18n" not defined
+2025/04/09 22:33:53.802  [W] [hooks.go:83]  template: admin/users.html:67: function "i18n" not defined
+2025/04/09 22:36:31.373  [E] [template.go:224]  parse template err: admin/users.html template: admin/users.html:67: function "paginator" not defined
+2025/04/09 22:36:31.373  [W] [hooks.go:83]  template: admin/users.html:67: function "paginator" not defined
+2025/04/09 22:36:47.070  [E] [template.go:224]  parse template err: admin/users.html template: admin/users.html:70: function "paginator" not defined
+2025/04/09 22:36:47.070  [W] [hooks.go:83]  template: admin/users.html:70: function "paginator" not defined
+2025/04/09 22:37:07.130  [I] [server.go:280]  http server Running on http://:8080
+2025/04/09 22:37:07.130  [D] [admin.go:87]  now we don't start tasks here, if you use task module, please invoke task.StartTask, or task will not be executed
+2025/04/09 22:37:07.130  [I] [admin.go:93]  Admin server Running on localhost:8088
+2025/04/09 22:37:07.130  [I] [server.go:280]  http server Running on http://localhost:8088
+2025/04/09 22:37:18.319  [D] [router.go:1306]  |      127.0.0.1|[90;47m 302 [0m|    111.791µs| nomatch|[97;44m GET     [0m /  
+2025/04/09 22:37:18.333  [D] [router.go:1306]  |      127.0.0.1|[97;42m 200 [0m|   2.990833ms|   match|[97;44m GET     [0m /login   r:/login
+2025/04/09 22:37:21.889  [D] [router.go:1306]  |      127.0.0.1|[90;47m 302 [0m|  67.622042ms|   match|[97;46m POST    [0m /login   r:/login
+2025/04/09 22:37:21.896  [D] [router.go:1306]  |      127.0.0.1|[97;42m 200 [0m|   3.690417ms|   match|[97;44m GET     [0m /     r:/
+2025/04/09 22:37:42.490  [D] [router.go:1306]  |      127.0.0.1|[97;42m 200 [0m|   3.534083ms|   match|[97;44m GET     [0m /devices   r:/devices
+2025/04/09 22:38:54.998  [I] [server.go:280]  http server Running on http://:8080
+2025/04/09 22:38:54.998  [D] [admin.go:87]  now we don't start tasks here, if you use task module, please invoke task.StartTask, or task will not be executed
+2025/04/09 22:38:54.998  [I] [admin.go:93]  Admin server Running on localhost:8088
+2025/04/09 22:38:54.998  [I] [server.go:280]  http server Running on http://localhost:8088
+2025/04/09 22:40:29.187  [D] [router.go:1306]  |      127.0.0.1|[90;47m 302 [0m|     192.75µs| nomatch|[97;44m GET     [0m /admin
+2025/04/09 22:40:29.199  [D] [router.go:1306]  |      127.0.0.1|[97;42m 200 [0m|   3.759625ms|   match|[97;44m GET     [0m /login   r:/login
+2025/04/09 22:40:33.580  [D] [router.go:1306]  |      127.0.0.1|[90;47m 302 [0m|   66.57375ms|   match|[97;46m POST    [0m /login   r:/login
+2025/04/09 22:40:33.587  [D] [router.go:1306]  |      127.0.0.1|[97;42m 200 [0m|   2.335042ms|   match|[97;44m GET     [0m /     r:/
+2025/04/09 22:40:36.823  [D] [router.go:1306]  |      127.0.0.1|[97;42m 200 [0m|   3.485334ms|   match|[97;44m GET     [0m /admin   r:/admin
+2025/04/09 22:40:51.351  [D] [router.go:1306]  |      127.0.0.1|[97;42m 200 [0m|   2.821334ms|   match|[97;44m GET     [0m /admin/users   r:/admin/users
+2025/04/09 22:40:55.302  [D] [router.go:1306]  |      127.0.0.1|[97;42m 200 [0m|     3.2595ms|   match|[97;44m GET     [0m /devices   r:/devices
+2025/04/09 22:40:55.754  [D] [router.go:1306]  |      127.0.0.1|[97;42m 200 [0m|   5.287833ms|   match|[97;44m GET     [0m /     r:/
+2025/04/09 22:41:21.270  [D] [router.go:1306]  |      127.0.0.1|[97;42m 200 [0m|   2.658208ms|   match|[97;44m GET     [0m /admin   r:/admin
+2025/04/09 22:41:22.401  [D] [router.go:1306]  |      127.0.0.1|[97;42m 200 [0m|    303.042µs|   match|[97;44m GET     [0m /     r:/
+2025/04/09 22:41:22.515  [D] [router.go:1306]  |      127.0.0.1|[97;43m 404 [0m|    445.875µs| nomatch|[97;44m GET     [0m /favicon.ico
+2025/04/09 22:41:26.290  [D] [router.go:1306]  |      127.0.0.1|[97;42m 200 [0m|    642.583µs|   match|[97;44m GET     [0m /qps   r:/qps
+2025/04/09 22:44:24.254  [I] [server.go:280]  http server Running on http://:8080
+2025/04/09 22:44:24.254  [D] [admin.go:87]  now we don't start tasks here, if you use task module, please invoke task.StartTask, or task will not be executed
+2025/04/09 22:44:24.254  [I] [admin.go:93]  Admin server Running on localhost:8088
+2025/04/09 22:44:24.254  [I] [server.go:280]  http server Running on http://localhost:8088
+2025/04/09 22:46:40.793  [D] [router.go:1306]  |      127.0.0.1|[90;47m 302 [0m|     147.75µs| nomatch|[97;44m GET     [0m /  
+2025/04/09 22:46:40.805  [D] [router.go:1306]  |      127.0.0.1|[97;42m 200 [0m|   3.758084ms|   match|[97;44m GET     [0m /login   r:/login
+2025/04/09 22:52:02.439  [I] [server.go:280]  http server Running on http://:8080
+2025/04/09 22:52:02.439  [D] [admin.go:87]  now we don't start tasks here, if you use task module, please invoke task.StartTask, or task will not be executed
+2025/04/09 22:52:02.439  [I] [admin.go:93]  Admin server Running on localhost:8088
+2025/04/09 22:52:02.439  [I] [server.go:280]  http server Running on http://localhost:8088
+2025/04/09 22:52:02.440  [I] [server.go:248]  https server Running on https://:10443
+2025/04/09 22:52:02.440  [C] [server.go:271]  ListenAndServeTLS:  open cert.pem: no such file or directory
+2025/04/09 22:52:38.888  [I] [server.go:280]  http server Running on http://:8080
+2025/04/09 22:52:38.888  [D] [admin.go:87]  now we don't start tasks here, if you use task module, please invoke task.StartTask, or task will not be executed
+2025/04/09 22:52:38.888  [I] [admin.go:93]  Admin server Running on localhost:8088
+2025/04/09 22:52:38.888  [I] [server.go:280]  http server Running on http://localhost:8088
+2025/04/09 22:52:38.889  [I] [server.go:248]  https server Running on https://:10443
+2025/04/09 22:52:38.889  [C] [server.go:271]  ListenAndServeTLS:  open cert.pem: no such file or directory
+2025/04/09 22:55:54.394  [I] [server.go:280]  http server Running on http://:8080
+2025/04/09 22:55:54.394  [D] [admin.go:87]  now we don't start tasks here, if you use task module, please invoke task.StartTask, or task will not be executed
+2025/04/09 22:55:54.394  [I] [admin.go:93]  Admin server Running on localhost:8088
+2025/04/09 22:55:54.394  [I] [server.go:280]  http server Running on http://localhost:8088
+2025/04/09 22:55:54.395  [I] [server.go:248]  https server Running on https://:10443
+2025/04/09 22:55:54.395  [C] [server.go:271]  ListenAndServeTLS:  open cert.pem: no such file or directory
+2025/04/09 22:58:51.733  [I] [server.go:280]  http server Running on http://:8080
+2025/04/09 22:58:51.733  [D] [admin.go:87]  now we don't start tasks here, if you use task module, please invoke task.StartTask, or task will not be executed
+2025/04/09 22:58:51.733  [I] [admin.go:93]  Admin server Running on localhost:8088
+2025/04/09 22:58:51.733  [I] [server.go:280]  http server Running on http://localhost:8088
+2025/04/09 22:58:51.734  [I] [server.go:248]  https server Running on https://:10443
+2025/04/09 22:58:51.734  [C] [server.go:271]  ListenAndServeTLS:  open cert.pem: no such file or directory
+2025/04/09 23:00:36.663  [D] [admin.go:87]  now we don't start tasks here, if you use task module, please invoke task.StartTask, or task will not be executed
+2025/04/09 23:00:36.663  [I] [server.go:280]  http server Running on http://:8080
+2025/04/09 23:00:36.663  [I] [admin.go:93]  Admin server Running on localhost:8088
+2025/04/09 23:00:36.663  [I] [server.go:280]  http server Running on http://localhost:8088
+2025/04/09 23:00:36.664  [I] [server.go:248]  https server Running on https://:10443
+2025/04/09 23:00:36.664  [C] [server.go:271]  ListenAndServeTLS:  open cert.pem: no such file or directory
+2025/04/09 23:00:47.453  [I] [server.go:280]  http server Running on http://:8080
+2025/04/09 23:00:47.453  [D] [admin.go:87]  now we don't start tasks here, if you use task module, please invoke task.StartTask, or task will not be executed
+2025/04/09 23:00:47.453  [I] [admin.go:93]  Admin server Running on localhost:8088
+2025/04/09 23:00:47.453  [I] [server.go:280]  http server Running on http://localhost:8088
+2025/04/09 23:00:47.454  [I] [server.go:248]  https server Running on https://:10443
+2025/04/09 23:00:47.454  [C] [server.go:271]  ListenAndServeTLS:  open cert.pem: no such file or directory
+2025/04/09 23:00:59.836  [I] [server.go:280]  http server Running on http://:8080
+2025/04/09 23:00:59.836  [D] [admin.go:87]  now we don't start tasks here, if you use task module, please invoke task.StartTask, or task will not be executed
+2025/04/09 23:00:59.836  [I] [admin.go:93]  Admin server Running on localhost:8088
+2025/04/09 23:00:59.836  [I] [server.go:280]  http server Running on http://localhost:8088
+2025/04/09 23:01:09.874  [I] [server.go:280]  http server Running on http://:8080
+2025/04/09 23:01:09.874  [D] [admin.go:87]  now we don't start tasks here, if you use task module, please invoke task.StartTask, or task will not be executed
+2025/04/09 23:01:09.874  [I] [admin.go:93]  Admin server Running on localhost:8088
+2025/04/09 23:01:09.874  [I] [server.go:280]  http server Running on http://localhost:8088
+2025/04/09 23:01:25.809  [I] [server.go:280]  http server Running on http://:8080
+2025/04/09 23:01:25.809  [D] [admin.go:87]  now we don't start tasks here, if you use task module, please invoke task.StartTask, or task will not be executed
+2025/04/09 23:01:25.809  [I] [admin.go:93]  Admin server Running on localhost:8088
+2025/04/09 23:01:25.809  [I] [server.go:280]  http server Running on http://localhost:8088
+2025/04/09 23:02:17.391  [E] [router.go:1098]  pq: relation "session" does not exist
+2025/04/09 23:02:17.391  [D] [router.go:1306]  |      127.0.0.1|[97;41m 503 [0m|   6.256292ms| nomatch|[97;44m GET     [0m /  
+2025/04/09 23:02:21.106  [E] [router.go:1098]  pq: relation "session" does not exist
+2025/04/09 23:02:21.107  [D] [router.go:1306]  |      127.0.0.1|[97;41m 503 [0m|   7.019708ms| nomatch|[97;44m GET     [0m /  
+2025/04/09 23:03:11.361  [I] [server.go:280]  http server Running on http://:8080
+2025/04/09 23:03:11.361  [D] [admin.go:87]  now we don't start tasks here, if you use task module, please invoke task.StartTask, or task will not be executed
+2025/04/09 23:03:11.361  [I] [admin.go:93]  Admin server Running on localhost:8088
+2025/04/09 23:03:11.361  [I] [server.go:280]  http server Running on http://localhost:8088
+2025/04/09 23:03:17.022  [I] [server.go:280]  http server Running on http://:8080
+2025/04/09 23:03:17.022  [D] [admin.go:87]  now we don't start tasks here, if you use task module, please invoke task.StartTask, or task will not be executed
+2025/04/09 23:03:17.022  [I] [admin.go:93]  Admin server Running on localhost:8088
+2025/04/09 23:03:17.022  [I] [server.go:280]  http server Running on http://localhost:8088
+2025/04/09 23:03:18.191  [C] [config.go:500]  the request url is  /
+2025/04/09 23:03:18.191  [C] [config.go:501]  Handler crashed with error runtime error: invalid memory address or nil pointer dereference
+2025/04/09 23:03:18.191  [C] [config.go:507]  /opt/homebrew/Cellar/go/1.24.2/libexec/src/runtime/panic.go:792
+2025/04/09 23:03:18.191  [C] [config.go:507]  /opt/homebrew/Cellar/go/1.24.2/libexec/src/runtime/panic.go:262
+2025/04/09 23:03:18.191  [C] [config.go:507]  /opt/homebrew/Cellar/go/1.24.2/libexec/src/runtime/signal_unix.go:925
+2025/04/09 23:03:18.191  [C] [config.go:507]  /Users/matthewholden/Code/go/pkg/mod/github.com/beego/beego/v2@v2.3.7/server/web/session/session.go:159
+2025/04/09 23:03:18.191  [C] [config.go:507]  /Users/matthewholden/Code/go/pkg/mod/github.com/beego/beego/v2@v2.3.7/server/web/session/session.go:189
+2025/04/09 23:03:18.191  [C] [config.go:507]  /Users/matthewholden/Code/go/pkg/mod/github.com/beego/beego/v2@v2.3.7/server/web/router.go:1096
+2025/04/09 23:03:18.191  [C] [config.go:507]  /Users/matthewholden/Code/go/pkg/mod/github.com/beego/beego/v2@v2.3.7/server/web/filter.go:83
+2025/04/09 23:03:18.192  [C] [config.go:507]  /Users/matthewholden/Code/go/pkg/mod/github.com/beego/beego/v2@v2.3.7/server/web/router.go:1003
+2025/04/09 23:03:18.192  [C] [config.go:507]  /opt/homebrew/Cellar/go/1.24.2/libexec/src/net/http/server.go:3301
+2025/04/09 23:03:18.192  [C] [config.go:507]  /opt/homebrew/Cellar/go/1.24.2/libexec/src/net/http/server.go:2102
+2025/04/09 23:03:18.192  [C] [config.go:507]  /opt/homebrew/Cellar/go/1.24.2/libexec/src/runtime/asm_arm64.s:1223
+2025/04/09 23:03:19.784  [C] [config.go:500]  the request url is  /
+2025/04/09 23:03:19.784  [C] [config.go:501]  Handler crashed with error runtime error: invalid memory address or nil pointer dereference
+2025/04/09 23:03:19.784  [C] [config.go:507]  /opt/homebrew/Cellar/go/1.24.2/libexec/src/runtime/panic.go:792
+2025/04/09 23:03:19.784  [C] [config.go:507]  /opt/homebrew/Cellar/go/1.24.2/libexec/src/runtime/panic.go:262
+2025/04/09 23:03:19.784  [C] [config.go:507]  /opt/homebrew/Cellar/go/1.24.2/libexec/src/runtime/signal_unix.go:925
+2025/04/09 23:03:19.784  [C] [config.go:507]  /Users/matthewholden/Code/go/pkg/mod/github.com/beego/beego/v2@v2.3.7/server/web/session/session.go:159
+2025/04/09 23:03:19.785  [C] [config.go:507]  /Users/matthewholden/Code/go/pkg/mod/github.com/beego/beego/v2@v2.3.7/server/web/session/session.go:189
+2025/04/09 23:03:19.785  [C] [config.go:507]  /Users/matthewholden/Code/go/pkg/mod/github.com/beego/beego/v2@v2.3.7/server/web/router.go:1096
+2025/04/09 23:03:19.785  [C] [config.go:507]  /Users/matthewholden/Code/go/pkg/mod/github.com/beego/beego/v2@v2.3.7/server/web/filter.go:83
+2025/04/09 23:03:19.785  [C] [config.go:507]  /Users/matthewholden/Code/go/pkg/mod/github.com/beego/beego/v2@v2.3.7/server/web/router.go:1003
+2025/04/09 23:03:19.785  [C] [config.go:507]  /opt/homebrew/Cellar/go/1.24.2/libexec/src/net/http/server.go:3301
+2025/04/09 23:03:19.785  [C] [config.go:507]  /opt/homebrew/Cellar/go/1.24.2/libexec/src/net/http/server.go:2102
+2025/04/09 23:03:19.785  [C] [config.go:507]  /opt/homebrew/Cellar/go/1.24.2/libexec/src/runtime/asm_arm64.s:1223
+2025/04/09 23:03:24.584  [C] [config.go:500]  the request url is  /
+2025/04/09 23:03:24.584  [C] [config.go:501]  Handler crashed with error runtime error: invalid memory address or nil pointer dereference
+2025/04/09 23:03:24.584  [C] [config.go:507]  /opt/homebrew/Cellar/go/1.24.2/libexec/src/runtime/panic.go:792
+2025/04/09 23:03:24.584  [C] [config.go:507]  /opt/homebrew/Cellar/go/1.24.2/libexec/src/runtime/panic.go:262
+2025/04/09 23:03:24.584  [C] [config.go:507]  /opt/homebrew/Cellar/go/1.24.2/libexec/src/runtime/signal_unix.go:925
+2025/04/09 23:03:24.584  [C] [config.go:507]  /Users/matthewholden/Code/go/pkg/mod/github.com/beego/beego/v2@v2.3.7/server/web/session/session.go:159
+2025/04/09 23:03:24.584  [C] [config.go:507]  /Users/matthewholden/Code/go/pkg/mod/github.com/beego/beego/v2@v2.3.7/server/web/session/session.go:189
+2025/04/09 23:03:24.584  [C] [config.go:507]  /Users/matthewholden/Code/go/pkg/mod/github.com/beego/beego/v2@v2.3.7/server/web/router.go:1096
+2025/04/09 23:03:24.584  [C] [config.go:507]  /Users/matthewholden/Code/go/pkg/mod/github.com/beego/beego/v2@v2.3.7/server/web/filter.go:83
+2025/04/09 23:03:24.584  [C] [config.go:507]  /Users/matthewholden/Code/go/pkg/mod/github.com/beego/beego/v2@v2.3.7/server/web/router.go:1003
+2025/04/09 23:03:24.584  [C] [config.go:507]  /opt/homebrew/Cellar/go/1.24.2/libexec/src/net/http/server.go:3301
+2025/04/09 23:03:24.584  [C] [config.go:507]  /opt/homebrew/Cellar/go/1.24.2/libexec/src/net/http/server.go:2102
+2025/04/09 23:03:24.585  [C] [config.go:507]  /opt/homebrew/Cellar/go/1.24.2/libexec/src/runtime/asm_arm64.s:1223
+2025/04/09 23:03:41.012  [D] [admin.go:87]  now we don't start tasks here, if you use task module, please invoke task.StartTask, or task will not be executed
+2025/04/09 23:03:41.012  [I] [admin.go:93]  Admin server Running on localhost:8088
+2025/04/09 23:03:41.012  [I] [server.go:280]  http server Running on http://:8080
+2025/04/09 23:03:41.013  [I] [server.go:280]  http server Running on http://localhost:8088
+2025/04/09 23:03:41.590  [E] [router.go:1098]  pq: relation "session" does not exist
+2025/04/09 23:03:41.591  [D] [router.go:1306]  |      127.0.0.1|[97;41m 503 [0m|   4.264292ms| nomatch|[97;44m GET     [0m /  
+2025/04/09 23:03:43.761  [E] [router.go:1098]  pq: relation "session" does not exist
+2025/04/09 23:03:43.761  [D] [router.go:1306]  |      127.0.0.1|[97;41m 503 [0m|   5.629625ms| nomatch|[97;44m GET     [0m /  
+2025/04/09 23:04:27.076  [I] [server.go:280]  http server Running on http://:8080
+2025/04/09 23:04:27.076  [D] [admin.go:87]  now we don't start tasks here, if you use task module, please invoke task.StartTask, or task will not be executed
+2025/04/09 23:04:27.076  [I] [admin.go:93]  Admin server Running on localhost:8088
+2025/04/09 23:04:27.076  [I] [server.go:280]  http server Running on http://localhost:8088
+2025/04/09 23:04:33.634  [I] [server.go:280]  http server Running on http://:8080
+2025/04/09 23:04:33.634  [D] [admin.go:87]  now we don't start tasks here, if you use task module, please invoke task.StartTask, or task will not be executed
+2025/04/09 23:04:33.634  [I] [admin.go:93]  Admin server Running on localhost:8088
+2025/04/09 23:04:33.634  [I] [server.go:280]  http server Running on http://localhost:8088
+2025/04/09 23:04:37.987  [C] [config.go:500]  the request url is  /
+2025/04/09 23:04:37.987  [C] [config.go:501]  Handler crashed with error runtime error: invalid memory address or nil pointer dereference
+2025/04/09 23:04:37.987  [C] [config.go:507]  /opt/homebrew/Cellar/go/1.24.2/libexec/src/runtime/panic.go:792
+2025/04/09 23:04:37.987  [C] [config.go:507]  /opt/homebrew/Cellar/go/1.24.2/libexec/src/runtime/panic.go:262
+2025/04/09 23:04:37.987  [C] [config.go:507]  /opt/homebrew/Cellar/go/1.24.2/libexec/src/runtime/signal_unix.go:925
+2025/04/09 23:04:37.987  [C] [config.go:507]  /Users/matthewholden/Code/go/pkg/mod/github.com/beego/beego/v2@v2.3.7/server/web/context/input.go:363
+2025/04/09 23:04:37.987  [C] [config.go:507]  /Users/matthewholden/Code/github/holdem3_cat/iotgo/routers/router.go:25
+2025/04/09 23:04:37.987  [C] [config.go:507]  /Users/matthewholden/Code/go/pkg/mod/github.com/beego/beego/v2@v2.3.7/server/web/filter.go:83
+2025/04/09 23:04:37.987  [C] [config.go:507]  /Users/matthewholden/Code/go/pkg/mod/github.com/beego/beego/v2@v2.3.7/server/web/router.go:987
+2025/04/09 23:04:37.987  [C] [config.go:507]  /Users/matthewholden/Code/go/pkg/mod/github.com/beego/beego/v2@v2.3.7/server/web/router.go:1108
+2025/04/09 23:04:37.987  [C] [config.go:507]  /Users/matthewholden/Code/go/pkg/mod/github.com/beego/beego/v2@v2.3.7/server/web/filter.go:83
+2025/04/09 23:04:37.987  [C] [config.go:507]  /Users/matthewholden/Code/go/pkg/mod/github.com/beego/beego/v2@v2.3.7/server/web/router.go:1003
+2025/04/09 23:04:37.987  [C] [config.go:507]  /opt/homebrew/Cellar/go/1.24.2/libexec/src/net/http/server.go:3301
+2025/04/09 23:04:37.987  [C] [config.go:507]  /opt/homebrew/Cellar/go/1.24.2/libexec/src/net/http/server.go:2102
+2025/04/09 23:04:37.987  [C] [config.go:507]  /opt/homebrew/Cellar/go/1.24.2/libexec/src/runtime/asm_arm64.s:1223
+2025/04/09 23:04:53.722  [C] [config.go:500]  the request url is  /
+2025/04/09 23:04:53.722  [C] [config.go:501]  Handler crashed with error runtime error: invalid memory address or nil pointer dereference
+2025/04/09 23:04:53.722  [C] [config.go:507]  /opt/homebrew/Cellar/go/1.24.2/libexec/src/runtime/panic.go:792
+2025/04/09 23:04:53.722  [C] [config.go:507]  /opt/homebrew/Cellar/go/1.24.2/libexec/src/runtime/panic.go:262
+2025/04/09 23:04:53.722  [C] [config.go:507]  /opt/homebrew/Cellar/go/1.24.2/libexec/src/runtime/signal_unix.go:925
+2025/04/09 23:04:53.722  [C] [config.go:507]  /Users/matthewholden/Code/go/pkg/mod/github.com/beego/beego/v2@v2.3.7/server/web/context/input.go:363
+2025/04/09 23:04:53.722  [C] [config.go:507]  /Users/matthewholden/Code/github/holdem3_cat/iotgo/routers/router.go:25
+2025/04/09 23:04:53.722  [C] [config.go:507]  /Users/matthewholden/Code/go/pkg/mod/github.com/beego/beego/v2@v2.3.7/server/web/filter.go:83
+2025/04/09 23:04:53.722  [C] [config.go:507]  /Users/matthewholden/Code/go/pkg/mod/github.com/beego/beego/v2@v2.3.7/server/web/router.go:987
+2025/04/09 23:04:53.722  [C] [config.go:507]  /Users/matthewholden/Code/go/pkg/mod/github.com/beego/beego/v2@v2.3.7/server/web/router.go:1108
+2025/04/09 23:04:53.722  [C] [config.go:507]  /Users/matthewholden/Code/go/pkg/mod/github.com/beego/beego/v2@v2.3.7/server/web/filter.go:83
+2025/04/09 23:04:53.722  [C] [config.go:507]  /Users/matthewholden/Code/go/pkg/mod/github.com/beego/beego/v2@v2.3.7/server/web/router.go:1003
+2025/04/09 23:04:53.723  [C] [config.go:507]  /opt/homebrew/Cellar/go/1.24.2/libexec/src/net/http/server.go:3301
+2025/04/09 23:04:53.723  [C] [config.go:507]  /opt/homebrew/Cellar/go/1.24.2/libexec/src/net/http/server.go:2102
+2025/04/09 23:04:53.723  [C] [config.go:507]  /opt/homebrew/Cellar/go/1.24.2/libexec/src/runtime/asm_arm64.s:1223
+2025/04/09 23:05:53.842  [C] [config.go:500]  the request url is  /
+2025/04/09 23:05:53.842  [C] [config.go:501]  Handler crashed with error runtime error: invalid memory address or nil pointer dereference
+2025/04/09 23:05:53.842  [C] [config.go:507]  /opt/homebrew/Cellar/go/1.24.2/libexec/src/runtime/panic.go:792
+2025/04/09 23:05:53.842  [C] [config.go:507]  /opt/homebrew/Cellar/go/1.24.2/libexec/src/runtime/panic.go:262
+2025/04/09 23:05:53.842  [C] [config.go:507]  /opt/homebrew/Cellar/go/1.24.2/libexec/src/runtime/signal_unix.go:925
+2025/04/09 23:05:53.842  [C] [config.go:507]  /Users/matthewholden/Code/go/pkg/mod/github.com/beego/beego/v2@v2.3.7/server/web/context/input.go:363
+2025/04/09 23:05:53.842  [C] [config.go:507]  /Users/matthewholden/Code/github/holdem3_cat/iotgo/routers/router.go:25
+2025/04/09 23:05:53.842  [C] [config.go:507]  /Users/matthewholden/Code/go/pkg/mod/github.com/beego/beego/v2@v2.3.7/server/web/filter.go:83
+2025/04/09 23:05:53.842  [C] [config.go:507]  /Users/matthewholden/Code/go/pkg/mod/github.com/beego/beego/v2@v2.3.7/server/web/router.go:987
+2025/04/09 23:05:53.843  [C] [config.go:507]  /Users/matthewholden/Code/go/pkg/mod/github.com/beego/beego/v2@v2.3.7/server/web/router.go:1108
+2025/04/09 23:05:53.843  [C] [config.go:507]  /Users/matthewholden/Code/go/pkg/mod/github.com/beego/beego/v2@v2.3.7/server/web/filter.go:83
+2025/04/09 23:05:53.843  [C] [config.go:507]  /Users/matthewholden/Code/go/pkg/mod/github.com/beego/beego/v2@v2.3.7/server/web/router.go:1003
+2025/04/09 23:05:53.843  [C] [config.go:507]  /opt/homebrew/Cellar/go/1.24.2/libexec/src/net/http/server.go:3301
+2025/04/09 23:05:53.843  [C] [config.go:507]  /opt/homebrew/Cellar/go/1.24.2/libexec/src/net/http/server.go:2102
+2025/04/09 23:05:53.843  [C] [config.go:507]  /opt/homebrew/Cellar/go/1.24.2/libexec/src/runtime/asm_arm64.s:1223
+2025/04/09 23:06:14.916  [I] [server.go:280]  http server Running on http://:8080
+2025/04/09 23:06:14.916  [D] [admin.go:87]  now we don't start tasks here, if you use task module, please invoke task.StartTask, or task will not be executed
+2025/04/09 23:06:14.916  [I] [admin.go:93]  Admin server Running on localhost:8088
+2025/04/09 23:06:14.916  [I] [server.go:280]  http server Running on http://localhost:8088
+2025/04/09 23:06:17.072  [C] [config.go:500]  the request url is  /
+2025/04/09 23:06:17.072  [C] [config.go:501]  Handler crashed with error runtime error: invalid memory address or nil pointer dereference
+2025/04/09 23:06:17.072  [C] [config.go:507]  /opt/homebrew/Cellar/go/1.24.2/libexec/src/runtime/panic.go:792
+2025/04/09 23:06:17.072  [C] [config.go:507]  /opt/homebrew/Cellar/go/1.24.2/libexec/src/runtime/panic.go:262
+2025/04/09 23:06:17.072  [C] [config.go:507]  /opt/homebrew/Cellar/go/1.24.2/libexec/src/runtime/signal_unix.go:925
+2025/04/09 23:06:17.072  [C] [config.go:507]  /Users/matthewholden/Code/go/pkg/mod/github.com/beego/beego/v2@v2.3.7/server/web/context/input.go:363
+2025/04/09 23:06:17.073  [C] [config.go:507]  /Users/matthewholden/Code/github/holdem3_cat/iotgo/routers/router.go:25
+2025/04/09 23:06:17.073  [C] [config.go:507]  /Users/matthewholden/Code/go/pkg/mod/github.com/beego/beego/v2@v2.3.7/server/web/filter.go:83
+2025/04/09 23:06:17.073  [C] [config.go:507]  /Users/matthewholden/Code/go/pkg/mod/github.com/beego/beego/v2@v2.3.7/server/web/router.go:987
+2025/04/09 23:06:17.073  [C] [config.go:507]  /Users/matthewholden/Code/go/pkg/mod/github.com/beego/beego/v2@v2.3.7/server/web/router.go:1108
+2025/04/09 23:06:17.073  [C] [config.go:507]  /Users/matthewholden/Code/go/pkg/mod/github.com/beego/beego/v2@v2.3.7/server/web/filter.go:83
+2025/04/09 23:06:17.073  [C] [config.go:507]  /Users/matthewholden/Code/go/pkg/mod/github.com/beego/beego/v2@v2.3.7/server/web/router.go:1003
+2025/04/09 23:06:17.073  [C] [config.go:507]  /opt/homebrew/Cellar/go/1.24.2/libexec/src/net/http/server.go:3301
+2025/04/09 23:06:17.073  [C] [config.go:507]  /opt/homebrew/Cellar/go/1.24.2/libexec/src/net/http/server.go:2102
+2025/04/09 23:06:17.073  [C] [config.go:507]  /opt/homebrew/Cellar/go/1.24.2/libexec/src/runtime/asm_arm64.s:1223
+2025/04/09 23:06:43.080  [I] [server.go:280]  http server Running on http://:8080
+2025/04/09 23:06:43.080  [D] [admin.go:87]  now we don't start tasks here, if you use task module, please invoke task.StartTask, or task will not be executed
+2025/04/09 23:06:43.080  [I] [admin.go:93]  Admin server Running on localhost:8088
+2025/04/09 23:06:43.080  [I] [server.go:280]  http server Running on http://localhost:8088
+2025/04/09 23:06:47.193  [C] [config.go:500]  the request url is  /login
+2025/04/09 23:06:47.193  [C] [config.go:501]  Handler crashed with error runtime error: invalid memory address or nil pointer dereference
+2025/04/09 23:06:47.193  [C] [config.go:507]  /opt/homebrew/Cellar/go/1.24.2/libexec/src/runtime/panic.go:792
+2025/04/09 23:06:47.193  [C] [config.go:507]  /opt/homebrew/Cellar/go/1.24.2/libexec/src/runtime/panic.go:262
+2025/04/09 23:06:47.193  [C] [config.go:507]  /opt/homebrew/Cellar/go/1.24.2/libexec/src/runtime/signal_unix.go:925
+2025/04/09 23:06:47.193  [C] [config.go:507]  /Users/matthewholden/Code/go/pkg/mod/github.com/beego/beego/v2@v2.3.7/server/web/controller.go:727
+2025/04/09 23:06:47.193  [C] [config.go:507]  /Users/matthewholden/Code/github/holdem3_cat/iotgo/controllers/base.go:16
+2025/04/09 23:06:47.193  [C] [config.go:507]  /Users/matthewholden/Code/go/pkg/mod/github.com/beego/beego/v2@v2.3.7/server/web/router.go:1197
+2025/04/09 23:06:47.193  [C] [config.go:507]  /Users/matthewholden/Code/go/pkg/mod/github.com/beego/beego/v2@v2.3.7/server/web/filter.go:83
+2025/04/09 23:06:47.194  [C] [config.go:507]  /Users/matthewholden/Code/go/pkg/mod/github.com/beego/beego/v2@v2.3.7/server/web/router.go:1003
+2025/04/09 23:06:47.194  [C] [config.go:507]  /opt/homebrew/Cellar/go/1.24.2/libexec/src/net/http/server.go:3301
+2025/04/09 23:06:47.194  [C] [config.go:507]  /opt/homebrew/Cellar/go/1.24.2/libexec/src/net/http/server.go:2102
+2025/04/09 23:06:47.194  [C] [config.go:507]  /opt/homebrew/Cellar/go/1.24.2/libexec/src/runtime/asm_arm64.s:1223
+2025/04/09 23:07:05.481  [I] [server.go:280]  http server Running on http://:8080
+2025/04/09 23:07:05.481  [D] [admin.go:87]  now we don't start tasks here, if you use task module, please invoke task.StartTask, or task will not be executed
+2025/04/09 23:07:05.481  [I] [admin.go:93]  Admin server Running on localhost:8088
+2025/04/09 23:07:05.481  [I] [server.go:280]  http server Running on http://localhost:8088
+2025/04/09 23:07:30.981  [I] [server.go:280]  http server Running on http://:8080
+2025/04/09 23:07:30.981  [D] [admin.go:87]  now we don't start tasks here, if you use task module, please invoke task.StartTask, or task will not be executed
+2025/04/09 23:07:30.981  [I] [admin.go:93]  Admin server Running on localhost:8088
+2025/04/09 23:07:30.981  [I] [server.go:280]  http server Running on http://localhost:8088
+2025/04/09 23:07:36.767  [C] [config.go:500]  the request url is  /
+2025/04/09 23:07:36.767  [C] [config.go:501]  Handler crashed with error runtime error: invalid memory address or nil pointer dereference
+2025/04/09 23:07:36.767  [C] [config.go:507]  /opt/homebrew/Cellar/go/1.24.2/libexec/src/runtime/panic.go:792
+2025/04/09 23:07:36.767  [C] [config.go:507]  /opt/homebrew/Cellar/go/1.24.2/libexec/src/runtime/panic.go:262
+2025/04/09 23:07:36.767  [C] [config.go:507]  /opt/homebrew/Cellar/go/1.24.2/libexec/src/runtime/signal_unix.go:925
+2025/04/09 23:07:36.767  [C] [config.go:507]  /Users/matthewholden/Code/go/pkg/mod/github.com/beego/beego/v2@v2.3.7/server/web/context/input.go:363
+2025/04/09 23:07:36.767  [C] [config.go:507]  /Users/matthewholden/Code/github/holdem3_cat/iotgo/routers/router.go:25
+2025/04/09 23:07:36.767  [C] [config.go:507]  /Users/matthewholden/Code/go/pkg/mod/github.com/beego/beego/v2@v2.3.7/server/web/filter.go:83
+2025/04/09 23:07:36.767  [C] [config.go:507]  /Users/matthewholden/Code/go/pkg/mod/github.com/beego/beego/v2@v2.3.7/server/web/router.go:987
+2025/04/09 23:07:36.767  [C] [config.go:507]  /Users/matthewholden/Code/go/pkg/mod/github.com/beego/beego/v2@v2.3.7/server/web/router.go:1108
+2025/04/09 23:07:36.767  [C] [config.go:507]  /Users/matthewholden/Code/go/pkg/mod/github.com/beego/beego/v2@v2.3.7/server/web/filter.go:83
+2025/04/09 23:07:36.767  [C] [config.go:507]  /Users/matthewholden/Code/go/pkg/mod/github.com/beego/beego/v2@v2.3.7/server/web/router.go:1003
+2025/04/09 23:07:36.767  [C] [config.go:507]  /opt/homebrew/Cellar/go/1.24.2/libexec/src/net/http/server.go:3301
+2025/04/09 23:07:36.767  [C] [config.go:507]  /opt/homebrew/Cellar/go/1.24.2/libexec/src/net/http/server.go:2102
+2025/04/09 23:07:36.767  [C] [config.go:507]  /opt/homebrew/Cellar/go/1.24.2/libexec/src/runtime/asm_arm64.s:1223
+2025/04/09 23:07:37.065  [C] [config.go:500]  the request url is  /favicon.ico
+2025/04/09 23:07:37.065  [C] [config.go:501]  Handler crashed with error runtime error: invalid memory address or nil pointer dereference
+2025/04/09 23:07:37.065  [C] [config.go:507]  /opt/homebrew/Cellar/go/1.24.2/libexec/src/runtime/panic.go:792
+2025/04/09 23:07:37.065  [C] [config.go:507]  /opt/homebrew/Cellar/go/1.24.2/libexec/src/runtime/panic.go:262
+2025/04/09 23:07:37.065  [C] [config.go:507]  /opt/homebrew/Cellar/go/1.24.2/libexec/src/runtime/signal_unix.go:925
+2025/04/09 23:07:37.065  [C] [config.go:507]  /Users/matthewholden/Code/go/pkg/mod/github.com/beego/beego/v2@v2.3.7/server/web/context/input.go:363
+2025/04/09 23:07:37.065  [C] [config.go:507]  /Users/matthewholden/Code/github/holdem3_cat/iotgo/routers/router.go:25
+2025/04/09 23:07:37.065  [C] [config.go:507]  /Users/matthewholden/Code/go/pkg/mod/github.com/beego/beego/v2@v2.3.7/server/web/filter.go:83
+2025/04/09 23:07:37.065  [C] [config.go:507]  /Users/matthewholden/Code/go/pkg/mod/github.com/beego/beego/v2@v2.3.7/server/web/router.go:987
+2025/04/09 23:07:37.065  [C] [config.go:507]  /Users/matthewholden/Code/go/pkg/mod/github.com/beego/beego/v2@v2.3.7/server/web/router.go:1108
+2025/04/09 23:07:37.065  [C] [config.go:507]  /Users/matthewholden/Code/go/pkg/mod/github.com/beego/beego/v2@v2.3.7/server/web/filter.go:83
+2025/04/09 23:07:37.066  [C] [config.go:507]  /Users/matthewholden/Code/go/pkg/mod/github.com/beego/beego/v2@v2.3.7/server/web/router.go:1003
+2025/04/09 23:07:37.066  [C] [config.go:507]  /opt/homebrew/Cellar/go/1.24.2/libexec/src/net/http/server.go:3301
+2025/04/09 23:07:37.066  [C] [config.go:507]  /opt/homebrew/Cellar/go/1.24.2/libexec/src/net/http/server.go:2102
+2025/04/09 23:07:37.066  [C] [config.go:507]  /opt/homebrew/Cellar/go/1.24.2/libexec/src/runtime/asm_arm64.s:1223
+2025/04/09 23:08:18.929  [I] [server.go:280]  http server Running on http://:8080
+2025/04/09 23:08:18.929  [D] [admin.go:87]  now we don't start tasks here, if you use task module, please invoke task.StartTask, or task will not be executed
+2025/04/09 23:08:18.929  [I] [admin.go:93]  Admin server Running on localhost:8088
+2025/04/09 23:08:18.929  [I] [server.go:280]  http server Running on http://localhost:8088
+2025/04/09 23:08:26.156  [I] [server.go:280]  http server Running on http://:8080
+2025/04/09 23:08:26.156  [D] [admin.go:87]  now we don't start tasks here, if you use task module, please invoke task.StartTask, or task will not be executed
+2025/04/09 23:08:26.156  [I] [admin.go:93]  Admin server Running on localhost:8088
+2025/04/09 23:08:26.156  [I] [server.go:280]  http server Running on http://localhost:8088
+2025/04/09 23:08:30.232  [C] [config.go:500]  the request url is  /login
+2025/04/09 23:08:30.232  [C] [config.go:501]  Handler crashed with error runtime error: invalid memory address or nil pointer dereference
+2025/04/09 23:08:30.232  [C] [config.go:507]  /opt/homebrew/Cellar/go/1.24.2/libexec/src/runtime/panic.go:792
+2025/04/09 23:08:30.232  [C] [config.go:507]  /opt/homebrew/Cellar/go/1.24.2/libexec/src/runtime/panic.go:262
+2025/04/09 23:08:30.232  [C] [config.go:507]  /opt/homebrew/Cellar/go/1.24.2/libexec/src/runtime/signal_unix.go:925
+2025/04/09 23:08:30.232  [C] [config.go:507]  /Users/matthewholden/Code/go/pkg/mod/github.com/beego/beego/v2@v2.3.7/server/web/controller.go:727
+2025/04/09 23:08:30.232  [C] [config.go:507]  /Users/matthewholden/Code/github/holdem3_cat/iotgo/controllers/base.go:16
+2025/04/09 23:08:30.232  [C] [config.go:507]  /Users/matthewholden/Code/go/pkg/mod/github.com/beego/beego/v2@v2.3.7/server/web/router.go:1197
+2025/04/09 23:08:30.232  [C] [config.go:507]  /Users/matthewholden/Code/go/pkg/mod/github.com/beego/beego/v2@v2.3.7/server/web/filter.go:83
+2025/04/09 23:08:30.232  [C] [config.go:507]  /Users/matthewholden/Code/go/pkg/mod/github.com/beego/beego/v2@v2.3.7/server/web/router.go:1003
+2025/04/09 23:08:30.232  [C] [config.go:507]  /opt/homebrew/Cellar/go/1.24.2/libexec/src/net/http/server.go:3301
+2025/04/09 23:08:30.232  [C] [config.go:507]  /opt/homebrew/Cellar/go/1.24.2/libexec/src/net/http/server.go:2102
+2025/04/09 23:08:30.232  [C] [config.go:507]  /opt/homebrew/Cellar/go/1.24.2/libexec/src/runtime/asm_arm64.s:1223
+2025/04/09 23:08:35.299  [C] [config.go:500]  the request url is  /
+2025/04/09 23:08:35.299  [C] [config.go:501]  Handler crashed with error runtime error: invalid memory address or nil pointer dereference
+2025/04/09 23:08:35.299  [C] [config.go:507]  /opt/homebrew/Cellar/go/1.24.2/libexec/src/runtime/panic.go:792
+2025/04/09 23:08:35.299  [C] [config.go:507]  /opt/homebrew/Cellar/go/1.24.2/libexec/src/runtime/panic.go:262
+2025/04/09 23:08:35.299  [C] [config.go:507]  /opt/homebrew/Cellar/go/1.24.2/libexec/src/runtime/signal_unix.go:925
+2025/04/09 23:08:35.299  [C] [config.go:507]  /Users/matthewholden/Code/go/pkg/mod/github.com/beego/beego/v2@v2.3.7/server/web/context/input.go:363
+2025/04/09 23:08:35.299  [C] [config.go:507]  /Users/matthewholden/Code/github/holdem3_cat/iotgo/routers/router.go:25
+2025/04/09 23:08:35.299  [C] [config.go:507]  /Users/matthewholden/Code/go/pkg/mod/github.com/beego/beego/v2@v2.3.7/server/web/filter.go:83
+2025/04/09 23:08:35.299  [C] [config.go:507]  /Users/matthewholden/Code/go/pkg/mod/github.com/beego/beego/v2@v2.3.7/server/web/router.go:987
+2025/04/09 23:08:35.299  [C] [config.go:507]  /Users/matthewholden/Code/go/pkg/mod/github.com/beego/beego/v2@v2.3.7/server/web/router.go:1108
+2025/04/09 23:08:35.299  [C] [config.go:507]  /Users/matthewholden/Code/go/pkg/mod/github.com/beego/beego/v2@v2.3.7/server/web/filter.go:83
+2025/04/09 23:08:35.299  [C] [config.go:507]  /Users/matthewholden/Code/go/pkg/mod/github.com/beego/beego/v2@v2.3.7/server/web/router.go:1003
+2025/04/09 23:08:35.299  [C] [config.go:507]  /opt/homebrew/Cellar/go/1.24.2/libexec/src/net/http/server.go:3301
+2025/04/09 23:08:35.299  [C] [config.go:507]  /opt/homebrew/Cellar/go/1.24.2/libexec/src/net/http/server.go:2102
+2025/04/09 23:08:35.299  [C] [config.go:507]  /opt/homebrew/Cellar/go/1.24.2/libexec/src/runtime/asm_arm64.s:1223
+2025/04/09 23:09:03.771  [I] [server.go:280]  http server Running on http://:8080
+2025/04/09 23:09:03.771  [D] [admin.go:87]  now we don't start tasks here, if you use task module, please invoke task.StartTask, or task will not be executed
+2025/04/09 23:09:03.771  [I] [admin.go:93]  Admin server Running on localhost:8088
+2025/04/09 23:09:03.771  [I] [server.go:280]  http server Running on http://localhost:8088
+2025/04/09 23:09:06.958  [D] [router.go:1306]  |      127.0.0.1|[90;47m 302 [0m|    215.334µs| nomatch|[97;44m GET     [0m /  
+2025/04/09 23:09:06.967  [D] [router.go:1306]  |      127.0.0.1|[97;42m 200 [0m|    2.37475ms|   match|[97;44m GET     [0m /login   r:/login
+2025/04/09 23:09:10.313  [D] [router.go:1306]  |      127.0.0.1|[90;47m 302 [0m|  68.208417ms|   match|[97;46m POST    [0m /login   r:/login
+2025/04/09 23:09:10.323  [D] [router.go:1306]  |      127.0.0.1|[97;42m 200 [0m|   3.837292ms|   match|[97;44m GET     [0m /     r:/
+2025/04/09 23:09:22.566  [D] [router.go:1306]  |      127.0.0.1|[97;42m 200 [0m|   2.451916ms|   match|[97;44m GET     [0m /     r:/
+2025/04/09 23:09:24.036  [D] [router.go:1306]  |      127.0.0.1|[97;42m 200 [0m|   2.694708ms|   match|[97;44m GET     [0m /     r:/
+2025/04/09 23:09:46.412  [I] [server.go:280]  http server Running on http://:8080
+2025/04/09 23:09:46.412  [D] [admin.go:87]  now we don't start tasks here, if you use task module, please invoke task.StartTask, or task will not be executed
+2025/04/09 23:09:46.412  [I] [admin.go:93]  Admin server Running on localhost:8088
+2025/04/09 23:09:46.412  [I] [server.go:280]  http server Running on http://localhost:8088
+2025/04/09 23:09:47.911  [E] [router.go:1098]  pq: relation "session" does not exist
+2025/04/09 23:09:47.912  [D] [router.go:1306]  |      127.0.0.1|[97;41m 503 [0m|   6.678625ms| nomatch|[97;44m GET     [0m /  
+2025/04/09 23:09:51.179  [E] [router.go:1098]  pq: relation "session" does not exist
+2025/04/09 23:09:51.179  [D] [router.go:1306]  |      127.0.0.1|[97;41m 503 [0m|   4.118167ms| nomatch|[97;44m GET     [0m /  
+2025/04/09 23:09:51.875  [E] [router.go:1098]  pq: relation "session" does not exist
+2025/04/09 23:09:51.875  [D] [router.go:1306]  |      127.0.0.1|[97;41m 503 [0m|   6.989416ms| nomatch|[97;44m GET     [0m /  
+2025/04/09 23:10:48.279  [I] [server.go:280]  http server Running on http://:8080
+2025/04/09 23:10:48.279  [D] [admin.go:87]  now we don't start tasks here, if you use task module, please invoke task.StartTask, or task will not be executed
+2025/04/09 23:10:48.279  [I] [admin.go:93]  Admin server Running on localhost:8088
+2025/04/09 23:10:48.279  [I] [server.go:280]  http server Running on http://localhost:8088
+2025/04/09 23:10:50.148  [D] [router.go:1306]  |      127.0.0.1|[90;47m 302 [0m|    116.667µs| nomatch|[97;44m GET     [0m /  
+2025/04/09 23:10:50.159  [D] [router.go:1306]  |      127.0.0.1|[97;42m 200 [0m|    3.63125ms|   match|[97;44m GET     [0m /login   r:/login
+2025/04/09 23:10:54.705  [D] [router.go:1306]  |      127.0.0.1|[90;47m 302 [0m|  65.807833ms|   match|[97;46m POST    [0m /login   r:/login
+2025/04/09 23:10:54.711  [D] [router.go:1306]  |      127.0.0.1|[97;42m 200 [0m|   2.552708ms|   match|[97;44m GET     [0m /     r:/
+2025/04/09 23:10:58.763  [I] [server.go:280]  http server Running on http://:8080
+2025/04/09 23:10:58.763  [D] [admin.go:87]  now we don't start tasks here, if you use task module, please invoke task.StartTask, or task will not be executed
+2025/04/09 23:10:58.763  [I] [admin.go:93]  Admin server Running on localhost:8088
+2025/04/09 23:10:58.763  [I] [server.go:280]  http server Running on http://localhost:8088
+2025/04/09 23:10:59.946  [D] [router.go:1306]  |      127.0.0.1|[90;47m 302 [0m|    161.834µs| nomatch|[97;44m GET     [0m /  
+2025/04/09 23:10:59.956  [D] [router.go:1306]  |      127.0.0.1|[97;42m 200 [0m|   2.217541ms|   match|[97;44m GET     [0m /login   r:/login
+2025/04/09 23:11:02.920  [D] [router.go:1306]  |      127.0.0.1|[90;47m 302 [0m|  86.222084ms|   match|[97;46m POST    [0m /login   r:/login
+2025/04/09 23:11:02.927  [D] [router.go:1306]  |      127.0.0.1|[97;42m 200 [0m|   3.043083ms|   match|[97;44m GET     [0m /     r:/
+2025/04/09 23:15:49.298  [D] [router.go:1306]  |      127.0.0.1|[97;42m 200 [0m|   2.171666ms|   match|[97;44m GET     [0m /     r:/
+2025/04/09 23:18:52.355  [D] [admin.go:87]  now we don't start tasks here, if you use task module, please invoke task.StartTask, or task will not be executed
+2025/04/09 23:18:52.355  [I] [admin.go:93]  Admin server Running on localhost:8088
+2025/04/09 23:18:52.355  [I] [server.go:280]  http server Running on http://:8080
+2025/04/09 23:18:52.355  [I] [server.go:280]  http server Running on http://localhost:8088
+2025/04/09 23:19:12.921  [I] [server.go:280]  http server Running on http://:8080
+2025/04/09 23:19:12.921  [D] [admin.go:87]  now we don't start tasks here, if you use task module, please invoke task.StartTask, or task will not be executed
+2025/04/09 23:19:12.921  [I] [admin.go:93]  Admin server Running on localhost:8088
+2025/04/09 23:19:12.921  [I] [server.go:280]  http server Running on http://localhost:8088
+2025/04/09 23:19:32.825  [I] [server.go:280]  http server Running on http://:8080
+2025/04/09 23:19:32.825  [D] [admin.go:87]  now we don't start tasks here, if you use task module, please invoke task.StartTask, or task will not be executed
+2025/04/09 23:19:32.825  [I] [admin.go:93]  Admin server Running on localhost:8088
+2025/04/09 23:19:32.825  [I] [server.go:280]  http server Running on http://localhost:8088
+2025/04/09 23:20:20.500  [I] [server.go:280]  http server Running on http://:8080
+2025/04/09 23:20:20.500  [D] [admin.go:87]  now we don't start tasks here, if you use task module, please invoke task.StartTask, or task will not be executed
+2025/04/09 23:20:20.500  [I] [admin.go:93]  Admin server Running on localhost:8088
+2025/04/09 23:20:20.500  [I] [server.go:280]  http server Running on http://localhost:8088
+2025/04/09 23:21:01.803  [I] [server.go:280]  http server Running on http://:8080
+2025/04/09 23:21:01.803  [D] [admin.go:87]  now we don't start tasks here, if you use task module, please invoke task.StartTask, or task will not be executed
+2025/04/09 23:21:01.803  [I] [admin.go:93]  Admin server Running on localhost:8088
+2025/04/09 23:21:01.803  [I] [server.go:280]  http server Running on http://localhost:8088
+2025/04/09 23:21:08.794  [D] [admin.go:87]  now we don't start tasks here, if you use task module, please invoke task.StartTask, or task will not be executed
+2025/04/09 23:21:08.795  [I] [admin.go:93]  Admin server Running on localhost:8088
+2025/04/09 23:21:08.795  [I] [server.go:280]  http server Running on http://:8080
+2025/04/09 23:21:08.795  [I] [server.go:280]  http server Running on http://localhost:8088
+2025/04/09 23:22:36.245  [I] [server.go:280]  http server Running on http://:8080
+2025/04/09 23:22:36.245  [D] [admin.go:87]  now we don't start tasks here, if you use task module, please invoke task.StartTask, or task will not be executed
+2025/04/09 23:22:36.245  [I] [admin.go:93]  Admin server Running on localhost:8088
+2025/04/09 23:22:36.245  [I] [server.go:280]  http server Running on http://localhost:8088
+2025/04/09 23:22:57.403  [I] [server.go:280]  http server Running on http://:8080
+2025/04/09 23:22:57.403  [D] [admin.go:87]  now we don't start tasks here, if you use task module, please invoke task.StartTask, or task will not be executed
+2025/04/09 23:22:57.403  [I] [admin.go:93]  Admin server Running on localhost:8088
+2025/04/09 23:22:57.403  [I] [server.go:280]  http server Running on http://localhost:8088
+2025/04/09 23:23:05.330  [I] [server.go:280]  http server Running on http://:8080
+2025/04/09 23:23:05.330  [D] [admin.go:87]  now we don't start tasks here, if you use task module, please invoke task.StartTask, or task will not be executed
+2025/04/09 23:23:05.330  [I] [admin.go:93]  Admin server Running on localhost:8088
+2025/04/09 23:23:05.330  [I] [server.go:280]  http server Running on http://localhost:8088
+2025/04/09 23:23:53.275  [I] [server.go:280]  http server Running on http://:8080
+2025/04/09 23:23:53.275  [D] [admin.go:87]  now we don't start tasks here, if you use task module, please invoke task.StartTask, or task will not be executed
+2025/04/09 23:23:53.275  [I] [admin.go:93]  Admin server Running on localhost:8088
+2025/04/09 23:23:53.275  [I] [server.go:280]  http server Running on http://localhost:8088
+2025/04/09 23:24:29.609  [D] [admin.go:87]  now we don't start tasks here, if you use task module, please invoke task.StartTask, or task will not be executed
+2025/04/09 23:24:29.610  [I] [admin.go:93]  Admin server Running on localhost:8088
+2025/04/09 23:24:29.609  [I] [server.go:280]  http server Running on http://:8080
+2025/04/09 23:24:29.610  [I] [server.go:280]  http server Running on http://localhost:8088
+2025/04/09 23:24:44.202  [I] [server.go:280]  http server Running on http://:8080
+2025/04/09 23:24:44.202  [D] [admin.go:87]  now we don't start tasks here, if you use task module, please invoke task.StartTask, or task will not be executed
+2025/04/09 23:24:44.202  [I] [admin.go:93]  Admin server Running on localhost:8088
+2025/04/09 23:24:44.202  [I] [server.go:280]  http server Running on http://localhost:8088
+2025/04/09 23:24:52.519  [D] [admin.go:87]  now we don't start tasks here, if you use task module, please invoke task.StartTask, or task will not be executed
+2025/04/09 23:24:52.519  [I] [admin.go:93]  Admin server Running on localhost:8088
+2025/04/09 23:24:52.519  [I] [server.go:280]  http server Running on http://:8080
+2025/04/09 23:24:52.519  [I] [server.go:280]  http server Running on http://localhost:8088
+2025/04/09 23:24:54.997  [I] [server.go:280]  http server Running on http://:8080
+2025/04/09 23:24:54.997  [D] [admin.go:87]  now we don't start tasks here, if you use task module, please invoke task.StartTask, or task will not be executed
+2025/04/09 23:24:54.997  [I] [admin.go:93]  Admin server Running on localhost:8088
+2025/04/09 23:24:54.997  [I] [server.go:280]  http server Running on http://localhost:8088
+2025/04/09 23:25:08.622  [I] [server.go:280]  http server Running on http://:8080
+2025/04/09 23:25:08.622  [D] [admin.go:87]  now we don't start tasks here, if you use task module, please invoke task.StartTask, or task will not be executed
+2025/04/09 23:25:08.622  [I] [admin.go:93]  Admin server Running on localhost:8088
+2025/04/09 23:25:08.622  [I] [server.go:280]  http server Running on http://localhost:8088
+2025/04/09 23:25:20.562  [I] [server.go:280]  http server Running on http://:8080
+2025/04/09 23:25:20.562  [D] [admin.go:87]  now we don't start tasks here, if you use task module, please invoke task.StartTask, or task will not be executed
+2025/04/09 23:25:20.562  [I] [admin.go:93]  Admin server Running on localhost:8088
+2025/04/09 23:25:20.562  [I] [server.go:280]  http server Running on http://localhost:8088
+2025/04/09 23:25:40.955  [I] [server.go:280]  http server Running on http://:8080
+2025/04/09 23:25:40.955  [D] [admin.go:87]  now we don't start tasks here, if you use task module, please invoke task.StartTask, or task will not be executed
+2025/04/09 23:25:40.955  [I] [admin.go:93]  Admin server Running on localhost:8088
+2025/04/09 23:25:40.955  [I] [server.go:280]  http server Running on http://localhost:8088
+2025/04/09 23:25:50.508  [D] [admin.go:87]  now we don't start tasks here, if you use task module, please invoke task.StartTask, or task will not be executed
+2025/04/09 23:25:50.509  [I] [admin.go:93]  Admin server Running on localhost:8088
+2025/04/09 23:25:50.509  [I] [server.go:280]  http server Running on http://:8080
+2025/04/09 23:25:50.509  [I] [server.go:280]  http server Running on http://localhost:8088
+2025/04/09 23:26:07.664  [D] [router.go:1306]  |      127.0.0.1|[90;47m 302 [0m|     114.75µs| nomatch|[97;44m GET     [0m /  
+2025/04/09 23:26:07.675  [D] [router.go:1306]  |      127.0.0.1|[97;42m 200 [0m|   3.431833ms|   match|[97;44m GET     [0m /login   r:/login
+2025/04/09 23:26:12.264  [C] [config.go:500]  the request url is  /login
+2025/04/09 23:26:12.264  [C] [config.go:501]  Handler crashed with error can't find templatefile in the path:views/login.html
+2025/04/09 23:26:12.264  [C] [config.go:507]  /opt/homebrew/Cellar/go/1.24.2/libexec/src/runtime/panic.go:792
+2025/04/09 23:26:12.264  [C] [config.go:507]  /Users/matthewholden/Code/go/pkg/mod/github.com/beego/beego/v2@v2.3.7/server/web/template.go:74
+2025/04/09 23:26:12.264  [C] [config.go:507]  /Users/matthewholden/Code/go/pkg/mod/github.com/beego/beego/v2@v2.3.7/server/web/controller.go:359
+2025/04/09 23:26:12.264  [C] [config.go:507]  /Users/matthewholden/Code/go/pkg/mod/github.com/beego/beego/v2@v2.3.7/server/web/controller.go:310
+2025/04/09 23:26:12.264  [C] [config.go:507]  /Users/matthewholden/Code/go/pkg/mod/github.com/beego/beego/v2@v2.3.7/server/web/controller.go:287
+2025/04/09 23:26:12.264  [C] [config.go:507]  /Users/matthewholden/Code/go/pkg/mod/github.com/beego/beego/v2@v2.3.7/server/web/router.go:1246
+2025/04/09 23:26:12.264  [C] [config.go:507]  /Users/matthewholden/Code/go/pkg/mod/github.com/beego/beego/v2@v2.3.7/server/web/filter.go:83
+2025/04/09 23:26:12.264  [C] [config.go:507]  /Users/matthewholden/Code/go/pkg/mod/github.com/beego/beego/v2@v2.3.7/server/web/router.go:1003
+2025/04/09 23:26:12.264  [C] [config.go:507]  /opt/homebrew/Cellar/go/1.24.2/libexec/src/net/http/server.go:3301
+2025/04/09 23:26:12.264  [C] [config.go:507]  /opt/homebrew/Cellar/go/1.24.2/libexec/src/net/http/server.go:2102
+2025/04/09 23:26:12.264  [C] [config.go:507]  /opt/homebrew/Cellar/go/1.24.2/libexec/src/runtime/asm_arm64.s:1223
+2025/04/09 23:26:35.442  [I] [server.go:280]  http server Running on http://:8080
+2025/04/09 23:26:35.442  [D] [admin.go:87]  now we don't start tasks here, if you use task module, please invoke task.StartTask, or task will not be executed
+2025/04/09 23:26:35.442  [I] [admin.go:93]  Admin server Running on localhost:8088
+2025/04/09 23:26:35.442  [I] [server.go:280]  http server Running on http://localhost:8088
+2025/04/09 23:26:38.566  [C] [config.go:500]  the request url is  /login
+2025/04/09 23:26:38.566  [C] [config.go:501]  Handler crashed with error can't find templatefile in the path:views/login.html
+2025/04/09 23:26:38.566  [C] [config.go:507]  /opt/homebrew/Cellar/go/1.24.2/libexec/src/runtime/panic.go:792
+2025/04/09 23:26:38.566  [C] [config.go:507]  /Users/matthewholden/Code/go/pkg/mod/github.com/beego/beego/v2@v2.3.7/server/web/template.go:74
+2025/04/09 23:26:38.566  [C] [config.go:507]  /Users/matthewholden/Code/go/pkg/mod/github.com/beego/beego/v2@v2.3.7/server/web/controller.go:359
+2025/04/09 23:26:38.566  [C] [config.go:507]  /Users/matthewholden/Code/go/pkg/mod/github.com/beego/beego/v2@v2.3.7/server/web/controller.go:310
+2025/04/09 23:26:38.566  [C] [config.go:507]  /Users/matthewholden/Code/go/pkg/mod/github.com/beego/beego/v2@v2.3.7/server/web/controller.go:287
+2025/04/09 23:26:38.566  [C] [config.go:507]  /Users/matthewholden/Code/go/pkg/mod/github.com/beego/beego/v2@v2.3.7/server/web/router.go:1246
+2025/04/09 23:26:38.566  [C] [config.go:507]  /Users/matthewholden/Code/go/pkg/mod/github.com/beego/beego/v2@v2.3.7/server/web/filter.go:83
+2025/04/09 23:26:38.567  [C] [config.go:507]  /Users/matthewholden/Code/go/pkg/mod/github.com/beego/beego/v2@v2.3.7/server/web/router.go:1003
+2025/04/09 23:26:38.567  [C] [config.go:507]  /opt/homebrew/Cellar/go/1.24.2/libexec/src/net/http/server.go:3301
+2025/04/09 23:26:38.567  [C] [config.go:507]  /opt/homebrew/Cellar/go/1.24.2/libexec/src/net/http/server.go:2102
+2025/04/09 23:26:38.567  [C] [config.go:507]  /opt/homebrew/Cellar/go/1.24.2/libexec/src/runtime/asm_arm64.s:1223
+2025/04/09 23:26:38.609  [D] [router.go:1306]  |      127.0.0.1|[90;47m 302 [0m|     88.417µs| nomatch|[97;44m GET     [0m /favicon.ico
+2025/04/09 23:26:53.840  [D] [router.go:1306]  |      127.0.0.1|[90;47m 302 [0m|     28.917µs| nomatch|[97;44m GET     [0m /  
+2025/04/09 23:26:53.853  [D] [router.go:1306]  |      127.0.0.1|[97;42m 200 [0m|   2.064959ms|   match|[97;44m GET     [0m /login   r:/login
+2025/04/09 23:26:57.462  [D] [router.go:1306]  |      127.0.0.1|[90;47m 302 [0m|  65.757375ms|   match|[97;46m POST    [0m /login   r:/login
+2025/04/09 23:26:57.470  [D] [router.go:1306]  |      127.0.0.1|[97;42m 200 [0m|     2.3825ms|   match|[97;44m GET     [0m /     r:/
+2025/04/09 23:27:03.794  [D] [router.go:1306]  |      127.0.0.1|[97;42m 200 [0m|   3.836958ms|   match|[97;44m GET     [0m /devices   r:/devices
+2025/04/09 23:27:56.024  [I] [server.go:280]  http server Running on http://:8080
+2025/04/09 23:27:56.024  [D] [admin.go:87]  now we don't start tasks here, if you use task module, please invoke task.StartTask, or task will not be executed
+2025/04/09 23:27:56.024  [I] [admin.go:93]  Admin server Running on localhost:8088
+2025/04/09 23:27:56.024  [I] [server.go:280]  http server Running on http://localhost:8088
+2025/04/09 23:28:02.286  [D] [router.go:1306]  |      127.0.0.1|[90;47m 302 [0m|        182µs| nomatch|[97;44m GET     [0m /admin
+2025/04/09 23:28:02.296  [D] [router.go:1306]  |      127.0.0.1|[97;42m 200 [0m|   2.700625ms|   match|[97;44m GET     [0m /login   r:/login
+2025/04/09 23:28:08.684  [C] [config.go:500]  the request url is  /login
+2025/04/09 23:28:08.685  [C] [config.go:501]  Handler crashed with error can't find templatefile in the path:views/login.html
+2025/04/09 23:28:08.685  [C] [config.go:507]  /opt/homebrew/Cellar/go/1.24.2/libexec/src/runtime/panic.go:792
+2025/04/09 23:28:08.685  [C] [config.go:507]  /Users/matthewholden/Code/go/pkg/mod/github.com/beego/beego/v2@v2.3.7/server/web/template.go:74
+2025/04/09 23:28:08.685  [C] [config.go:507]  /Users/matthewholden/Code/go/pkg/mod/github.com/beego/beego/v2@v2.3.7/server/web/controller.go:359
+2025/04/09 23:28:08.685  [C] [config.go:507]  /Users/matthewholden/Code/go/pkg/mod/github.com/beego/beego/v2@v2.3.7/server/web/controller.go:310
+2025/04/09 23:28:08.685  [C] [config.go:507]  /Users/matthewholden/Code/go/pkg/mod/github.com/beego/beego/v2@v2.3.7/server/web/controller.go:287
+2025/04/09 23:28:08.685  [C] [config.go:507]  /Users/matthewholden/Code/go/pkg/mod/github.com/beego/beego/v2@v2.3.7/server/web/router.go:1246
+2025/04/09 23:28:08.685  [C] [config.go:507]  /Users/matthewholden/Code/go/pkg/mod/github.com/beego/beego/v2@v2.3.7/server/web/filter.go:83
+2025/04/09 23:28:08.685  [C] [config.go:507]  /Users/matthewholden/Code/go/pkg/mod/github.com/beego/beego/v2@v2.3.7/server/web/router.go:1003
+2025/04/09 23:28:08.685  [C] [config.go:507]  /opt/homebrew/Cellar/go/1.24.2/libexec/src/net/http/server.go:3301
+2025/04/09 23:28:08.685  [C] [config.go:507]  /opt/homebrew/Cellar/go/1.24.2/libexec/src/net/http/server.go:2102
+2025/04/09 23:28:08.685  [C] [config.go:507]  /opt/homebrew/Cellar/go/1.24.2/libexec/src/runtime/asm_arm64.s:1223
+2025/04/09 23:28:17.668  [I] [server.go:280]  http server Running on http://:8080
+2025/04/09 23:28:17.668  [D] [admin.go:87]  now we don't start tasks here, if you use task module, please invoke task.StartTask, or task will not be executed
+2025/04/09 23:28:17.668  [I] [admin.go:93]  Admin server Running on localhost:8088
+2025/04/09 23:28:17.668  [I] [server.go:280]  http server Running on http://localhost:8088
+2025/04/09 23:28:21.984  [D] [router.go:1306]  |      127.0.0.1|[90;47m 302 [0m|    145.041µs| nomatch|[97;44m GET     [0m /  
+2025/04/09 23:28:21.998  [D] [router.go:1306]  |      127.0.0.1|[97;42m 200 [0m|   4.709334ms|   match|[97;44m GET     [0m /login   r:/login
+2025/04/09 23:28:25.828  [D] [router.go:1306]  |      127.0.0.1|[90;47m 302 [0m|  64.257542ms|   match|[97;46m POST    [0m /login   r:/login
+2025/04/09 23:28:25.835  [D] [router.go:1306]  |      127.0.0.1|[97;42m 200 [0m|   2.158459ms|   match|[97;44m GET     [0m /     r:/
+2025/04/09 23:28:27.068  [D] [router.go:1306]  |      127.0.0.1|[97;42m 200 [0m|   3.878416ms|   match|[97;44m GET     [0m /devices   r:/devices
+2025/04/09 23:28:38.226  [D] [router.go:1306]  |      127.0.0.1|[97;42m 200 [0m|   3.572667ms|   match|[97;44m GET     [0m /admin   r:/admin
+2025/04/09 23:28:45.286  [E] [admin.go:105]  Error in GetUsers: Simulated database error
+2025/04/09 23:28:45.288  [D] [router.go:1306]  |      127.0.0.1|[97;42m 200 [0m|   3.132417ms|   match|[97;44m GET     [0m /admin/users   r:/admin/users
+2025/04/09 23:28:49.774  [D] [router.go:1306]  |      127.0.0.1|[97;42m 200 [0m|   5.170208ms|   match|[97;44m GET     [0m /admin   r:/admin
+2025/04/09 23:29:01.965  [I] [server.go:280]  http server Running on http://:8080
+2025/04/09 23:29:01.965  [D] [admin.go:87]  now we don't start tasks here, if you use task module, please invoke task.StartTask, or task will not be executed
+2025/04/09 23:29:01.965  [I] [admin.go:93]  Admin server Running on localhost:8088
+2025/04/09 23:29:01.965  [I] [server.go:280]  http server Running on http://localhost:8088
+2025/04/09 23:29:08.891  [D] [admin.go:87]  now we don't start tasks here, if you use task module, please invoke task.StartTask, or task will not be executed
+2025/04/09 23:29:08.892  [I] [admin.go:93]  Admin server Running on localhost:8088
+2025/04/09 23:29:08.892  [I] [server.go:280]  http server Running on http://localhost:8088
+2025/04/09 23:29:08.891  [I] [server.go:280]  http server Running on http://:8080
+2025/04/09 23:35:53.609  [I] [server.go:280]  http server Running on http://:8080
+2025/04/09 23:35:53.609  [D] [admin.go:87]  now we don't start tasks here, if you use task module, please invoke task.StartTask, or task will not be executed
+2025/04/09 23:35:53.609  [I] [admin.go:93]  Admin server Running on localhost:8088
+2025/04/09 23:35:53.609  [I] [server.go:280]  http server Running on http://localhost:8088
+2025/04/09 23:36:08.971  [D] [admin.go:87]  now we don't start tasks here, if you use task module, please invoke task.StartTask, or task will not be executed
+2025/04/09 23:36:08.971  [I] [admin.go:93]  Admin server Running on localhost:8088
+2025/04/09 23:36:08.971  [I] [server.go:280]  http server Running on http://:8080
+2025/04/09 23:36:08.971  [I] [server.go:280]  http server Running on http://localhost:8088
+2025/04/09 23:36:26.398  [I] [server.go:280]  http server Running on http://:8080
+2025/04/09 23:36:26.398  [D] [admin.go:87]  now we don't start tasks here, if you use task module, please invoke task.StartTask, or task will not be executed
+2025/04/09 23:36:26.398  [I] [admin.go:93]  Admin server Running on localhost:8088
+2025/04/09 23:36:26.398  [I] [server.go:280]  http server Running on http://localhost:8088
+2025/04/09 23:36:56.601  [I] [server.go:280]  http server Running on http://:8080
+2025/04/09 23:36:56.601  [D] [admin.go:87]  now we don't start tasks here, if you use task module, please invoke task.StartTask, or task will not be executed
+2025/04/09 23:36:56.601  [I] [admin.go:93]  Admin server Running on localhost:8088
+2025/04/09 23:36:56.601  [I] [server.go:280]  http server Running on http://localhost:8088
+2025/04/09 23:46:53.382  [D] [admin.go:87]  now we don't start tasks here, if you use task module, please invoke task.StartTask, or task will not be executed
+2025/04/09 23:46:53.382  [I] [admin.go:93]  Admin server Running on localhost:8088
+2025/04/09 23:46:53.382  [I] [server.go:280]  http server Running on http://localhost:8088
+2025/04/09 23:46:53.382  [I] [server.go:280]  http server Running on http://:8080
+2025/04/09 23:49:45.914  [I] [server.go:280]  http server Running on http://:8080
+2025/04/09 23:49:45.914  [D] [admin.go:87]  now we don't start tasks here, if you use task module, please invoke task.StartTask, or task will not be executed
+2025/04/09 23:49:45.914  [I] [admin.go:93]  Admin server Running on localhost:8088
+2025/04/09 23:49:45.914  [I] [server.go:280]  http server Running on http://localhost:8088
+2025/04/09 23:49:48.776  [I] [server.go:280]  http server Running on http://:8080
+2025/04/09 23:49:48.776  [D] [admin.go:87]  now we don't start tasks here, if you use task module, please invoke task.StartTask, or task will not be executed
+2025/04/09 23:49:48.776  [I] [admin.go:93]  Admin server Running on localhost:8088
+2025/04/09 23:49:48.776  [I] [server.go:280]  http server Running on http://localhost:8088
+2025/04/09 23:50:38.574  [I] [server.go:280]  http server Running on http://:8080
+2025/04/09 23:50:38.574  [D] [admin.go:87]  now we don't start tasks here, if you use task module, please invoke task.StartTask, or task will not be executed
+2025/04/09 23:50:38.574  [I] [admin.go:93]  Admin server Running on localhost:8088
+2025/04/09 23:50:38.574  [I] [server.go:280]  http server Running on http://localhost:8088
+2025/04/10 11:15:01.346  [I] [server.go:280]  http server Running on http://:8080
+2025/04/10 11:15:01.346  [D] [admin.go:87]  now we don't start tasks here, if you use task module, please invoke task.StartTask, or task will not be executed
+2025/04/10 11:15:01.346  [I] [admin.go:93]  Admin server Running on localhost:8088
+2025/04/10 11:15:01.346  [I] [server.go:280]  http server Running on http://localhost:8088
+2025/04/10 11:16:27.321  [D] [router.go:1306]  |      127.0.0.1|[90;47m 302 [0m|    111.875µs| nomatch|[97;44m GET     [0m /  
+2025/04/10 11:16:27.333  [D] [router.go:1306]  |      127.0.0.1|[97;42m 200 [0m|   3.926625ms|   match|[97;44m GET     [0m /login   r:/login
+2025/04/10 11:16:31.865  [D] [router.go:1306]  |      127.0.0.1|[90;47m 302 [0m|  70.808458ms|   match|[97;46m POST    [0m /login   r:/login
+2025/04/10 11:16:31.871  [D] [router.go:1306]  |      127.0.0.1|[97;42m 200 [0m|   2.815375ms|   match|[97;44m GET     [0m /     r:/
+2025/04/10 11:16:42.197  [D] [router.go:1306]  |      127.0.0.1|[97;42m 200 [0m|   4.996084ms|   match|[97;44m GET     [0m /devices   r:/devices
+2025/04/10 11:16:43.695  [D] [router.go:1306]  |      127.0.0.1|[97;42m 200 [0m|  10.139125ms|   match|[97;44m GET     [0m /devices/1   r:/devices/:id
+2025/04/10 11:21:15.608  [D] [router.go:1306]  |      127.0.0.1|[97;42m 200 [0m|   3.092292ms|   match|[97;44m GET     [0m /devices   r:/devices
+2025/04/10 11:21:16.768  [D] [router.go:1306]  |      127.0.0.1|[97;42m 200 [0m|   6.637292ms|   match|[97;44m GET     [0m /devices   r:/devices
+2025/04/10 11:21:17.925  [D] [router.go:1306]  |      127.0.0.1|[97;42m 200 [0m|    4.96025ms|   match|[97;44m GET     [0m /devices/1   r:/devices/:id
+2025/04/10 11:21:30.050  [D] [router.go:1306]  |      127.0.0.1|[97;42m 200 [0m|   3.482334ms|   match|[97;44m GET     [0m /     r:/
+2025/04/10 11:21:31.120  [D] [router.go:1306]  |      127.0.0.1|[97;42m 200 [0m|   3.696709ms|   match|[97;44m GET     [0m /devices   r:/devices
+2025/04/10 11:21:35.596  [D] [router.go:1306]  |      127.0.0.1|[97;42m 200 [0m|   8.421875ms|   match|[97;44m GET     [0m /devices/1   r:/devices/:id
+2025/04/10 11:21:37.323  [C] [config.go:500]  the request url is  /devices/1/integrations/new
+2025/04/10 11:21:37.323  [C] [config.go:501]  Handler crashed with error can't find templatefile in the path:views/base.tpl
+2025/04/10 11:21:37.323  [C] [config.go:507]  /opt/homebrew/Cellar/go/1.24.2/libexec/src/runtime/panic.go:792
+2025/04/10 11:21:37.323  [C] [config.go:507]  /Users/matthewholden/Code/go/pkg/mod/github.com/beego/beego/v2@v2.3.7/server/web/template.go:74
+2025/04/10 11:21:37.323  [C] [config.go:507]  /Users/matthewholden/Code/go/pkg/mod/github.com/beego/beego/v2@v2.3.7/server/web/controller.go:331
+2025/04/10 11:21:37.323  [C] [config.go:507]  /Users/matthewholden/Code/go/pkg/mod/github.com/beego/beego/v2@v2.3.7/server/web/controller.go:287
+2025/04/10 11:21:37.323  [C] [config.go:507]  /Users/matthewholden/Code/go/pkg/mod/github.com/beego/beego/v2@v2.3.7/server/web/router.go:1246
+2025/04/10 11:21:37.323  [C] [config.go:507]  /Users/matthewholden/Code/go/pkg/mod/github.com/beego/beego/v2@v2.3.7/server/web/filter.go:83
+2025/04/10 11:21:37.323  [C] [config.go:507]  /Users/matthewholden/Code/go/pkg/mod/github.com/beego/beego/v2@v2.3.7/server/web/router.go:1003
+2025/04/10 11:21:37.323  [C] [config.go:507]  /opt/homebrew/Cellar/go/1.24.2/libexec/src/net/http/server.go:3301
+2025/04/10 11:21:37.323  [C] [config.go:507]  /opt/homebrew/Cellar/go/1.24.2/libexec/src/net/http/server.go:2102
+2025/04/10 11:21:37.323  [C] [config.go:507]  /opt/homebrew/Cellar/go/1.24.2/libexec/src/runtime/asm_arm64.s:1223
+2025/04/10 11:25:23.969  [I] [server.go:280]  http server Running on http://:8080
+2025/04/10 11:25:23.969  [D] [admin.go:87]  now we don't start tasks here, if you use task module, please invoke task.StartTask, or task will not be executed
+2025/04/10 11:25:23.969  [I] [admin.go:93]  Admin server Running on localhost:8088
+2025/04/10 11:25:23.969  [I] [server.go:280]  http server Running on http://localhost:8088
+2025/04/10 11:25:27.524  [D] [router.go:1306]  |      127.0.0.1|[90;47m 302 [0m|     95.833µs| nomatch|[97;44m GET     [0m /admin
+2025/04/10 11:25:27.533  [D] [router.go:1306]  |      127.0.0.1|[97;42m 200 [0m|    1.89725ms|   match|[97;44m GET     [0m /login   r:/login
+2025/04/10 11:25:30.871  [D] [router.go:1306]  |      127.0.0.1|[90;47m 302 [0m|  66.451375ms|   match|[97;46m POST    [0m /login   r:/login
+2025/04/10 11:25:30.877  [D] [router.go:1306]  |      127.0.0.1|[97;42m 200 [0m|   2.166708ms|   match|[97;44m GET     [0m /     r:/
+2025/04/10 11:25:35.909  [D] [router.go:1306]  |      127.0.0.1|[97;42m 200 [0m|   2.224208ms|   match|[97;44m GET     [0m /devices   r:/devices
+2025/04/10 11:25:36.924  [D] [router.go:1306]  |      127.0.0.1|[97;42m 200 [0m|  12.225459ms|   match|[97;44m GET     [0m /devices/1   r:/devices/:id
+2025/04/10 11:25:38.936  [C] [config.go:500]  the request url is  /devices/1/integrations/new
+2025/04/10 11:25:38.936  [C] [config.go:501]  Handler crashed with error can't find templatefile in the path:views/base.tpl
+2025/04/10 11:25:38.937  [C] [config.go:507]  /opt/homebrew/Cellar/go/1.24.2/libexec/src/runtime/panic.go:792
+2025/04/10 11:25:38.937  [C] [config.go:507]  /Users/matthewholden/Code/go/pkg/mod/github.com/beego/beego/v2@v2.3.7/server/web/template.go:74
+2025/04/10 11:25:38.937  [C] [config.go:507]  /Users/matthewholden/Code/go/pkg/mod/github.com/beego/beego/v2@v2.3.7/server/web/controller.go:331
+2025/04/10 11:25:38.937  [C] [config.go:507]  /Users/matthewholden/Code/go/pkg/mod/github.com/beego/beego/v2@v2.3.7/server/web/controller.go:287
+2025/04/10 11:25:38.937  [C] [config.go:507]  /Users/matthewholden/Code/go/pkg/mod/github.com/beego/beego/v2@v2.3.7/server/web/router.go:1246
+2025/04/10 11:25:38.937  [C] [config.go:507]  /Users/matthewholden/Code/go/pkg/mod/github.com/beego/beego/v2@v2.3.7/server/web/filter.go:83
+2025/04/10 11:25:38.937  [C] [config.go:507]  /Users/matthewholden/Code/go/pkg/mod/github.com/beego/beego/v2@v2.3.7/server/web/router.go:1003
+2025/04/10 11:25:38.937  [C] [config.go:507]  /opt/homebrew/Cellar/go/1.24.2/libexec/src/net/http/server.go:3301
+2025/04/10 11:25:38.937  [C] [config.go:507]  /opt/homebrew/Cellar/go/1.24.2/libexec/src/net/http/server.go:2102
+2025/04/10 11:25:38.937  [C] [config.go:507]  /opt/homebrew/Cellar/go/1.24.2/libexec/src/runtime/asm_arm64.s:1223
+2025/04/10 11:25:57.801  [D] [router.go:1306]  |      127.0.0.1|[97;42m 200 [0m|    8.99225ms|   match|[97;44m GET     [0m /devices/1   r:/devices/:id
+2025/04/10 11:25:58.568  [C] [config.go:500]  the request url is  /devices/1/integrations/new
+2025/04/10 11:25:58.568  [C] [config.go:501]  Handler crashed with error can't find templatefile in the path:views/base.tpl
+2025/04/10 11:25:58.568  [C] [config.go:507]  /opt/homebrew/Cellar/go/1.24.2/libexec/src/runtime/panic.go:792
+2025/04/10 11:25:58.568  [C] [config.go:507]  /Users/matthewholden/Code/go/pkg/mod/github.com/beego/beego/v2@v2.3.7/server/web/template.go:74
+2025/04/10 11:25:58.568  [C] [config.go:507]  /Users/matthewholden/Code/go/pkg/mod/github.com/beego/beego/v2@v2.3.7/server/web/controller.go:331
+2025/04/10 11:25:58.568  [C] [config.go:507]  /Users/matthewholden/Code/go/pkg/mod/github.com/beego/beego/v2@v2.3.7/server/web/controller.go:287
+2025/04/10 11:25:58.568  [C] [config.go:507]  /Users/matthewholden/Code/go/pkg/mod/github.com/beego/beego/v2@v2.3.7/server/web/router.go:1246
+2025/04/10 11:25:58.568  [C] [config.go:507]  /Users/matthewholden/Code/go/pkg/mod/github.com/beego/beego/v2@v2.3.7/server/web/filter.go:83
+2025/04/10 11:25:58.568  [C] [config.go:507]  /Users/matthewholden/Code/go/pkg/mod/github.com/beego/beego/v2@v2.3.7/server/web/router.go:1003
+2025/04/10 11:25:58.568  [C] [config.go:507]  /opt/homebrew/Cellar/go/1.24.2/libexec/src/net/http/server.go:3301
+2025/04/10 11:25:58.568  [C] [config.go:507]  /opt/homebrew/Cellar/go/1.24.2/libexec/src/net/http/server.go:2102
+2025/04/10 11:25:58.568  [C] [config.go:507]  /opt/homebrew/Cellar/go/1.24.2/libexec/src/runtime/asm_arm64.s:1223
+2025/04/10 11:26:24.666  [I] [server.go:280]  http server Running on http://:8080
+2025/04/10 11:26:24.666  [D] [admin.go:87]  now we don't start tasks here, if you use task module, please invoke task.StartTask, or task will not be executed
+2025/04/10 11:26:24.666  [I] [admin.go:93]  Admin server Running on localhost:8088
+2025/04/10 11:26:24.666  [I] [server.go:280]  http server Running on http://localhost:8088
+2025/04/10 11:26:30.801  [D] [router.go:1306]  |      127.0.0.1|[90;47m 302 [0m|    107.209µs| nomatch|[97;44m GET     [0m /devices/1
+2025/04/10 11:26:30.811  [D] [router.go:1306]  |      127.0.0.1|[97;42m 200 [0m|   3.803333ms|   match|[97;44m GET     [0m /login   r:/login
+2025/04/10 11:26:33.911  [D] [router.go:1306]  |      127.0.0.1|[90;47m 302 [0m|  68.748083ms|   match|[97;46m POST    [0m /login   r:/login
+2025/04/10 11:26:33.919  [D] [router.go:1306]  |      127.0.0.1|[97;42m 200 [0m|   3.579666ms|   match|[97;44m GET     [0m /     r:/
+2025/04/10 11:26:37.087  [D] [router.go:1306]  |      127.0.0.1|[97;42m 200 [0m|   2.989125ms|   match|[97;44m GET     [0m /devices   r:/devices
+2025/04/10 11:26:38.043  [D] [router.go:1306]  |      127.0.0.1|[97;42m 200 [0m|   8.071167ms|   match|[97;44m GET     [0m /devices/1   r:/devices/:id
+2025/04/10 11:26:38.994  [D] [router.go:1306]  |      127.0.0.1|[97;42m 200 [0m|   3.917417ms|   match|[97;44m GET     [0m /devices/1/integrations/new   r:/devices/:device_id/integrations/new
+2025/04/10 11:28:04.137  [D] [router.go:1306]  |      127.0.0.1|[90;47m 302 [0m|    3.95475ms|   match|[97;46m POST    [0m /devices/1/integrations   r:/devices/:device_id/integrations
+2025/04/10 11:28:04.147  [D] [template.go:70]  template Execute err: template: devices/show.html:54:14: executing "devices/show.html" at <.xsrfdata>: can't evaluate field xsrfdata in type *models.Integration
+2025/04/10 11:28:04.147  [E] [router.go:1247]  template: devices/show.html:54:14: executing "devices/show.html" at <.xsrfdata>: can't evaluate field xsrfdata in type *models.Integration
+2025/04/10 11:28:04.147  [D] [router.go:1306]  |      127.0.0.1|[97;42m 200 [0m|      6.005ms|   match|[97;44m GET     [0m /devices/1   r:/devices/:id
+2025/04/10 11:29:07.509  [D] [template.go:70]  template Execute err: template: devices/show.html:54:14: executing "devices/show.html" at <.xsrfdata>: can't evaluate field xsrfdata in type *models.Integration
+2025/04/10 11:29:07.510  [E] [router.go:1247]  template: devices/show.html:54:14: executing "devices/show.html" at <.xsrfdata>: can't evaluate field xsrfdata in type *models.Integration
+2025/04/10 11:29:07.510  [D] [router.go:1306]  |      127.0.0.1|[97;42m 200 [0m|    4.87725ms|   match|[97;44m GET     [0m /devices/1   r:/devices/:id
+2025/04/10 11:29:10.156  [D] [template.go:70]  template Execute err: template: devices/show.html:54:14: executing "devices/show.html" at <.xsrfdata>: can't evaluate field xsrfdata in type *models.Integration
+2025/04/10 11:29:10.156  [E] [router.go:1247]  template: devices/show.html:54:14: executing "devices/show.html" at <.xsrfdata>: can't evaluate field xsrfdata in type *models.Integration
+2025/04/10 11:29:10.157  [D] [router.go:1306]  |      127.0.0.1|[97;42m 200 [0m|   5.333958ms|   match|[97;44m GET     [0m /devices/1   r:/devices/:id
+2025/04/10 11:44:03.273  [I] [server.go:280]  http server Running on http://:8080
+2025/04/10 11:44:03.273  [D] [admin.go:87]  now we don't start tasks here, if you use task module, please invoke task.StartTask, or task will not be executed
+2025/04/10 11:44:03.273  [I] [admin.go:93]  Admin server Running on localhost:8088
+2025/04/10 11:44:03.273  [I] [server.go:280]  http server Running on http://localhost:8088
+2025/04/10 11:48:02.297  [I] [server.go:280]  http server Running on http://:8080
+2025/04/10 11:48:02.297  [D] [admin.go:87]  now we don't start tasks here, if you use task module, please invoke task.StartTask, or task will not be executed
+2025/04/10 11:48:02.297  [I] [admin.go:93]  Admin server Running on localhost:8088
+2025/04/10 11:48:02.297  [I] [server.go:280]  http server Running on http://localhost:8088
+2025/04/10 11:48:09.661  [I] [server.go:280]  http server Running on http://:8080
+2025/04/10 11:48:09.661  [D] [admin.go:87]  now we don't start tasks here, if you use task module, please invoke task.StartTask, or task will not be executed
+2025/04/10 11:48:09.661  [I] [admin.go:93]  Admin server Running on localhost:8088
+2025/04/10 11:48:09.661  [I] [server.go:280]  http server Running on http://localhost:8088
+2025/04/10 11:49:26.971  [D] [admin.go:87]  now we don't start tasks here, if you use task module, please invoke task.StartTask, or task will not be executed
+2025/04/10 11:49:26.971  [I] [admin.go:93]  Admin server Running on localhost:8088
+2025/04/10 11:49:26.971  [I] [server.go:280]  http server Running on http://:8080
+2025/04/10 11:49:26.971  [I] [server.go:280]  http server Running on http://localhost:8088
+2025/04/10 11:50:09.851  [I] [server.go:280]  http server Running on http://:8080
+2025/04/10 11:50:09.851  [D] [admin.go:87]  now we don't start tasks here, if you use task module, please invoke task.StartTask, or task will not be executed
+2025/04/10 11:50:09.851  [I] [admin.go:93]  Admin server Running on localhost:8088
+2025/04/10 11:50:09.851  [I] [server.go:280]  http server Running on http://localhost:8088
+2025/04/10 12:00:47.015  [I] [server.go:280]  http server Running on http://:8080
+2025/04/10 12:00:47.015  [D] [admin.go:87]  now we don't start tasks here, if you use task module, please invoke task.StartTask, or task will not be executed
+2025/04/10 12:00:47.016  [I] [admin.go:93]  Admin server Running on localhost:8088
+2025/04/10 12:00:47.016  [I] [server.go:280]  http server Running on http://localhost:8088
+2025/04/10 12:00:51.547  [D] [router.go:1306]  |      127.0.0.1|[90;47m 302 [0m|    236.875µs| nomatch|[97;44m GET     [0m /devices
+2025/04/10 12:00:51.558  [D] [router.go:1306]  |      127.0.0.1|[97;42m 200 [0m|   2.123291ms|   match|[97;44m GET     [0m /login   r:/login
+2025/04/10 12:00:55.059  [D] [router.go:1306]  |      127.0.0.1|[90;47m 302 [0m|  71.325166ms|   match|[97;46m POST    [0m /login   r:/login
+2025/04/10 12:00:55.068  [D] [router.go:1306]  |      127.0.0.1|[97;42m 200 [0m|      3.746ms|   match|[97;44m GET     [0m /     r:/
+2025/04/10 12:00:59.681  [D] [router.go:1306]  |      127.0.0.1|[97;42m 200 [0m|   2.381375ms|   match|[97;44m GET     [0m /devices   r:/devices
+2025/04/10 12:01:00.762  [D] [template.go:70]  template Execute err: template: devices/show.html:54:14: executing "devices/show.html" at <.xsrfdata>: can't evaluate field xsrfdata in type *models.Integration
+2025/04/10 12:01:00.762  [E] [router.go:1247]  template: devices/show.html:54:14: executing "devices/show.html" at <.xsrfdata>: can't evaluate field xsrfdata in type *models.Integration
+2025/04/10 12:01:00.762  [D] [router.go:1306]  |      127.0.0.1|[97;42m 200 [0m|  13.384334ms|   match|[97;44m GET     [0m /devices/1   r:/devices/:id
+2025/04/10 12:01:59.959  [D] [router.go:1306]  |      127.0.0.1|[97;42m 200 [0m|   6.735959ms|   match|[97;44m GET     [0m /devices/1   r:/devices/:id
+2025/04/10 12:02:15.876  [E] [web_device.go:267]  Error in BrowseNodes: strconv.Atoi: parsing "": invalid syntax
+2025/04/10 12:02:15.882  [D] [router.go:1306]  |      127.0.0.1|[97;42m 200 [0m|   5.883584ms|   match|[97;44m GET     [0m /devices/1/integrations/1/browse   r:/devices/:device_id/integrations/:id/browse
+2025/04/10 12:02:20.618  [D] [router.go:1306]  |      127.0.0.1|[97;42m 200 [0m|   9.357708ms|   match|[97;44m GET     [0m /devices/1   r:/devices/:id
+2025/04/10 12:02:22.556  [D] [router.go:1306]  |      127.0.0.1|[97;42m 200 [0m|  10.118042ms|   match|[97;44m GET     [0m /devices/1   r:/devices/:id

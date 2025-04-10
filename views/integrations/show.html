@@ -1,0 +1,30 @@
+<div class="row mb-4">
+  <div class="col-12">
+    <div class="card shadow" style="background-color: #2d2d2d; border: none">
+      <div class="card-body">
+        <h1 style="color: #ffffff; font-weight: 700">
+          Integration: {{.Integration.IntegrationType}}
+        </h1>
+        <p style="color: #f5f5f5">ID: {{.Integration.Id}}</p>
+        <p style="color: #f5f5f5">Identifier: {{.Integration.Identifier}}</p>
+        <p style="color: #f5f5f5">Host: {{.Integration.Host}}</p>
+        <p style="color: #f5f5f5">Port: {{.Integration.Port}}</p>
+        <p style="color: #f5f5f5">Protocol: {{.Integration.Protocol}}</p>
+        <div class="d-flex justify-content-between">
+          <a
+            href="/devices/{{.Integration.Device.Id}}/integrations/{{.Integration.Id}}/edit"
+            class="btn btn-primary"
+            style="background-color: #007bff; border: none"
+            >Edit</a
+          >
+          <a
+            href="/devices/{{.Integration.Device.Id}}"
+            class="btn btn-secondary"
+            style="background-color: #6c757d; border: none"
+            >Back to Device</a
+          >
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

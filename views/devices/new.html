@@ -1,0 +1,59 @@
+<div class="row justify-content-center">
+  <div class="col-md-6">
+    <div class="card shadow" style="background-color: #2d2d2d; border: none">
+      <div class="card-body">
+        <h1 class="text-center mb-4" style="color: #ffffff; font-weight: 700">
+          Add New Device
+        </h1>
+        {{range .Errors}}
+        <p class="text-danger">{{.Message}}</p>
+        {{end}}
+        <form action="/devices" method="post">
+          {{.xsrfdata}}
+          <div class="mb-3">
+            <label for="name" style="color: #e0e0e0">Name:</label>
+            <input
+              type="text"
+              name="name"
+              id="name"
+              class="form-control"
+              style="background-color: #3a3a3a; border: none; color: #e0e0e0"
+              placeholder="Device Name"
+            />
+          </div>
+          <div class="mb-3">
+            <label for="manufacturer" style="color: #e0e0e0"
+              >Manufacturer:</label
+            >
+            <input
+              type="text"
+              name="manufacturer"
+              id="manufacturer"
+              class="form-control"
+              style="background-color: #3a3a3a; border: none; color: #e0e0e0"
+              placeholder="Manufacturer"
+            />
+          </div>
+          <div class="mb-3">
+            <label for="type" style="color: #e0e0e0">Type:</label>
+            <input
+              type="text"
+              name="type"
+              id="type"
+              class="form-control"
+              style="background-color: #3a3a3a; border: none; color: #e0e0e0"
+              placeholder="Device Type"
+            />
+          </div>
+          <button
+            type="submit"
+            class="btn btn-primary w-100"
+            style="background-color: #007bff; border: none; font-weight: 600"
+          >
+            Add Device
+          </button>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>

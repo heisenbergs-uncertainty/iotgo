@@ -1,0 +1,27 @@
+<div class="row justify-content-center">
+    <div class="col-md-6">
+        <div class="card shadow" style="background-color: #2D2D2D; border: none;">
+            <div class="card-body">
+                <h1 class="text-center mb-4" style="color: #FFFFFF; font-weight: 700;">Edit User</h1>
+                {{range .Errors}}
+                <p class="text-danger">{{.Message}}</p>
+                {{end}}
+                <form action="/admin/users/edit/{{.User.Id}}" method="post">
+                    {{.xsrfdata}}
+                    <div class="mb-3">
+                        <label for="username" style="color: #F5F5F5;">Username:</label>
+                        <input type="text" name="username" id="username" class="form-control" value="{{.User.Username}}" style="background-color: #3A3A3A; border: none; color: #F5F5F5;" required minlength="3">
+                    </div>
+                    <div class="mb-3">
+                        <label for="role" style="color: #F5F5F5;">Role:</label>
+                        <select name="role" id="role" class="form-select" style="background-color: #3A3A3A; border: none; color: #F5F5F5;" required>
+                            <option value="user" {{if eq .User.Role "user"}}selected{{end}} style="color: #F5F5F5;">User</option>
+                            <option value="admin" {{if eq .User.Role "admin"}}selected{{end}} style="color: #F5F5F5;">Admin</option>
+                        </select>
+                    </div>
+                    <button type="submit" class="btn btn-primary w-100" style="background-color: #007BFF; border: none; font-weight: 600;">Update User</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
