@@ -49,7 +49,7 @@ func init() {
 	beego.Router("/devices/:device_id/integrations/new", &controllers.WebIntegrationController{}, "get:New;post:Create")
 	beego.Router("/devices/:device_id/integrations", &controllers.WebIntegrationController{}, "post:Create")
 	beego.Router("/devices/:device_id/integrations/:id/delete", &controllers.WebIntegrationController{}, "post:Delete")
-	beego.Router("/devices/:device_id/integrations/:id/browse", &controllers.WebDeviceController{}, "get:BrowseNodes")
+	beego.Router("/devices/:device_id/integrations/:integration_id/browse", &controllers.WebDeviceController{}, "get:BrowseNodes")
 	//	beego.Router("/devices/:device_id/integrations/:integration_id/record", &controllers.RecordingController{}, "post:RecordData")
 	beego.Router("/devices/:device_id/integrations/:integration_id/snapshot", &controllers.SnapshotController{}, "post:TakeSnapshot")
 
