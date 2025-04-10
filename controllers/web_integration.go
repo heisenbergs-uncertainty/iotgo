@@ -19,9 +19,6 @@ type WebIntegrationController struct {
 // Prepare sets up the controller
 func (c *WebIntegrationController) Prepare() {
 	c.BaseController.Prepare()
-	c.EnableXSRF = true
-	c.XSRFExpire = 7200
-	c.Layout = "base.tpl"
 }
 
 // List shows the list of all integrations
