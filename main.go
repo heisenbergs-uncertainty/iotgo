@@ -1,10 +1,10 @@
 package main
 
 import (
+	_ "github.com/lib/pq"
 	"iotgo/models"
 	_ "iotgo/routers"
-
-	_ "github.com/lib/pq"
+	"iotgo/utils"
 
 	"github.com/beego/beego/v2/client/orm"
 	"github.com/beego/beego/v2/core/config"
@@ -20,6 +20,9 @@ func init() {
 	orm.RegisterDriver("postgres", orm.DRPostgres)
 	orm.RegisterDataBase("default", "postgres", "postgres://postgres@localhost/spmog-iot?sslmode=disable")
 	orm.RunSyncdb("default", false, true)
+
+	// Register Template functions
+	utils.RegisterTemplateFuncs()
 }
 
 func seedAdminUser() {

@@ -9,6 +9,7 @@ type Device struct {
 	Name         string `orm:"size(100)"`
 	Manufacturer string `orm:"size(100)"`
 	Type         string `orm:"size(50)"`
+	Building     string `orm:"size(10)"`
 }
 
 func init() {

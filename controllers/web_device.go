@@ -2,6 +2,7 @@ package controllers
 
 import (
 	"context"
+	"github.com/gopcua/opcua/id"
 	"html/template"
 	"iotgo/models"
 	"strconv"
@@ -11,7 +12,6 @@ import (
 	"github.com/beego/beego/v2/core/logs"
 	"github.com/beego/beego/v2/core/validation"
 	admin "github.com/beego/beego/v2/server/web"
-	"github.com/beego/beego/v2/server/web/pagination"
 	"github.com/gopcua/opcua"
 	"github.com/gopcua/opcua/ua"
 )
@@ -326,15 +326,13 @@ func (c *WebDeviceController) BrowseNodes() {
 	}
 	defer client.Close(ctx)
 
-	// Pagination parameters
-	page, _ := c.GetInt("page", 1)
-	perPage := 50
-	offset := (page - 1) * perPage
-
 	// Browse the Objects folder (default starting point)
-	nodeId := ua.MustParseNodeID("ns=0;i=85") // Objects folder (Root/Objects)
-	allNodes, err := browseNodes(client, nodeId, 0)
+	nodeId := ua.MustParseNodeID("ns=7;i=5001") // Objects folder (Root/Objects)
+	visited := make(map[string]bool)            // Track visited nodes to prevent cycles
+	allNodes, err := browseNodes(client, nodeId, 0, visited)
 	if err != nil {
+		userId, _ := c.GetSession("user_id").(int)
+		models.AddErrorLog("Error in BrowseNodes: "+err.Error(), userId)
 		c.Data["Error"] = "Failed to browse OPC UA nodes: " + err.Error()
 		c.Data["Redirect"] = "/devices/" + strconv.Itoa(deviceId)
 		c.Data["Title"] = "Error"
@@ -347,30 +345,28 @@ func (c *WebDeviceController) BrowseNodes() {
 	}
 
 	// Flatten the node tree for pagination
-	var flatNodes []*Node
-	flattenNodes(allNodes, &flatNodes)
-
-	// Apply pagination
-	total := len(flatNodes)
-	paginator := pagination.SetPaginator(c.Ctx, perPage, int64(total))
-	end := offset + perPage
-	if end > total {
-		end = total
-	}
-	if offset > total {
-		offset = total
-	}
-	nodes := flatNodes[offset:end]
+	var totalNodes int
+	countNodes(allNodes, &totalNodes)
+	logs.Info("Total nodes fetched:", totalNodes)
 
 	c.Data["Device"] = device
 	c.Data["Integration"] = integration
-	c.Data["Nodes"] = nodes
-	c.Data["TotalNodes"] = total
-	c.Data["Paginator"] = paginator
+	c.Data["Nodes"] = allNodes
+	c.Data["TotalNodes"] = totalNodes
 	c.Data["Title"] = "Browse OPC UA Nodes - " + device.Name
 	c.Data["xsrfdata"] = template.HTML(c.XSRFFormHTML())
-	c.TplName = "devices/browse_nodes.html"
+	c.TplName = "devices/browse_nodes.gohtml"
 	admin.StatisticsMap.AddStatistics("GET", "/devices/"+strconv.Itoa(deviceId)+"/browse", "&WebDeviceController.BrowseNodes", time.Since(start))
+}
+
+// countNodes counts the total number of nodes in the hierarchy for debugging
+func countNodes(nodes []*Node, count *int) {
+	for _, node := range nodes {
+		*count++
+		if len(node.Children) > 0 {
+			countNodes(node.Children, count)
+		}
+	}
 }
 
 // Node represents an OPC UA node for display purposes
@@ -384,50 +380,92 @@ type Node struct {
 }
 
 // browseNodes recursively browses OPC UA nodes with optimization
-func browseNodes(client *opcua.Client, nodeId *ua.NodeID, level int) ([]*Node, error) {
-	if level > 10 { // Prevent infinite recursion in cyclic graphs
-		return nil, nil
+// browseNodes recursively browses OPC UA nodes with cycle detection and continuation points
+func browseNodes(client *opcua.Client, nodeId *ua.NodeID, level int, visited map[string]bool) ([]*Node, error) {
+	nodeIdStr := nodeId.String()
+	if visited[nodeIdStr] {
+		return nil, nil // Skip nodes that have already been visited to prevent cycles
 	}
+	visited[nodeIdStr] = true
 
-	browseReq := &ua.BrowseRequest{
-		NodesToBrowse: []*ua.BrowseDescription{
-			{
-				NodeID:          nodeId,
-				BrowseDirection: ua.BrowseDirectionForward,
-				ReferenceTypeID: ua.MustParseNodeID("i=35"), // HierarchicalReferences
-				IncludeSubtypes: true,
-				NodeClassMask:   uint32(ua.NodeClassObject | ua.NodeClassVariable),
-				ResultMask:      uint32(ua.BrowseResultMaskAll),
+	var allRefs []*ua.ReferenceDescription
+	var continuationPoint []byte
+	for {
+		req := &ua.BrowseRequest{
+			NodesToBrowse: []*ua.BrowseDescription{
+				{
+					NodeID:          nodeId,
+					BrowseDirection: ua.BrowseDirectionForward,
+					ReferenceTypeID: ua.NewNumericNodeID(0, id.HierarchicalReferences),
+					IncludeSubtypes: true,
+					NodeClassMask:   uint32(ua.NodeClassObject | ua.NodeClassVariable),
+					ResultMask:      uint32(ua.BrowseResultMaskAll),
+				},
 			},
-		},
-	}
+			RequestedMaxReferencesPerNode: 0, // Let server decide
+		}
+		resp, err := client.Browse(context.Background(), req)
+		if err != nil {
+			return nil, err
+		}
+		if len(resp.Results) == 0 {
+			break
+		}
+		result := resp.Results[0]
+		if result.StatusCode != ua.StatusOK {
+			logs.Warn("Browse failed for node", nodeId.String(), "with status", result.StatusCode)
+			break
+		}
+		allRefs = append(allRefs, result.References...)
+		continuationPoint = result.ContinuationPoint
+		if len(continuationPoint) == 0 {
+			break
+		}
 
-	ctx := context.Background()
-	resp, err := client.Browse(ctx, browseReq)
-	if err != nil {
-		return nil, err
+		// Use BrowseNext to get the next set of references
+		browseNextReq := &ua.BrowseNextRequest{
+			ReleaseContinuationPoints: false,
+			ContinuationPoints:        [][]byte{continuationPoint},
+		}
+		browseNextResp, err := client.BrowseNext(context.Background(), browseNextReq)
+		if err != nil {
+			logs.Warn("BrowseNext failed for node", nodeId.String(), ":", err)
+			break
+		}
+		if len(browseNextResp.Results) == 0 {
+			break
+		}
+		nextResult := browseNextResp.Results[0]
+		if nextResult.StatusCode != ua.StatusOK {
+			logs.Warn("BrowseNext failed for node", nodeId.String(), "with status", nextResult.StatusCode)
+			break
+		}
+		allRefs = append(allRefs, nextResult.References...)
+		if len(nextResult.ContinuationPoint) == 0 {
+			break
+		}
+		continuationPoint = nextResult.ContinuationPoint
 	}
 
 	var nodes []*Node
-	for _, result := range resp.Results {
-		for _, ref := range result.References {
-			node := &Node{
-				NodeId:      ref.NodeID.String(),
-				BrowseName:  ref.BrowseName.Name,
-				DisplayName: ref.DisplayName.Text,
-				NodeClass:   ref.NodeClass.String(),
-				Level:       level,
-			}
-
-			// Recursively browse children
-			children, err := browseNodes(client, ref.NodeID.NodeID, level+1)
-			if err != nil {
-				logs.Warn("Error browsing children for node", ref.NodeID.String(), ":", err)
-				continue
-			}
-			node.Children = children
-			nodes = append(nodes, node)
+	for _, ref := range allRefs {
+		childNodeId := ref.NodeID
+		node := &Node{
+			NodeId:      childNodeId.String(),
+			BrowseName:  ref.BrowseName.Name,
+			DisplayName: ref.DisplayName.Text,
+			NodeClass:   ref.NodeClass.String(),
+			Level:       level,
 		}
+
+		// Recursively browse children
+		children, err := browseNodes(client, childNodeId.NodeID, level+1, visited)
+		if err != nil {
+			logs.Warn("Error browsing children for node", childNodeId.String(), ":", err)
+			continue
+		}
+		node.Children = children
+		nodes = append(nodes, node)
 	}
 	return nodes, nil
 }
