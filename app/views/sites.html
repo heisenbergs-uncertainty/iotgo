@@ -1,0 +1,221 @@
+<div class="bg-white p-8 rounded-2xl shadow-xl">
+  <h2 class="text-3xl font-bold mb-6 text-gray-800 flex items-center">
+    <i class="fas fa-map-marker-alt mr-2"></i> Manage Sites
+  </h2>
+  {{if .Error}}
+  <div
+    class="bg-red-100 text-red-700 p-4 rounded-lg mb-6 flex items-center animate-pulse"
+  >
+    <i class="fas fa-exclamation-circle mr-2"></i> {{.Error}}
+  </div>
+  {{end}} {{if .TokenError}}
+  <div
+    class="bg-yellow-100 text-yellow-700 p-4 rounded-lg mb-6 flex items-center"
+  >
+    <i class="fas fa-exclamation-triangle mr-2"></i> {{.TokenError}}
+    <a href="/api_key" class="text-blue-600 hover:underline ml-2"
+      >Generate API Key</a
+    >
+  </div>
+  {{end}}
+  <!-- Site List -->
+  <div
+    class="mb-8 bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition"
+  >
+    <h3 class="text-xl font-semibold mb-4 text-gray-700 flex items-center">
+      <i class="fas fa-list mr-2"></i> Site List
+    </h3>
+    <table class="w-full border-collapse">
+      <thead>
+        <tr class="bg-gray-100 text-gray-600">
+          <th class="p-3 text-left">Name</th>
+          <th class="p-3 text-left">Address</th>
+          <th class="p-3 text-left">City</th>
+          <th class="p-3 text-left">Actions</th>
+        </tr>
+      </thead>
+      <tbody id="site-table-body"></tbody>
+    </table>
+  </div>
+  <!-- Create Site Form -->
+  <div class="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition">
+    <h3 class="text-xl font-semibold mb-4 text-gray-700 flex items-center">
+      <i class="fas fa-plus-circle mr-2"></i> Add New Site
+    </h3>
+    <form id="create-site-form">
+      <div class="mb-5">
+        <label
+          for="name"
+          class="block text-gray-700 font-medium mb-1 flex items-center"
+        >
+          <i class="fas fa-tag mr-1"></i> Name
+        </label>
+        <input
+          type="text"
+          id="name"
+          name="name"
+          class="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 transition"
+          required
+        />
+      </div>
+      <div class="mb-5">
+        <label
+          for="address"
+          class="block text-gray-700 font-medium mb-1 flex items-center"
+        >
+          <i class="fas fa-map mr-1"></i> Address
+        </label>
+        <input
+          type="text"
+          id="address"
+          name="address"
+          class="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 transition"
+          required
+        />
+      </div>
+      <div class="mb-5">
+        <label
+          for="city"
+          class="block text-gray-700 font-medium mb-1 flex items-center"
+        >
+          <i class="fas fa-city mr-1"></i> City
+        </label>
+        <input
+          type="text"
+          id="city"
+          name="city"
+          class="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 transition"
+          required
+        />
+      </div>
+      <div class="mb-5">
+        <label
+          for="state"
+          class="block text-gray-700 font-medium mb-1 flex items-center"
+        >
+          <i class="fas fa-map-pin mr-1"></i> State
+        </label>
+        <input
+          type="text"
+          id="state"
+          name="state"
+          class="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 transition"
+          required
+        />
+      </div>
+      <div class="mb-6">
+        <label
+          for="country"
+          class="block text-gray-700 font-medium mb-1 flex items-center"
+        >
+          <i class="fas fa-globe mr-1"></i> Country
+        </label>
+        <input
+          type="text"
+          id="country"
+          name="country"
+          class="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 transition"
+          required
+        />
+      </div>
+      <button
+        type="submit"
+        class="bg-blue-600 text-white p-3 rounded-lg hover:bg-blue-700 transition duration-300 flex items-center"
+      >
+        <i class="fas fa-plus mr-2"></i> Create Site
+      </button>
+    </form>
+  </div>
+</div>
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    const token = "{{.ApiToken}}";
+    if (!token) {
+      document.getElementById("site-table-body").innerHTML =
+        '<tr><td colspan="4" class="p-3 text-center text-gray-500">Please generate an API key to view sites</td></tr>';
+      return;
+    }
+
+    // Fetch and display sites
+    const fetchSites = () => {
+      fetch("/api/sites?limit=10&offset=0", {
+        headers: { Authorization: `Bearer ${token}` },
+      })
+        .then((response) => response.json())
+        .then((data) => {
+          const tbody = document.getElementById("site-table-body");
+          tbody.innerHTML = "";
+          if (data.data && data.data.items) {
+            data.data.items.forEach((site) => {
+              const row = document.createElement("tr");
+              row.className = "border-b hover:bg-gray-50 transition";
+              row.innerHTML = `
+                        <td class="p-3">${site.name}</td>
+                        <td class="p-3">${site.address}</td>
+                        <td class="p-3">${site.city}</td>
+                        <td class="p-3">
+                            <button onclick="deleteSite(${site.id})" class="text-red-500 hover:text-red-700 transition flex items-center">
+                                <i class="fas fa-trash-alt mr-1"></i> Delete
+                            </button>
+                        </td>
+                    `;
+              tbody.appendChild(row);
+            });
+          } else {
+            tbody.innerHTML =
+              '<tr><td colspan="4" class="p-3 text-center text-gray-500">No sites found</td></tr>';
+          }
+        });
+    };
+
+    // Create site
+    document
+      .getElementById("create-site-form")
+      .addEventListener("submit", (e) => {
+        e.preventDefault();
+        const formData = new FormData(e.target);
+        const site = {
+          name: formData.get("name"),
+          address: formData.get("address"),
+          city: formData.get("city"),
+          state: formData.get("state"),
+          country: formData.get("country"),
+        };
+        fetch("/api/sites", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+            Authorization: `Bearer ${token}`,
+          },
+          body: JSON.stringify(site),
+        })
+          .then((response) => response.json())
+          .then((data) => {
+            if (data.code === 200) {
+              fetchSites();
+              e.target.reset();
+            } else {
+              alert(data.error);
+            }
+          });
+      });
+
+    // Delete site
+    window.deleteSite = (id) => {
+      fetch(`/api/sites/${id}`, {
+        method: "DELETE",
+        headers: { Authorization: `Bearer ${token}` },
+      })
+        .then((response) => response.json())
+        .then((data) => {
+          if (data.code === 200) {
+            fetchSites();
+          } else {
+            alert(data.error);
+          }
+        });
+    };
+
+    fetchSites();
+  });
+</script>
