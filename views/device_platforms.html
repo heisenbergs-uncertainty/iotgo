@@ -1,0 +1,173 @@
+<div class="bg-white p-8 rounded-2xl shadow-xl">
+  <h2 class="text-3xl font-bold mb-6 text-gray-800 flex items-center">
+    <i class="fas fa-link mr-2"></i> Manage Device-Platform Associations for
+    {{.Device.Name}}
+  </h2>
+  {{if .Error}}
+  <div
+    class="bg-red-100 text-red-700 p-4 rounded-lg mb-6 flex items-center animate-pulse"
+  >
+    <i class="fas fa-exclamation-circle mr-2"></i> {{.Error}}
+  </div>
+  {{end}} {{if .TokenError}}
+  <div
+    class="bg-yellow-100 text-yellow-700 p-4 rounded-lg mb-6 flex items-center"
+  >
+    <i class="fas fa-exclamation-triangle mr-2"></i> {{.TokenError}}
+    <a href="/api_key" class="text-blue-600 hover:underline ml-2"
+      >Generate API Key</a
+    >
+  </div>
+  {{end}}
+  <!-- Association List -->
+  <div
+    class="mb-8 bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition"
+  >
+    <h3 class="text-xl font-semibold mb-4 text-gray-700 flex items-center">
+      <i class="fas fa-list mr-2"></i> Associations
+    </h3>
+    <table class="w-full border-collapse">
+      <thead>
+        <tr class="bg-gray-100 text-gray-600">
+          <th class="p-3 text-left">Platform</th>
+          <th class="p-3 text-left">Device Alias</th>
+          <th class="p-3 text-left">Actions</th>
+        </tr>
+      </thead>
+      <tbody id="association-table-body"></tbody>
+    </table>
+  </div>
+  <!-- Create Association Form -->
+  <div class="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition">
+    <h3 class="text-xl font-semibold mb-4 text-gray-700 flex items-center">
+      <i class="fas fa-plus-circle mr-2"></i> Add New Association
+    </h3>
+    <form id="create-association-form">
+      <div class="mb-5">
+        <label
+          for="platform_id"
+          class="block text-gray-700 font-medium mb-1 flex items-center"
+        >
+          <i class="fas fa-server mr-1"></i> Platform
+        </label>
+        <select
+          id="platform_id"
+          name="platform_id"
+          class="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 transition"
+          required
+        >
+          <option value="">Select Platform</option>
+          {{range .Platforms}}
+          <option value="{{.ID}}">{{.Name}}</option>
+          {{end}}
+        </select>
+      </div>
+      <div class="mb-6">
+        <label
+          for="device_alias"
+          class="block text-gray-700 font-medium mb-1 flex items-center"
+        >
+          <i class="fas fa-tag mr-1"></i> Device Alias
+        </label>
+        <input
+          type="text"
+          id="device_alias"
+          name="device_alias"
+          class="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 transition"
+          required
+        />
+      </div>
+      <button
+        type="submit"
+        class="bg-blue-600 text-white p-3 rounded-lg hover:bg-blue-700 transition duration-300 flex items-center"
+      >
+        <i class="fas fa-plus mr-2"></i> Create Association
+      </button>
+    </form>
+  </div>
+</div>
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+      const token = "{{.ApiToken}}";
+      const deviceId = {{.Device.ID}};
+      if (!token) {
+          document.getElementById("association-table-body").innerHTML = '<tr><td colspan="3" class="p-3 text-center text-gray-500">Please generate an API key to view associations</td></tr>';
+          return;
+      }
+
+      // Fetch and display associations
+      const fetchAssociations = () => {
+          fetch(`/api/devices/${deviceId}/platforms?limit=10&offset=0`, {
+              headers: { "Authorization": `Bearer ${token}` }
+          })
+          .then(response => response.json())
+          .then(data => {
+              const tbody = document.getElementById("association-table-body");
+              tbody.innerHTML = "";
+              if (data.data && data.data.items) {
+                  data.data.items.forEach(association => {
+                      const row = document.createElement("tr");
+                      row.className = "border-b hover:bg-gray-50 transition";
+                      row.innerHTML = `
+                          <td class="p-3">${association.platform ? association.platform.name : "N/A"}</td>
+                          <td class="p-3">${association.device_alias}</td>
+                          <td class="p-3">
+                              <button onclick="deleteAssociation(${association.platform_id})" class="text-red-500 hover:text-red-700 transition flex items-center">
+                                  <i class="fas fa-trash-alt mr-1"></i> Delete
+                              </button>
+                          </td>
+                      `;
+                      tbody.appendChild(row);
+                  });
+              } else {
+                  tbody.innerHTML = '<tr><td colspan="3" class="p-3 text-center text-gray-500">No associations found</td></tr>';
+              }
+          });
+      };
+
+      // Create association
+      document.getElementById("create-association-form").addEventListener("submit", (e) => {
+          e.preventDefault();
+          const formData = new FormData(e.target);
+          const association = {
+              platform_id: parseInt(formData.get("platform_id")),
+              device_alias: formData.get("device_alias")
+          };
+          fetch(`/api/devices/${deviceId}/platforms`, {
+              method: "POST",
+              headers: {
+                  "Content-Type": "application/json",
+                  "Authorization": `Bearer ${token}`
+              },
+              body: JSON.stringify(association)
+          })
+          .then(response => response.json())
+          .then(data => {
+              if (data.code === 200) {
+                  fetchAssociations();
+                  e.target.reset();
+              } else {
+                  alert(data.error);
+              }
+          });
+      });
+
+      // Delete association
+      window.deleteAssociation = (platformId) => {
+          fetch(`/api/devices/${deviceId}/platforms/${platformId}`, {
+              method: "DELETE",
+              headers: { "Authorization": `Bearer ${token}` }
+          })
+          .then(response => response.json())
+          .then(data => {
+              if (data.code === 200) {
+                  fetchAssociations();
+              } else {
+                  alert(data.error);
+              }
+          });
+      };
+
+      fetchAssociations();
+  });
+</script>

@@ -1,0 +1,118 @@
+<div class="bg-white p-8 rounded-2xl shadow-xl">
+  <h2 class="text-3xl font-bold mb-6 text-gray-800 flex items-center">
+    <i class="fas fa-microchip mr-2"></i> Manage Devices
+  </h2>
+  {{if .Error}}
+  <div
+    class="bg-red-100 text-red-700 p-4 rounded-lg mb-6 flex items-center animate-pulse"
+  >
+    <i class="fas fa-exclamation-circle mr-2"></i> {{.Error}}
+  </div>
+  {{end}} {{if .TokenError}}
+  <div
+    class="bg-yellow-100 text-yellow-700 p-4 rounded-lg mb-6 flex items-center"
+  >
+    <i class="fas fa-exclamation-triangle mr-2"></i> {{.TokenError}}
+    <a href="/api_key" class="text-blue-600 hover:underline ml-2">
+      Generate API Key
+    </a>
+  </div>
+  {{end}}
+  <!-- Device List -->
+  <div
+    class="mb-8 bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition"
+  >
+    <h3 class="text-xl font-semibold mb-4 text-gray-700 flex items-center">
+      <i class="fas fa-list mr-2"></i> Device List
+    </h3>
+    <table class="w-full border-collapse">
+      <thead>
+        <tr class="bg-gray-100 text-gray-600">
+          <th class="p-3 text-left">Name</th>
+          <th class="p-3 text-left">Site</th>
+          <th class="p-3 text-left">Value Stream</th>
+          <th class="p-3 text-left">Actions</th>
+        </tr>
+      </thead>
+      <tbody id="device-table-body">
+        {{ range .Devices }}
+        <!-- Updated to include .Devices -->
+        <tr class="border-b hover:bg-gray-50 transition">
+          <td class="p-3">{{ .Name }}</td>
+          <td class="p-3">{{ .Site }}</td>
+          <td class="p-3">{{ .ValueStream }}</td>
+          <td class="p-3">
+            <button class="text-blue-600 hover:underline">Edit</button>
+            <button class="text-red-600 hover:underline">Delete</button>
+          </td>
+        </tr>
+        {{ end }}
+      </tbody>
+    </table>
+  </div>
+  <!-- Create Device Form -->
+  <div class="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition">
+    <h3 class="text-xl font-semibold mb-4 text-gray-700 flex items-center">
+      <i class="fas fa-plus-circle mr-2"></i> Add New Device
+    </h3>
+    <form id="create-device-form">
+      <div class="mb-5">
+        <label
+          for="name"
+          class="block text-gray-700 font-medium mb-1 flex items-center"
+        >
+          <i class="fas fa-tag mr-1"></i> Name
+        </label>
+        <input
+          type="text"
+          id="name"
+          name="name"
+          class="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 transition"
+          required
+        />
+      </div>
+      <div class="mb-5">
+        <label
+          for="site_id"
+          class="block text-gray-700 font-medium mb-1 flex items-center"
+        >
+          <i class="fas fa-map-marker-alt mr-1"></i> Site
+        </label>
+        <select
+          id="site_id"
+          name="site_id"
+          class="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 transition"
+        >
+          <option value="">Select Site</option>
+          {{range .Sites}}
+          <option value="{{.ID}}">{{.Name}}</option>
+          {{end}}
+        </select>
+      </div>
+      <div class="mb-6">
+        <label
+          for="value_stream_id"
+          class="block text-gray-700 font-medium mb-1 flex items-center"
+        >
+          <i class="fas fa-stream mr-1"></i> Value Stream
+        </label>
+        <select
+          id="value_stream_id"
+          name="value_stream_id"
+          class="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 transition"
+        >
+          <option value="">Select Value Stream</option>
+          {{range .ValueStreams}}
+          <option value="{{.ID}}">{{.Name}}</option>
+          {{end}}
+        </select>
+      </div>
+      <button
+        type="submit"
+        class="bg-blue-600 text-white p-3 rounded-lg hover:bg-blue-700 transition duration-300 flex items-center"
+      >
+        <i class="fas fa-plus mr-2"></i> Create Device
+      </button>
+    </form>
+  </div>
+</div>
