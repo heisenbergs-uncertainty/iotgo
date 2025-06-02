@@ -1,0 +1,360 @@
+<div class="bg-white p-8 rounded-2xl shadow-xl">
+    <h2 class="text-3xl font-bold mb-6 text-gray-800 flex items-center">
+        <i class="fas fa-edit mr-2"></i> Edit Platform
+    </h2>
+    {{if .Error}}
+        <div class="bg-red-100 text-red-700 p-4 rounded-lg mb-6 flex items-center animate-pulse">
+            <i class="fas fa-exclamation-circle mr-2"></i> {{.Error}}
+        </div>
+    {{end}}
+    <div id="form-error" class="hidden bg-red-100 text-red-700 p-4 rounded-lg mb-6 flex items-center animate-pulse">
+        <i class="fas fa-exclamation-circle mr-2"></i> <span id="error-message"></span>
+    </div>
+    <form id="edit-platform-form">
+        <input type="hidden" name="_method" value="PUT">
+        <div class="mb-5">
+            <label for="name" class="block text-gray-700 font-medium mb-1 flex items-center">
+                <i class="fas fa-tag mr-1"></i> Name
+            </label>
+            <input type="text" id="name" name="name" value="{{.Platform.Name}}" class="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 transition" required>
+        </div>
+        <div class="mb-5">
+            <label for="type" class="block text-gray-700 font-medium mb-1 flex items-center">
+                <i class="fas fa-cogs mr-1"></i> Type
+            </label>
+            <select id="type" name="type" class="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 transition" required>
+                <option value="">Select Type</option>
+                <option value="REST" {{if eq .Platform.Type "REST"}}selected{{end}}>REST</option>
+                <option value="InfluxDB" {{if eq .Platform.Type "InfluxDB"}}selected{{end}}>InfluxDB</option>
+                <option value="OPCUA" {{if eq .Platform.Type "OPCUA"}}selected{{end}}>OPC UA</option>
+                <option value="SDK" {{if eq .Platform.Type "SDK"}}selected{{end}}>SDK</option>
+            </select>
+        </div>
+        <div class="mb-5 {{if ne .Platform.Type "REST"}}hidden{{end}}" id="rest-config">
+            <label for="base_endpoint" class="block text-gray-700 font-medium mb-1 flex items-center">
+                <i class="fas fa-link mr-1"></i> Base Endpoint
+            </label>
+            <input type="url" id="base_endpoint" name="base_endpoint" value="{{.BaseEndpoint}}" class="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 transition" placeholder="https://api.example.com">
+            <label for="rest_timeout" class="block text-gray-700 font-medium mb-1 mt-4 flex items-center">
+                <i class="fas fa-clock mr-1"></i> Timeout (seconds)
+            </label>
+            <input type="number" id="rest_timeout" name="rest_timeout" value="{{.Timeout}}" min="1" max="60" class="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 transition">
+            <label for="auth_type" class="block text-gray-700 font-medium mb-1 mt-4 flex items-center">
+                <i class="fas fa-lock mr-1"></i> Authentication Type
+            </label>
+            <select id="auth_type" name="auth_type" class="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 transition">
+                <option value="none" {{if or (eq .AuthType "none") (eq .AuthType "")}}selected{{end}}>None</option>
+                <option value="api_key" {{if eq .AuthType "api_key"}}selected{{end}}>API Key</option>
+                <option value="bearer" {{if eq .AuthType "bearer"}}selected{{end}}>Bearer Token</option>
+                <option value="basic" {{if eq .AuthType "basic"}}selected{{end}}>Basic Auth</option>
+            </select>
+            <div class="mb-5 {{if ne .AuthType "api_key"}}hidden{{end}}" id="auth-api-key">
+                <label for="api_key" class="block text-gray-700 font-medium mb-1 flex items-center">
+                    <i class="fas fa-key mr-1"></i> API Key
+                </label>
+                <input type="text" id="api_key" name="api_key" value="{{.APIKey}}" class="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 transition">
+            </div>
+            <div class="mb-5 {{if ne .AuthType "bearer"}}hidden{{end}}" id="auth-bearer">
+                <label for="bearer_token" class="block text-gray-700 font-medium mb-1 flex items-center">
+                    <i class="fas fa-key mr-1"></i> Bearer Token
+                </label>
+                <input type="text" id="bearer_token" name="bearer_token" value="{{.BearerToken}}" class="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 transition">
+            </div>
+            <div class="mb-5 {{if ne .AuthType "basic"}}hidden{{end}}" id="auth-basic">
+                <label for="basic_username" class="block text-gray-700 font-medium mb-1 flex items-center">
+                    <i class="fas fa-user mr-1"></i> Username
+                </label>
+                <input type="text" id="basic_username" name="basic_username" value="{{.BasicUsername}}" class="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 transition">
+                <label for="basic_password" class="block text-gray-700 font-medium mb-1 mt-4 flex items-center">
+                    <i class="fas fa-lock mr-1"></i> Password
+                </label>
+                <input type="password" id="basic_password" name="basic_password" value="{{.BasicPassword}}" class="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 transition">
+            </div>
+        </div>
+        <div class="mb-5 {{if ne .Platform.Type "InfluxDB"}}hidden{{end}}" id="influxdb-config">
+            <label for="url" class="block text-gray-700 font-medium mb-1 flex items-center">
+                <i class="fas fa-link mr-1"></i> URL
+            </label>
+            <input type="url" id="url" name="url" value="{{.URL}}" class="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 transition" placeholder="http://localhost:8086" required>
+            <label for="token" class="block text-gray-700 font-medium mb-1 mt-4 flex items-center">
+                <i class="fas fa-key mr-1"></i> Token
+            </label>
+            <input type="text" id="token" name="token" value="{{.Token}}" class="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 transition" required>
+            <label for="org" class="block text-gray-700 font-medium mb-1 mt-4 flex items-center">
+                <i class="fas fa-building mr-1"></i> Organization
+            </label>
+            <input type="text" id="org" name="org" value="{{.Org}}" class="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 transition" required>
+            <label for="bucket" class="block text-gray-700 font-medium mb-1 mt-4 flex items-center">
+                <i class="fas fa-database mr-1"></i> Bucket
+            </label>
+            <input type="text" id="bucket" name="bucket" value="{{.Bucket}}" class="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 transition" required>
+            <label for="influxdb_timeout" class="block text-gray-700 font-medium mb-1 mt-4 flex items-center">
+                <i class="fas fa-clock mr-1"></i> Timeout (seconds)
+            </label>
+            <input type="number" id="influxdb_timeout" name="influxdb_timeout" value="{{.Timeout}}" min="1" max="60" class="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 transition">
+        </div>
+        <div class="mb-6">
+            <label for="metadata" class="block text-gray-700 font-medium mb-1 flex items-center">
+                <i class="fas fa-code mr-1"></i> Metadata (JSON)
+            </label>
+            <textarea id="metadata" name="metadata" class="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 transition" readonly>{{.Platform.Metadata}}</textarea>
+        </div>
+        <div class="flex justify-end space-x-4">
+            <a href="/platforms" class="bg-gray-500 text-white p-3 rounded-lg hover:bg-gray-600 transition flex items-center">
+                <i class="fas fa-arrow-left mr-2"></i> Cancel
+            </a>
+            <button type="button" onclick="testConnection()" class="bg-yellow-500 text-white p-3 rounded-lg hover:bg-yellow-600 transition flex items-center">
+                <i class="fas fa-plug mr-2"></i> Test Connection
+            </button>
+            <button type="submit" class="bg-blue-600 text-white p-3 rounded-lg hover:bg-blue-700 transition flex items-center">
+                <i class="fas fa-save mr-2"></i> Save
+            </button>
+        </div>
+    </form>
+</div>
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+    const token = "{{.ApiToken}}";
+    console.log("API Token:", token);
+    const typeSelect = document.getElementById("type");
+    const restConfig = document.getElementById("rest-config");
+    const influxdbConfig = document.getElementById("influxdb-config");
+    const authTypeSelect = document.getElementById("auth_type");
+    const authAPIKey = document.getElementById("auth-api-key");
+    const authBearer = document.getElementById("auth-bearer");
+    const authBasic = document.getElementById("auth-basic");
+    const metadataTextarea = document.getElementById("metadata");
+    const formError = document.getElementById("form-error");
+    const errorMessage = document.getElementById("error-message");
+
+    // Show error message
+    function showError(message) {
+        errorMessage.textContent = message;
+        formError.classList.remove("hidden");
+        setTimeout(() => formError.classList.add("hidden"), 5000);
+    }
+
+    // Toggle configuration fields
+    typeSelect.addEventListener("change", () => {
+        restConfig.classList.add("hidden");
+        influxdbConfig.classList.add("hidden");
+        document.getElementById("base_endpoint").removeAttribute("required");
+        document.getElementById("auth_type").removeAttribute("required");
+        if (typeSelect.value === "REST") {
+            restConfig.classList.remove("hidden");
+            document.getElementById("base_endpoint").setAttribute("required", "");
+            document.getElementById("auth_type").setAttribute("required", "");
+            updateMetadata();
+        } else if (typeSelect.value === "InfluxDB") {
+            influxdbConfig.classList.remove("hidden");
+            updateMetadata();
+        } else {
+            metadataTextarea.value = "{}";
+        }
+    });
+
+    // Toggle authentication fields for REST
+    authTypeSelect.addEventListener("change", () => {
+        authAPIKey.classList.add("hidden");
+        authBearer.classList.add("hidden");
+        authBasic.classList.add("hidden");
+        document.getElementById("api_key").removeAttribute("required");
+        document.getElementById("bearer_token").removeAttribute("required");
+        document.getElementById("basic_username").removeAttribute("required");
+        document.getElementById("basic_password").removeAttribute("required");
+        if (authTypeSelect.value === "api_key") {
+            authAPIKey.classList.remove("hidden");
+            document.getElementById("api_key").setAttribute("required", "");
+        } else if (authTypeSelect.value === "bearer") {
+            authBearer.classList.remove("hidden");
+            document.getElementById("bearer_token").setAttribute("required", "");
+        } else if (authTypeSelect.value === "basic") {
+            authBasic.classList.remove("hidden");
+            document.getElementById("basic_username").setAttribute("required", "");
+            document.getElementById("basic_password").setAttribute("required", "");
+        }
+        updateMetadata();
+    });
+
+    // Update metadata on form changes
+    function updateMetadata() {
+        if (typeSelect.value === "REST") {
+            const metadata = {
+                base_endpoint: document.getElementById("base_endpoint").value,
+                timeout: parseInt(document.getElementById("rest_timeout").value) || 10,
+                auth: {
+                    type: authTypeSelect.value
+                }
+            };
+            if (authTypeSelect.value === "api_key") {
+                metadata.auth.api_key = document.getElementById("api_key").value;
+            } else if (authTypeSelect.value === "bearer") {
+                metadata.auth.bearer_token = document.getElementById("bearer_token").value;
+            } else if (authTypeSelect.value === "basic") {
+                metadata.auth.basic_auth = {
+                    username: document.getElementById("basic_username").value,
+                    password: document.getElementById("basic_password").value
+                };
+            }
+            metadataTextarea.value = JSON.stringify(metadata, null, 2);
+        } else if (typeSelect.value === "InfluxDB") {
+            const metadata = {
+                url: document.getElementById("url").value,
+                token: document.getElementById("token").value,
+                org: document.getElementById("org").value,
+                bucket: document.getElementById("bucket").value,
+                timeout: parseInt(document.getElementById("influxdb_timeout").value) || 10
+            };
+            metadataTextarea.value = JSON.stringify(metadata, null, 2);
+        } else {
+            metadataTextarea.value = "{}";
+        }
+    }
+
+    document.getElementById("base_endpoint").addEventListener("input", updateMetadata);
+    document.getElementById("rest_timeout").addEventListener("input", updateMetadata);
+    document.getElementById("url").addEventListener("input", updateMetadata);
+    document.getElementById("token").addEventListener("input", updateMetadata);
+    document.getElementById("org").addEventListener("input", updateMetadata);
+    document.getElementById("bucket").addEventListener("input", updateMetadata);
+    document.getElementById("influxdb_timeout").addEventListener("input", updateMetadata);
+    document.getElementById("auth_type").addEventListener("change", updateMetadata);
+    document.getElementById("api_key").addEventListener("input", updateMetadata);
+    document.getElementById("bearer_token").addEventListener("input", updateMetadata);
+    document.getElementById("basic_username").addEventListener("input", updateMetadata);
+    document.getElementById("basic_password").addEventListener("input", updateMetadata);
+
+    // Client-side validation and form submission
+    document.getElementById("edit-platform-form").addEventListener("submit", (e) => {
+        e.preventDefault();
+        if (!token) {
+            showError("User authentication token missing. Please generate an API key at /api_key.");
+            return;
+        }
+        const formData = new FormData(e.target);
+        const platform = {
+            name: formData.get("name"),
+            type: formData.get("type"),
+            metadata: formData.get("metadata")
+        };
+        console.log("Submitting platform update:", platform);
+        if (platform.type === "REST") {
+            const baseEndpoint = document.getElementById("base_endpoint").value;
+            const authType = authTypeSelect.value;
+            if (!baseEndpoint.match(/^https?:\/\/[^\s/$.?#].[^\s]*$/)) {
+                showError("Please enter a valid HTTP/HTTPS URL for the base endpoint");
+                return;
+            }
+            if (authType !== "none") {
+                if (authType === "api_key" && !document.getElementById("api_key").value.trim()) {
+                    showError("API Key is required for API Key authentication");
+                    return;
+                }
+                if (authType === "bearer" && !document.getElementById("bearer_token").value.trim()) {
+                    showError("Bearer Token is required for Bearer authentication");
+                    return;
+                }
+                if (authType === "basic") {
+                    if (!document.getElementById("basic_username").value.trim()) {
+                        showError("Username is required for Basic authentication");
+                        return;
+                    }
+                    if (!document.getElementById("basic_password").value.trim()) {
+                        showError("Password is required for Basic authentication");
+                        return;
+                    }
+                }
+            }
+        } else if (platform.type === "InfluxDB") {
+            const url = document.getElementById("url").value;
+            const token = document.getElementById("token").value;
+            const org = document.getElementById("org").value;
+            const bucket = document.getElementById("bucket").value;
+            if (!url.match(/^https?:\/\/[^\s/$.?#].[^\s]*$/)) {
+                showError("Please enter a valid HTTP/HTTPS URL for the InfluxDB URL");
+                return;
+            }
+            if (!token.trim()) {
+                showError("Token is required for InfluxDB");
+                return;
+            }
+            if (!org.trim()) {
+                showError("Organization is required for InfluxDB");
+                return;
+            }
+            if (!bucket.trim()) {
+                showError("Bucket is required for InfluxDB");
+                return;
+            }
+        } else {
+            showError("Please select a valid platform type");
+            return;
+        }
+
+        fetch("/api/platforms/{{.Platform.ID}}", {
+            method: "PUT",
+            headers: {
+                "Content-Type": "application/json",
+                "Authorization": `Bearer ${token}`
+            },
+            body: JSON.stringify(platform)
+        })
+        .then(response => {
+            if (!response.ok) {
+                throw new Error(`HTTP error! status: ${response.status}`);
+            }
+            return response.json();
+        })
+        .then(data => {
+            if (data.code === 200) {
+                window.location.href = "/platforms";
+            } else {
+                showError(data.error || "Failed to update platform");
+            }
+        })
+        .catch(error => {
+            console.error("Error updating platform:", error);
+            showError("Error updating platform: " + error.message);
+        });
+    });
+
+    function testConnection() {
+        if (!token) {
+            showError("User authentication token missing. Please generate an API key at /api_key.");
+            return;
+        }
+        const type = document.getElementById("type").value;
+        if (type !== "REST" && type !== "InfluxDB") {
+            showError("Connection test is only available for REST or InfluxDB platforms");
+            return;
+        }
+        const metadata = document.getElementById("metadata").value;
+        console.log("Testing connection with type:", type, "metadata:", metadata);
+        fetch("/api/platforms/test", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json",
+                "Authorization": `Bearer ${token}`
+            },
+            body: JSON.stringify({ type: type, metadata: metadata })
+        })
+        .then(response => {
+            if (!response.ok) {
+                throw new Error(`HTTP error! status: ${response.status}`);
+            }
+            return response.json();
+        })
+        .then(data => {
+            if (data.code === 200) {
+                alert("Connection successful!");
+            } else {
+                showError(data.error || "Connection failed");
+            }
+        })
+        .catch(error => {
+            console.error("Error testing connection:", error);
+            showError("Connection test failed: " + error.message);
+        });
+    }
+});
+</script>

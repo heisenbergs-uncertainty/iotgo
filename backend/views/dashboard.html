@@ -1,0 +1,66 @@
+<div class="bg-white p-8 rounded-2xl shadow-xl">
+    <h2 class="text-3xl font-bold mb-6 text-gray-800 flex items-center">
+        <i class="fas fa-tachometer-alt mr-2"></i> Dashboard
+    </h2>
+    {{if .Error}}
+        <div class="bg-red-100 text-red-700 p-4 rounded-lg mb-6 flex items-center animate-pulse">
+            <i class="fas fa-exclamation-circle mr-2"></i> {{.Error}}
+        </div>
+    {{end}}
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+        <!-- Devices Card -->
+        <div class="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition">
+            <h3 class="text-xl font-semibold mb-4 text-gray-700 flex items-center">
+                <i class="fas fa-microchip mr-2"></i> Devices
+            </h3>
+            <table class="w-full border-collapse">
+                <thead>
+                    <tr class="bg-gray-100 text-gray-600">
+                        <th class="p-3 text-left">Name</th>
+                        <th class="p-3 text-left">Site</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {{range .Devices}}
+                        <tr class="border-b hover:bg-gray-50 transition">
+                            <td class="p-3">{{.Name}}</td>
+                            <td class="p-3">{{if .Site}}{{.Site.Name}}{{else}}N/A{{end}}</td>
+                        </tr>
+                    {{else}}
+                        <tr><td colspan="2" class="p-3 text-center text-gray-500">No devices found</td></tr>
+                    {{end}}
+                </tbody>
+            </table>
+        </div>
+        <!-- Platforms Card -->
+        <div class="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition">
+            <h3 class="text-xl font-semibold mb-4 text-gray-700 flex items-center">
+                <i class="fas fa-server mr-2"></i> Platforms
+            </h3>
+            <table class="w-full border-collapse">
+                <thead>
+                    <tr class="bg-gray-100 text-gray-600">
+                        <th class="p-3 text-left">Name</th>
+                        <th class="p-3 text-left">Type</th>
+                        <th class="p-3 text-left">Status</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {{range .Platforms}}
+                        <tr class="border-b hover:bg-gray-50 transition">
+                            <td class="p-3">{{.Name}}</td>
+                            <td class="p-3">{{.Type}}</td>
+                            <td class="p-3">
+                                <span class="{{if eq .ConnectionState "Connected"}}text-green-600{{else}}text-red-600{{end}} flex items-center">
+                                    <i class="fas {{if eq .ConnectionState "Connected"}}fa-check-circle{{else}}fa-times-circle{{end}} mr-1"></i> {{.ConnectionState}}
+                                </span>
+                            </td>
+                        </tr>
+                    {{else}}
+                        <tr><td colspan="3" class="p-3 text-center text-gray-500">No platforms found</td></tr>
+                    {{end}}
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>

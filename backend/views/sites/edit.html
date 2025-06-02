@@ -1,0 +1,51 @@
+<div class="bg-white p-8 rounded-2xl shadow-xl">
+    <h2 class="text-3xl font-bold mb-6 text-gray-800 flex items-center">
+        <i class="fas fa-edit mr-2"></i> Edit Site
+    </h2>
+    {{if .Error}}
+        <div class="bg-red-100 text-red-700 p-4 rounded-lg mb-6 flex items-center animate-pulse">
+            <i class="fas fa-exclamation-circle mr-2"></i> {{.Error}}
+        </div>
+    {{end}}
+    <form action="/api/sites/{{.Site.ID}}" method="post">
+        <input type="hidden" name="_method" value="PUT">
+        <div class="mb-5">
+            <label for="name" class="block text-gray-700 font-medium mb-1 flex items-center">
+                <i class="fas fa-tag mr-1"></i> Name
+            </label>
+            <input type="text" id="name" name="name" value="{{.Site.Name}}" class="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 transition" required>
+        </div>
+        <div class="mb-5">
+            <label for="address" class="block text-gray-700 font-medium mb-1 flex items-center">
+                <i class="fas fa-map mr-1"></i> Address
+            </label>
+            <input type="text" id="address" name="address" value="{{.Site.Address}}" class="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 transition" required>
+        </div>
+        <div class="mb-5">
+            <label for="city" class="block text-gray-700 font-medium mb-1 flex items-center">
+                <i class="fas fa-city mr-1"></i> City
+            </label>
+            <input type="text" id="city" name="city" value="{{.Site.City}}" class="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 transition" required>
+        </div>
+        <div class="mb-5">
+            <label for="state" class="block text-gray-700 font-medium mb-1 flex items-center">
+                <i class="fas fa-map-pin mr-1"></i> State
+            </label>
+            <input type="text" id="state" name="state" value="{{.Site.State}}" class="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 transition" required>
+        </div>
+        <div class="mb-6">
+            <label for="country" class="block text-gray-700 font-medium mb-1 flex items-center">
+                <i class="fas fa-globe mr-1"></i> Country
+            </label>
+            <input type="text" id="country" name="country" value="{{.Site.Country}}" class="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 transition" required>
+        </div>
+        <div class="flex justify-end space-x-4">
+            <a href="/sites" class="bg-gray-500 text-white p-3 rounded-lg hover:bg-gray-600 transition flex items-center">
+                <i class="fas fa-arrow-left mr-2"></i> Cancel
+            </a>
+            <button type="submit" class="bg-blue-600 text-white p-3 rounded-lg hover:bg-blue-700 transition flex items-center">
+                <i class="fas fa-save mr-2"></i> Save
+            </button>
+        </div>
+    </form>
+</div>

@@ -1,0 +1,340 @@
+<div class="bg-white dark:bg-gray-800 p-8 md:p-10 rounded-2xl shadow-xl transform transition-all duration-300 hover:shadow-2xl">
+    <div class="mb-8">
+        <h2 class="text-3xl font-bold mb-6 text-blue-800 flex items-center">
+            <i class="fas fa-microchip mr-3 text-blue-600 dark:text-blue-400 mr-2"></i> Manage Platforms
+        </h2>
+    </div>
+    
+    {{if .Error}}
+    <div class="bg-red-100 text-red-700 p-4 rounded-lg mb-6 flex items-center animate-pulse">
+        <i class="fas fa-exclamation-circle mr-2"></i> {{.Error}}
+    </div>
+    {{end}}
+    {{if .TokenError}}
+    <div class="bg-yellow-100 text-yellow-700 p-4 rounded-lg mb-6 flex items-center">
+        <i class="fas fa-exclamation-triangle mr-2"></i> {{.TokenError}} <a href="/api_key" class="text-blue-600 hover:underline ml-2">Generate API Key</a>
+    </div>
+    {{end}}
+
+    <div class="mb-6">
+        <a href="/platforms/new" class="bg-blue-600 text-white p-3 rounded-lg hover:bg-blue-700 transition duration-300 flex items-center inline-flex">
+            <i class="fas fa-plus mr-2"></i>Create Platform
+        </a>
+    </div>
+
+    <!-- Platform table -->
+    <div class="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-md border border-gray-100 dark:border-gray-700">
+        <h3 class="text-xl font-semibold mb-4 text-gray-700 dark:text-gray-200 flex items-center">
+            <i class="fas fa-list mr-2 text-blue-600 dark:text-blue-400"></i> Platform List
+        </h3>
+        
+        <div id="loading-indicator" class="hidden justify-center items-center py-4">
+            <div class="animate-spin rounded-full h-8 w-8 border-b-2 border-blue-600 dark:border-blue-400"></div>
+            <span class="ml-2 text-gray-600 dark:text-gray-300">Loading...</span>
+        </div>
+        
+        <div class="overflow-x-auto">
+            <table class="w-full border-collapse">
+                <thead class="bg-gray-50 dark:bg-gray-700">
+                    <tr class="text-gray-600 dark:text-gray-200 border-b border-gray-200 dark:border-gray-600">
+                        <th class="p-4 text-left text-sm font-semibold tracking-wider">Name</th>
+                        <th class="p-4 text-left text-sm font-semibold tracking-wider">Type</th>
+                        <th class="p-4 text-left text-sm font-semibold tracking-wider">Status</th>
+                        <th class="p-4 text-left text-sm font-semibold tracking-wider">Actions</th>
+                    </tr>
+                </thead>
+                <tbody class="bg-white dark:bg-gray-900 divide-y divide-gray-200 dark:divide-gray-700">
+                    {{ range .Platforms }}
+                    <tr class="transition-all duration-200" data-platform-id="{{.ID}}">
+                        <td class="p-4 whitespace-nowrap text-sm text-gray-900 dark:text-gray-200 font-medium">{{.Name}}</td>
+                        <td class="p-4 whitespace-nowrap text-sm text-gray-900 dark:text-gray-200">{{.Type}}</td>
+                        <td class="p-4 whitespace-nowrap text-sm">
+                            <span class="px-2 py-1 rounded-full text-xs font-medium inline-flex items-center
+                                {{ if eq .ConnectionState "Connected" }}bg-green-100 text-green-800 dark:bg-green-900 dark:text-green-200
+                                {{ else if eq .ConnectionState "Disconnected" }}bg-red-200 text-red-800 dark:bg-red-900 dark:text-red-200
+                                {{ else }}bg-yellow-100 text-yellow-800 dark:bg-yellow-900 dark:text-yellow-200{{ end }}">
+                                <span class="w-2 h-2 rounded-full mr-1 
+                                    {{ if eq .ConnectionState "Connected" }}bg-green-500 dark:bg-green-400
+                                    {{ else if eq .ConnectionState "Disconnected" }}bg-red dark:bg-red
+                                    {{ else }}bg-yellow-500 dark:bg-yellow-400{{ end }}"></span>
+                                {{.ConnectionState}}
+                            </span>
+                        </td>
+                        <td class="p-4 whitespace-nowrap text-sm space-x-2">
+                            <a href="/platforms/{{.ID}}/view" 
+                                class="inline-flex items-center px-2 py-1 text-blue-600 hover:text-blue-800 dark:text-blue-400 dark:hover:text-blue-300 transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 rounded hover:bg-blue-50 dark:hover:bg-blue-900/20">
+                                <i class="fas fa-eye mr-1"></i> View
+                            </a>
+                            <a href="/platforms/{{.ID}}/edit" 
+                                class="inline-flex items-center px-2 py-1 text-green-600 hover:text-green-800 dark:text-green-400 dark:hover:text-green-300 transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-green-500 focus:ring-offset-2 rounded hover:bg-green-50 dark:hover:bg-green-900/20">
+                                <i class="fas fa-edit mr-1"></i> Edit
+                            </a>
+                            <a href="/platforms/{{.ID}}/resources" 
+                                class="inline-flex items-center px-2 py-1 text-purple-600 hover:text-purple-800 dark:text-purple-400 dark:hover:text-purple-300 transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-purple-500 focus:ring-offset-2 rounded hover:bg-purple-50 dark:hover:bg-purple-900/20">
+                                <i class="fas fa-cubes mr-1"></i> Resources
+                            </a>
+                            <button class="delete-btn inline-flex items-center px-2 py-1 text-red-600 hover:text-red-800 dark:text-red-400 dark:hover:text-red-300 transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-red-500 focus:ring-offset-2 rounded hover:bg-red-50 dark:hover:bg-red-900/20"
+                                    data-id="{{.ID}}" data-name="{{.Name}}">
+                                <i class="fas fa-trash-alt mr-1"></i> Delete
+                            </button>
+                        </td>
+                    </tr>
+                    {{ end }}
+                </tbody>
+            </table>
+        </div>
+        
+        <div id="no-platforms" class="hidden text-center py-8 text-gray-500 dark:text-gray-400">
+            <i class="fas fa-info-circle text-3xl mb-2"></i>
+            <p>No platforms found. Click "Create Platform" to add one.</p>
+        </div>
+    </div>
+
+    <!-- Modern delete confirmation modal -->
+    <div id="delete-modal" class="fixed inset-0 bg-black bg-opacity-50 dark:bg-opacity-70 hidden items-center justify-center z-50">
+        <div class="bg-white dark:bg-gray-800 p-6 rounded-xl shadow-2xl max-w-md w-full m-4">
+            <div class="text-center mb-4">
+                <div class="mx-auto flex items-center justify-center h-12 w-12 rounded-full bg-red-100 dark:bg-red-900/50 mb-4">
+                    <i class="fas fa-exclamation-triangle text-red-600 dark:text-red-400 text-xl"></i>
+                </div>
+                <h3 class="text-lg font-medium text-gray-900 dark:text-gray-100" id="modal-title">Delete Platform</h3>
+                <div class="mt-2">
+                    <p class="text-sm text-gray-500 dark:text-gray-400" id="modal-description"></p>
+                </div>
+            </div>
+            <div class="mt-6 flex justify-end space-x-3">
+                <button type="button" id="cancel-delete-btn" class="inline-flex justify-center px-4 py-2 text-sm font-medium text-gray-700 dark:text-gray-200 bg-gray-100 dark:bg-gray-700 border border-gray-300 dark:border-gray-600 rounded-md shadow-sm hover:bg-gray-200 dark:hover:bg-gray-600 focus:outline-none focus:ring-2 focus:ring-gray-500 focus:ring-offset-2 transition-all duration-200">
+                    Cancel
+                </button>
+                <button type="button" id="confirm-delete-btn" class="inline-flex justify-center px-4 py-2 text-sm font-medium text-white bg-red-600 dark:bg-red-700 border border-transparent rounded-md shadow-sm hover:bg-red-700 dark:hover:bg-red-600 focus:outline-none focus:ring-2 focus:ring-red-500 focus:ring-offset-2 transition-all duration-200">
+                    Delete
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        let platformToDelete = null;
+        
+        function showLoading() {
+            document.getElementById('loading-indicator').classList.remove('hidden');
+            document.getElementById('loading-indicator').classList.add('flex');
+        }
+        
+        function hideLoading() {
+            document.getElementById('loading-indicator').classList.add('hidden');
+            document.getElementById('loading-indicator').classList.remove('flex');
+        }
+        
+        function confirmDelete(id, name) {
+            platformToDelete = id;
+            document.getElementById('modal-description').textContent = `Are you sure you want to delete the platform "${name}"? This action cannot be undone.`;
+            document.getElementById('delete-modal').classList.remove('hidden');
+            document.getElementById('delete-modal').classList.add('flex');
+        }
+        
+        function closeModal() {
+            document.getElementById('delete-modal').classList.add('hidden');
+            document.getElementById('delete-modal').classList.remove('flex');
+            platformToDelete = null;
+        }
+        
+        async function deletePlatform(id) {
+            try {
+                showLoading();
+                const response = await fetch(`/api/platforms/${id}`, {
+                    method: 'DELETE',
+                    headers: {
+                        'Authorization': 'Bearer {{.ApiToken}}',
+                        'X-XSRF-TOKEN': document.querySelector('meta[name="_xsrf"]').content
+                    }
+                });
+                
+                if (!response.ok) throw new Error(`HTTP error: ${response.status}`);
+                
+                // Find and remove the row
+                const tableRow = document.querySelector(`tr[data-platform-id="${id}"]`);
+                if (tableRow) {
+                    tableRow.classList.add('opacity-0');
+                    setTimeout(() => {
+                        tableRow.remove();
+                        checkEmptyTable();
+                    }, 300);
+                }
+                
+                // Show success toast
+                showToast('Platform deleted successfully', 'success');
+            } catch (error) {
+                console.error('Error deleting platform:', error);
+                showToast('Failed to delete platform', 'error');
+            } finally {
+                hideLoading();
+            }
+        }
+        
+        function checkEmptyTable() {
+            const tableRows = document.querySelectorAll('tbody tr');
+            const noPlatforms = document.getElementById('no-platforms');
+            
+            if (tableRows.length === 0) {
+                noPlatforms.classList.remove('hidden');
+            } else {
+                noPlatforms.classList.add('hidden');
+            }
+        }
+        
+        function showToast(message, type = 'info') {
+            const toast = document.createElement('div');
+            toast.className = `fixed bottom-4 right-4 px-4 py-2 rounded-lg shadow-lg text-white transition-all transform translate-y-0 opacity-100 z-50 ${
+                type === 'success' ? 'bg-green-600' : 
+                type === 'error' ? 'bg-red-600' : 
+                'bg-blue-600'
+            }`;
+            toast.textContent = message;
+            
+            document.body.appendChild(toast);
+            
+            setTimeout(() => {
+                toast.classList.add('opacity-0', 'translate-y-4');
+                setTimeout(() => {
+                    toast.remove();
+                }, 300);
+            }, 3000);
+        }
+        
+        async function fetchPlatforms() {
+            try {
+                showLoading();
+                const response = await fetch('/api/platforms', {
+                    headers: {
+                        'Authorization': 'Bearer {{.ApiToken}}'
+                    }
+                });
+                
+                if (!response.ok) {
+                    throw new Error(`HTTP error: ${response.status}`);
+                }
+                
+                checkEmptyTable();
+            } catch (error) {
+                console.error('Error fetching platforms:', error);
+            } finally {
+                hideLoading();
+            }
+        }
+
+        // Setup event listeners once DOM is loaded
+        document.addEventListener('DOMContentLoaded', () => {
+            // Setup delete buttons
+            document.querySelectorAll('.delete-btn').forEach(btn => {
+                btn.addEventListener('click', function() {
+                    const id = this.getAttribute('data-id');
+                    const name = this.getAttribute('data-name');
+                    confirmDelete(id, name);
+                });
+            });
+            
+            // Setup modal buttons
+            document.getElementById('confirm-delete-btn').addEventListener('click', function() {
+                if (platformToDelete) {
+                    deletePlatform(platformToDelete);
+                    closeModal();
+                }
+            });
+            
+            document.getElementById('cancel-delete-btn').addEventListener('click', closeModal);
+            
+            // Close modal if clicked outside
+            document.getElementById('delete-modal').addEventListener('click', function(e) {
+                if (e.target === this) {
+                    closeModal();
+                }
+            });
+            
+            // Check for empty table
+            checkEmptyTable();
+            
+            // Fetch platforms data
+            fetchPlatforms();
+        });
+        
+        // Close modal if ESC key is pressed
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape' && !document.getElementById('delete-modal').classList.contains('hidden')) {
+                closeModal();
+            }
+        });
+    </script>
+    
+    <!-- Add custom styles -->
+    <style>
+        /* Animation for table rows */
+        tbody tr {
+            transition: opacity 0.3s ease, background-color 0.3s ease;
+        }
+        
+        /* Animation for status indicators */
+        tr:hover .bg-green-500, tr:hover .bg-green-400 {
+            animation: pulse 1.5s infinite;
+        }
+        
+        @keyframes pulse {
+            0% {
+                transform: scale(1);
+                opacity: 1;
+            }
+            50% {
+                transform: scale(1.2);
+                opacity: 0.8;
+            }
+            100% {
+                transform: scale(1);
+                opacity: 1;
+            }
+        }
+        
+        /* Scale animation for buttons */
+        a:hover i, button:hover i {
+            transform: scale(1.2);
+            transition: transform 0.2s ease;
+        }
+        
+        /* Custom scrollbar - WebKit only version */
+        .overflow-x-auto::-webkit-scrollbar {
+            height: 6px;
+        }
+        
+        .overflow-x-auto::-webkit-scrollbar-track {
+            background: transparent;
+        }
+        
+        .overflow-x-auto::-webkit-scrollbar-thumb {
+            background-color: rgba(156, 163, 175, 0.5);
+            border-radius: 9999px;
+        }
+        
+        /* Dark mode scrollbar */
+        .dark .overflow-x-auto::-webkit-scrollbar-thumb {
+            background-color: rgba(75, 85, 99, 0.5);
+        }
+        
+        /* Modal transitions */
+        #delete-modal {
+            transition: opacity 0.3s ease;
+        }
+        
+        /* Loading spinner */
+        .animate-spin {
+            animation: spin 1s linear infinite;
+        }
+        
+        @keyframes spin {
+            from {
+                transform: rotate(0deg);
+            }
+            to {
+                transform: rotate(360deg);
+            }
+        }
+    </style>
+</div>

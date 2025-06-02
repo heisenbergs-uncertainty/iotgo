@@ -1,0 +1,105 @@
+<div class="bg-white p-8 rounded-2xl shadow-xl">
+    <h2 class="text-3xl font-bold mb-6 text-gray-800 flex items-center">
+        <i class="fas fa-stream mr-2"></i> Manage Value Streams
+    </h2>
+    {{if .Error}}
+        <div class="bg-red-100 text-red-700 p-4 rounded-lg mb-6 flex items-center animate-pulse">
+            <i class="fas fa-exclamation-circle mr-2"></i> {{.Error}}
+        </div>
+    {{end}}
+    {{if .TokenError}}
+        <div class="bg-yellow-100 text-yellow-700 p-4 rounded-lg mb-6 flex items-center">
+            <i class="fas fa-exclamation-triangle mr-2"></i> {{.TokenError}} <a href="/api_key" class="text-blue-600 hover:underline ml-2">Generate API Key</a>
+        </div>
+    {{end}}
+    <div class="mb-6">
+        <a href="/value_streams/new" class="bg-blue-600 text-white p-3 rounded-lg hover:bg-blue-700 transition duration-300 flex items-center inline-flex">
+            <i class="fas fa-plus mr-2"></i> Create Value Stream
+        </a>
+    </div>
+    <!-- Value Stream List -->
+    <div class="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition">
+        <h3 class="text-xl font-semibold mb-4 text-gray-700 flex items-center">
+            <i class="fas fa-list mr-2"></i> Value Stream List
+        </h3>
+        <table class="w-full border-collapse">
+            <thead>
+                <tr class="bg-gray-100 text-gray-600">
+                    <th class="p-3 text-left">Name</th>
+                    <th class="p-3 text-left">Type</th>
+                    <th class="p-3 text-left">Status</th>
+                    <th class="p-3 text-left">Actions</th>
+                </tr>
+            </thead>
+            <tbody id="value-stream-table-body"></tbody>
+        </table>
+    </div>
+</div>
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+    const token = "{{.ApiToken}}";
+    if (!token) {
+        document.getElementById("value-stream-table-body").innerHTML = '<tr><td colspan="4" class="p-3 text-center text-gray-500">Please generate an API key to view value streams</td></tr>';
+        return;
+    }
+
+    // Fetch and display value streams
+    const fetchValueStreams = () => {
+        fetch("/api/value_streams?limit=10&offset=0", {
+            headers: { "Authorization": `Bearer ${token}` }
+        })
+        .then(response => response.json())
+        .then(data => {
+            const tbody = document.getElementById("value-stream-table-body");
+            tbody.innerHTML = "";
+            if (data.data && data.data.items) {
+                data.data.items.forEach(valueStream => {
+                    const row = document.createElement("tr");
+                    row.className = "border-b hover:bg-gray-50 transition";
+                    row.innerHTML = `
+                        <td class="p-3">${valueStream.name}</td>
+                        <td class="p-3">${valueStream.type}</td>
+                        <td class="p-3">
+                            <span class="${valueStream.is_active ? 'text-green-600' : 'text-red-600'} flex items-center">
+                                <i class="fas ${valueStream.is_active ? 'fa-check-circle' : 'fa-times-circle'} mr-1"></i> ${valueStream.is_active ? 'Active' : 'Inactive'}
+                            </span>
+                        </td>
+                        <td class="p-3">
+                            <a href="/value_streams/${valueStream.id}/view" class="text-blue-500 hover:text-blue-700 transition flex items-center mr-2">
+                                <i class="fas fa-eye mr-1"></i> View
+                            </a>
+                            <a href="/value_streams/${valueStream.id}/edit" class="text-green-500 hover:text-green-700 transition flex items-center mr-2">
+                                <i class="fas fa-edit mr-1"></i> Edit
+                            </a>
+                            <button onclick="deleteValueStream(${valueStream.id})" class="text-red-500 hover:text-red-700 transition flex items-center">
+                                <i class="fas fa-trash-alt mr-1"></i> Delete
+                            </button>
+                        </td>
+                    `;
+                    tbody.appendChild(row);
+                });
+            } else {
+                tbody.innerHTML = '<tr><td colspan="4" class="p-3 text-center text-gray-500">No value streams found</td></tr>';
+            }
+        });
+    };
+
+    // Delete value stream
+    window.deleteValueStream = (id) => {
+        fetch(`/api/value_streams/${id}`, {
+            method: "DELETE",
+            headers: { "Authorization": `Bearer ${token}` }
+        })
+        .then(response => response.json())
+        .then(data => {
+            if (data.code === 200) {
+                fetchValueStreams();
+            } else {
+                alert(data.error);
+            }
+        });
+    };
+
+    fetchValueStreams();
+});
+</script>

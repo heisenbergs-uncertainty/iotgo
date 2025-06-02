@@ -1,0 +1,727 @@
+<div class="bg-white dark:bg-gray-800 p-8 rounded-2xl shadow-xl transition-all duration-300 hover:shadow-2xl transform">
+    <h2 class="text-3xl font-bold mb-6 text-gray-800 dark:text-gray-100 flex items-center">
+        <i class="fas fa-cog mr-2 text-blue-600 dark:text-blue-400"></i> Manage Resources for {{.Platform.Name}}
+    </h2>
+    {{if .Error}}
+        <div class="bg-red-100 dark:bg-red-900/50 text-red-700 dark:text-red-200 p-4 rounded-lg mb-6 flex items-center animate-pulse border-l-4 border-red-600 dark:border-red-400">
+            <i class="fas fa-exclamation-circle mr-2 text-red-600 dark:text-red-400"></i> {{.Error}}
+        </div>
+    {{end}}
+    {{if .TokenError}}
+        <div class="bg-yellow-100 dark:bg-yellow-900/50 text-yellow-700 dark:text-yellow-200 p-4 rounded-lg mb-6 flex items-center border-l-4 border-yellow-600 dark:border-yellow-400">
+            <i class="fas fa-exclamation-triangle mr-2 text-yellow-600 dark:text-yellow-400"></i> {{.TokenError}} 
+            <a href="/api_key" class="text-blue-600 hover:text-blue-800 dark:text-blue-400 dark:hover:text-blue-300 ml-2 hover:underline transition-all duration-200">Generate API Key</a>
+        </div>
+    {{end}}
+    <div id="form-error" class="hidden bg-red-100 dark:bg-red-900/50 text-red-700 dark:text-red-200 p-4 rounded-lg mb-6 flex items-center animate-pulse border-l-4 border-red-600 dark:border-red-400">
+        <i class="fas fa-exclamation-circle mr-2 text-red-600 dark:text-red-400"></i> <span id="error-message"></span>
+    </div>
+
+    <div class="mb-6">
+        <button onclick="openResourceModal()" class="bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition">Add New Resource</button>
+    </div>
+
+    <!-- Resource List -->
+    <div class="mb-8 bg-white dark:bg-gray-800 p-6 rounded-lg shadow-md hover:shadow-lg transition-all duration-300 border border-gray-100 dark:border-gray-700">
+        <div class="flex justify-between items-center mb-4">
+            <h3 class="text-xl font-semibold text-gray-700 dark:text-gray-200 flex items-center">
+                <i class="fas fa-list mr-2 text-blue-600 dark:text-blue-400"></i> Resource List
+            </h3>
+            {{if eq .Platform.Type "InfluxDB"}}
+            <button onclick="configureQueries()" class="bg-blue-600 dark:bg-blue-500 text-white p-3 rounded-lg hover:bg-blue-700 dark:hover:bg-blue-600 transition-all duration-300 shadow-md hover:shadow-lg transform hover:scale-105 flex items-center focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 dark:focus:ring-offset-gray-800">
+                <i class="fas fa-plus mr-2"></i> Configure Queries
+            </button>
+            {{end}}
+        </div>
+        <table class="w-full border-collapse">
+            <thead>
+                <tr class="bg-gray-100 dark:bg-gray-700 text-gray-600 dark:text-gray-200 border-b border-gray-200 dark:border-gray-600">
+                    <th class="p-3 text-left">Name</th>
+                    <th class="p-3 text-left">Type</th>
+                    <th class="p-3 text-left">Details</th>
+                    <th class="p-3 text-left">Actions</th>
+                </tr>
+            </thead>
+            <tbody class="divide-y divide-gray-200 dark:divide-gray-700">
+                {{range .Resources}}
+                <tr>
+                    <td class="p-3">{{.Name}}</td>
+                    <td class="p-3">{{.Type}}</td>
+                    <td class="p-3">{{.Details}}</td>
+                    <td class="p-3">
+                        <button onclick="testResource({{.ID}})" class="text-green-600 dark:text-green-400 hover:underline">Test</button>
+                        <button onclick="editResource({{.ID}})" class="text-blue-600 dark:text-blue-400 hover:underline">Edit</button>
+                        <button onclick="deleteResource({{.ID}})" class="text-red-600 dark:text-red-400 hover:underline">Delete</button>
+                    </td>
+                </tr>
+                {{end}}
+            </tbody>
+        </table>
+    </div>
+    <!-- Resource Form (Create/Edit) -->
+    <div class="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-md hover:shadow-lg transition-all duration-300 border border-gray-100 dark:border-gray-700">
+        <h3 id="form-title" class="text-xl font-semibold mb-4 text-gray-700 dark:text-gray-200 flex items-center">
+            <i class="fas fa-plus-circle mr-2 text-blue-600 dark:text-blue-400"></i> Add New Resource
+        </h3>
+        <form id="resource-form">
+            <input type="hidden" id="resource_id" name="resource_id">
+            <div class="mb-5">
+                <label for="name" class="block text-gray-700 dark:text-gray-200 font-medium mb-1 flex items-center">
+                    <i class="fas fa-tag mr-1 text-blue-600 dark:text-blue-400"></i> Name
+                </label>
+                <input type="text" id="name" name="name" class="w-full p-3 border border-gray-300 dark:border-gray-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 dark:focus:ring-offset-gray-800 transition-all duration-200 bg-white dark:bg-gray-700 text-gray-900 dark:text-gray-100" required>
+            </div>
+            <div class="mb-5">
+                <label for="type" class="block text-gray-700 dark:text-gray-200 font-medium mb-1 flex items-center">
+                    <i class="fas fa-cogs mr-1 text-blue-600 dark:text-blue-400"></i> Type
+                </label>
+                <select id="type" name="type" class="w-full p-3 border border-gray-300 dark:border-gray-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 dark:focus:ring-offset-gray-800 transition-all duration-200 bg-white dark:bg-gray-700 text-gray-900 dark:text-gray-100" required>
+                    <option value="">Select Type</option>
+                    {{if eq .Platform.Type "REST"}}
+                    <option value="rest_endpoint">REST Endpoint</option>
+                    {{else if eq .Platform.Type "InfluxDB"}}
+                    <option value="influxdb_query">InfluxDB Query</option>
+                    {{end}}
+                </select>
+            </div>
+            <div class="mb-5 hidden" id="rest-endpoint-config">
+                <label for="method" class="block text-gray-700 dark:text-gray-200 font-medium mb-1 flex items-center">
+                    <i class="fas fa-exchange-alt mr-1 text-blue-600 dark:text-blue-400"></i> Method
+                </label>
+                <select id="method" name="method" class="w-full p-3 border border-gray-300 dark:border-gray-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 dark:focus:ring-offset-gray-800 transition-all duration-200 bg-white dark:bg-gray-700 text-gray-900 dark:text-gray-100" required>
+                    <option value="">Select Method</option>
+                    <option value="GET">GET</option>
+                    <option value="POST">POST</option>
+                    <option value="PUT">PUT</option>
+                    <option value="DELETE">DELETE</option>
+                </select>
+                <label for="path" class="block text-gray-700 dark:text-gray-200 font-medium mb-1 mt-4 flex items-center">
+                    <i class="fas fa-link mr-1 text-blue-600 dark:text-blue-400"></i> Path
+                </label>
+                <input type="text" id="path" name="path" class="w-full p-3 border border-gray-300 dark:border-gray-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 dark:focus:ring-offset-gray-800 transition-all duration-200 bg-white dark:bg-gray-700 text-gray-900 dark:text-gray-100" placeholder="/assets" required>
+                <div class="mt-4">
+                    <label class="block text-gray-700 dark:text-gray-200 font-medium mb-1 flex items-center">
+                        <i class="fas fa-header mr-1 text-blue-600 dark:text-blue-400"></i> Headers
+                    </label>
+                    <div id="headers-container" class="space-y-2"></div>
+                    <button type="button" onclick="addHeaderField()" class="mt-2 text-blue-500 dark:text-blue-400 hover:text-blue-700 dark:hover:text-blue-300 transition-all duration-200 flex items-center">
+                        <i class="fas fa-plus mr-1"></i> Add Header
+                    </button>
+                </div>
+                <div class="mt-4">
+                    <label class="block text-gray-700 dark:text-gray-200 font-medium mb-1 flex items-center">
+                        <i class="fas fa-question-circle mr-1 text-blue-600 dark:text-blue-400"></i> Query Parameters
+                    </label>
+                    <div id="query-params-container" class="space-y-2"></div>
+                    <button type="button" onclick="addQueryParamField()" class="mt-2 text-blue-500 dark:text-blue-400 hover:text-blue-700 dark:hover:text-blue-300 transition-all duration-200 flex items-center">
+                        <i class="fas fa-plus mr-1"></i> Add Query Parameter
+                    </button>
+                </div>
+                <label for="body" class="block text-gray-700 dark:text-gray-200 font-medium mb-1 mt-4 flex items-center">
+                    <i class="fas fa-code mr-1 text-blue-600 dark:text-blue-400"></i> Request Body (JSON)
+                </label>
+                <textarea id="body" name="body" class="w-full p-3 border border-gray-300 dark:border-gray-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 dark:focus:ring-offset-gray-800 transition-all duration-200 bg-white dark:bg-gray-700 text-gray-900 dark:text-gray-100" placeholder='{"key": "value"}'></textarea>
+            </div>
+            <div class="mb-5 hidden" id="influxdb-query-config">
+                <label for="bucket" class="block text-gray-700 dark:text-gray-200 font-medium mb-1 flex items-center">
+                    <i class="fas fa-database mr-1 text-blue-600 dark:text-blue-400"></i> Bucket
+                </label>
+                <input type="text" id="bucket" name="bucket" class="w-full p-3 border border-gray-300 dark:border-gray-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 dark:focus:ring-offset-gray-800 transition-all duration-200 bg-white dark:bg-gray-700 text-gray-900 dark:text-gray-100" required>
+                <label for="measurement" class="block text-gray-700 dark:text-gray-200 font-medium mb-1 mt-4 flex items-center">
+                    <i class="fas fa-ruler mr-1 text-blue-600 dark:text-blue-400"></i> Measurement
+                </label>
+                <input type="text" id="measurement" name="measurement" class="w-full p-3 border border-gray-300 dark:border-gray-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 dark:focus:ring-offset-gray-800 transition-all duration-200 bg-white dark:bg-gray-700 text-gray-900 dark:text-gray-100" required>
+                <label for="field" class="block text-gray-700 dark:text-gray-200 font-medium mb-1 mt-4 flex items-center">
+                    <i class="fas fa-tag mr-1 text-blue-600 dark:text-blue-400"></i> Field
+                </label>
+                <input type="text" id="field" name="field" class="w-full p-3 border border-gray-300 dark:border-gray-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 dark:focus:ring-offset-gray-800 transition-all duration-200 bg-white dark:bg-gray-700 text-gray-900 dark:text-gray-100" required>
+                <label for="time_range" class="block text-gray-700 dark:text-gray-200 font-medium mb-1 mt-4 flex items-center">
+                    <i class="fas fa-clock mr-1 text-blue-600 dark:text-blue-400"></i> Time Range
+                </label>
+                <input type="text" id="time_range" name="time_range" class="w-full p-3 border border-gray-300 dark:border-gray-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 dark:focus:ring-offset-gray-800 transition-all duration-200 bg-white dark:bg-gray-700 text-gray-900 dark:text-gray-100" placeholder="-1h" required>
+            </div>
+            <div class="flex justify-end space-x-4">
+                <button type="button" onclick="resetForm()" class="bg-gray-500 dark:bg-gray-600 text-white p-3 rounded-lg hover:bg-gray-600 dark:hover:bg-gray-700 transition-all duration-300 shadow-md hover:shadow-lg transform hover:scale-105 flex items-center focus:outline-none focus:ring-2 focus:ring-gray-500 focus:ring-offset-2 dark:focus:ring-offset-gray-800">
+                    <i class="fas fa-times mr-2"></i> Cancel
+                </button>
+                <button type="submit" id="form-submit" class="bg-blue-600 dark:bg-blue-500 text-white p-3 rounded-lg hover:bg-blue-700 dark:hover:bg-blue-600 transition-all duration-300 shadow-md hover:shadow-lg transform hover:scale-105 flex items-center focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 dark:focus:ring-offset-gray-800">
+                    <i class="fas fa-save mr-2"></i> Save
+                </button>
+            </div>
+        </form>
+    </div>
+
+    <!-- Test Result Modal -->
+    <div id="test-result-modal" class="hidden fixed inset-0 bg-gray-600 bg-opacity-50 flex items-center justify-center max-h-[80vh] overflow-y-auto">
+        <div class="bg-white p-6 rounded-lg shadow-lg w-full max-w-3xl border border-blue-200">
+            <h2 class="text-xl font-bold mb-4">Test Result</h2>
+            <div id="test-result-content" class="mb-4 h-5">
+                <div id="test-result-meta" class="space-y-2 mb-4"></div>
+                <div class="h-[400px] overflow-y-auto border border-gray-200 rounded-md bg-gray-100">
+                    <h3 class="text-lg font-semibold text-gray-700 p-4 sticky top-0 bg-gray-100">Response Body</h3>
+                    <pre class="text-sm text-gray-900 p-4 pt-0" id="test-result-json"></pre>
+                </div>
+            </div>
+            <div class="flex justify-end">
+                <button onclick="closeTestResultModal()" class="bg-gray-300 text-gray-700 px-4 py-2 rounded-lg hover:bg-gray-400 transition">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    let headerCount = 0;
+    let queryParamCount = 0;
+
+    function addHeader() {
+        const headersDiv = document.getElementById('headers');
+        headersDiv.innerHTML += `
+            <div class="flex space-x-2">
+                <input type="text" name="headers[${headerCount}][key]" placeholder="Key" class="mt-1 block w-1/2 border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500">
+                <input type="text" name="headers[${headerCount}][value]" placeholder="Value" class="mt-1 block w-1/2 border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500">
+            </div>
+        `;
+        headerCount++;
+    }
+
+    function addQueryParam() {
+        const queryParamsDiv = document.getElementById('query_params');
+        queryParamsDiv.innerHTML += `
+            <div class="flex space-x-2">
+                <input type="text" name="query_params[${queryParamCount}][key]" placeholder="Key" class="mt-1 block w-1/2 border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500">
+                <input type="text" name="query_params[${queryParamCount}][value]" placeholder="Value" class="mt-1 block w-1/2 border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500">
+            </div>
+        `;
+        queryParamCount++;
+    }
+
+   async function testResource(id) {
+        const testResultModal = document.getElementById('test-result-modal');
+        const testResultMeta = document.getElementById('test-result-meta');
+        const testResultJson = document.getElementById('test-result-json');
+        testResultModal.classList.remove('hidden');
+        testResultMeta.innerHTML = 'Testing resource...';
+        testResultJson.innerHTML = '';
+
+        try {
+            const response = await fetch(`/api/resources/${id}/test`, {
+                method: 'POST',
+                headers: {
+                    'Authorization': 'Bearer {{.ApiToken}}',
+                    'X-XSRF-TOKEN': document.querySelector('meta[name="_xsrf"]').content
+                }
+            });
+            const result = await response.json();
+            console.log('Test result:', result);
+
+            if (!response.ok || !result.data) {
+                testResultMeta.innerHTML = `<div class="text-red-700">${result.error || 'Unknown error'}</div>`;
+                return;
+            }
+
+            const data = result.data;
+
+            let requestURL = 'N/A';
+            if (data.platform_type === 'REST') {
+                const resourceResponse = await fetch(`/api/resources/${id}/edit`, {
+                    headers: {
+                        'Authorization': 'Bearer {{.ApiToken}}',
+                        'X-XSRF-TOKEN': document.querySelector('meta[name="_xsrf"]').content
+                    }
+                });
+                if (!resourceResponse.ok) throw new Error('Failed to fetch resource data');
+                const resourceData = await resourceResponse.json();
+                if (resourceData.type === 'rest_endpoint') {
+                    const platformResponse = await fetch(`/api/platforms/${data.platform_id}`, {
+                        headers: {
+                            'Authorization': 'Bearer {{.ApiToken}}',
+                            'X-XSRF-TOKEN': document.querySelector('meta[name="_xsrf"]').content
+                        }
+                    });
+                    if (!platformResponse.ok) throw new Error('Failed to fetch platform data');
+                    const platformData = await platformResponse.json();
+                    const baseURL = platformData.metadata ? JSON.parse(platformData.metadata).base_endpoint : '';
+                    const path = resourceData.details.path || '';
+                    requestURL = baseURL + (path.startsWith('/') ? path : '/' + path);
+                }
+            }
+
+            const status = data.result && data.result.status ? data.result.status : 'Unknown';
+            const statusCode = data.result && data.result.status_code ? data.result.status_code : 'N/A';
+            testResultMeta.innerHTML = `
+                <div class="text-gray-900">
+                    <p><strong>Resource:</strong> ${data.name || 'Unknown'}</p>
+                    <p><strong>Type:</strong> ${data.type || 'Unknown'}</p>
+                    <p><strong>Platform ID:</strong> ${data.platform_id || 'N/A'} (${data.platform_type || 'Unknown'})</p>
+                    <p><strong>Request URL:</strong> ${requestURL}</p>
+                    <p><strong>Status:</strong> ${status} (${statusCode})</p>
+                </div>
+            `;
+
+            const jsonBody = data.result && data.result.body ? data.result.body : {};
+            const jsonString = JSON.stringify(jsonBody, null, 2);
+            testResultJson.innerHTML = syntaxHighlight(jsonString);
+        } catch (error) {
+            console.error('Error during test:', error);
+            testResultMeta.innerHTML = `<div class="text-red-700">Error: ${error.message}</div>`;
+        }
+    }
+
+    // Basic JSON syntax highlighting
+    function syntaxHighlight(json) {
+        json = json.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
+        return json.replace(/("(\\u[a-zA-Z0-9]{4}|\\[^u]|[^\\"])*"(\s*:)?|\b(true|false|null)\b|-?\d+(?:\.\d*)?(?:[eE][+\-]?\d+)?)/g, function (match) {
+            let cls = 'number';
+            if (/^"/.test(match)) {
+                if (/:$/.test(match)) {
+                    cls = 'key';
+                } else {
+                    cls = 'string';
+                }
+            } else if (/true|false/.test(match)) {
+                cls = 'boolean';
+            } else if (/null/.test(match)) {
+                cls = 'null';
+            }
+            return `<span class="${cls}">${match}</span>`;
+        });
+    }
+
+    document.addEventListener("DOMContentLoaded", () => {
+        const token = "{{.ApiToken}}";
+        const platformMetadata = {{.Platform.Metadata | js}}; // Pass Metadata JSON string
+
+        console.log("API Token:", token);
+        console.log("Platform Metadata:", platformMetadata);
+        if (!token) {
+            document.getElementById("resource-table-body").innerHTML = '<tr><td colspan="4" class="p-3 text-center text-gray-500 dark:text-gray-400">Please generate an API key to view resources</td></tr>';
+            return;
+        }
+
+        const formError = document.getElementById("form-error");
+        const errorMessage = document.getElementById("error-message");
+        const testResultModal = document.getElementById("test-result-modal");
+        const testResultContent = document.getElementById("test-result-content");
+        const form = document.getElementById("resource-form");
+        const formTitle = document.getElementById("form-title");
+        const formSubmit = document.getElementById("form-submit");
+        const typeSelect = document.getElementById("type");
+        const restConfig = document.getElementById("rest-endpoint-config");
+        const influxdbConfig = document.getElementById("influxdb-query-config");
+
+    // Show error message
+    function showError(message) {
+        errorMessage.textContent = message;
+        formError.classList.remove("hidden");
+        setTimeout(() => formError.classList.add("hidden"), 5000);
+    }
+
+    // Show test result modal
+    function showTestModal(content, isError = false) {
+        let html = '';
+        if (isError && typeof content === 'string') {
+            // Handle error case with string message
+            html = `
+                <div class="text-red-600 dark:text-red-400 font-semibold mb-2">Test Failed</div>
+                <div class="text-gray-700 dark:text-gray-300 mb-2">Error: ${content}</div>
+                <div class="text-gray-600 dark:text-gray-400 text-sm">Please verify the endpoint URL, path, or authentication settings in the platform and resource configuration.</div>
+            `;
+        } else if (isError && typeof content === 'object' && content !== null) {
+            // Handle error case with structured response
+            html = `
+                <div class="text-red-600 dark:text-red-400 font-semibold mb-2">Test Failed: ${content.status || 'Unknown Error'}</div>
+                <div class="text-gray-700 dark:text-gray-300 mb-2">Request URL: ${content.url || 'Unknown'}</div>
+                <div class="text-gray-700 dark:text-gray-300 mb-2">Status Code: ${content.status_code || 'N/A'}</div>
+                <div class="text-gray-700 dark:text-gray-300 mb-2">Response Body:</div>
+                <pre class="text-sm text-gray-700 dark:text-gray-300 bg-gray-50 dark:bg-gray-600 p-2 rounded">${JSON.stringify(content.body || {}, null, 2)}</pre>
+                <div class="text-gray-600 dark:text-gray-400 text-sm mt-2">Please verify the endpoint URL, path, or authentication settings in the platform and resource configuration.</div>
+            `;
+        } else if (typeof content === 'object' && content !== null) {
+            // Handle success case
+            html = `
+                <div class="text-green-600 dark:text-green-400 font-semibold mb-2">Test Successful: ${content.status}</div>
+                <div class="text-gray-700 dark:text-gray-300 mb-2">Request URL: ${content.url || 'Unknown'}</div>
+                <div class="text-gray-700 dark:text-gray-300 mb-2">Status Code: ${content.status_code}</div>
+                <div class="text-gray-700 dark:text-gray-300 mb-2">Response Headers:</div>
+                <pre class="text-sm text-gray-700 dark:text-gray-300 bg-gray-50 dark:bg-gray-600 p-2 rounded">${JSON.stringify(content.headers || {}, null, 2)}</pre>
+                <div class="text-gray-700 dark:text-gray-300 mb-2">Response Body:</div>
+                <pre class="text-sm text-gray-700 dark:text-gray-300 bg-gray-50 dark:bg-gray-600 p-2 rounded">${JSON.stringify(content.body || {}, null, 2)}</pre>
+            `;
+        } else {
+            // Fallback for undefined or unexpected content
+            html = `
+                <div class="text-red-600 dark:text-red-400 font-semibold mb-2">Test Failed</div>
+                <div class="text-gray-700 dark:text-gray-300 mb-2">No data returned from the server.</div>
+                <div class="text-gray-600 dark:text-gray-400 text-sm">Please check the server logs or verify the endpoint configuration.</div>
+            `;
+            isError = true;
+        }
+        testResultContent.innerHTML = html;
+        testResultModal.classList.remove("hidden");
+        testResultModal.classList.add("flex");
+    }
+
+
+    // Reset form to create mode
+    function resetForm() {
+        form.reset();
+        formTitle.textContent = "Add New Resource";
+        formSubmit.innerHTML = '<i class="fas fa-plus mr-2"></i> Create';
+        document.getElementById("resource_id").value = "";
+        restConfig.classList.add("hidden");
+        influxdbConfig.classList.add("hidden");
+        typeSelect.value = "";
+        document.getElementById("headers-container").innerHTML = "";
+        document.getElementById("query-params-container").innerHTML = "";
+        headerIndex = 0;
+        queryParamIndex = 0;
+        document.getElementById("method").removeAttribute("required");
+        document.getElementById("path").removeAttribute("required");
+        document.getElementById("bucket").removeAttribute("required");
+        document.getElementById("measurement").removeAttribute("required");
+        document.getElementById("field").removeAttribute("required");
+        document.getElementById("time_range").removeAttribute("required");
+    }
+
+    // Toggle resource configuration
+    typeSelect.addEventListener("change", () => {
+        restConfig.classList.add("hidden");
+        influxdbConfig.classList.add("hidden");
+        document.getElementById("method").removeAttribute("required");
+        document.getElementById("path").removeAttribute("required");
+        document.getElementById("bucket").removeAttribute("required");
+        document.getElementById("measurement").removeAttribute("required");
+        document.getElementById("field").removeAttribute("required");
+        document.getElementById("time_range").removeAttribute("required");
+        if (typeSelect.value === "rest_endpoint") {
+            restConfig.classList.remove("hidden");
+            document.getElementById("method").setAttribute("required", "");
+            document.getElementById("path").setAttribute("required", "");
+        } else if (typeSelect.value === "influxdb_query") {
+            influxdbConfig.classList.remove("hidden");
+            document.getElementById("bucket").setAttribute("required", "");
+            document.getElementById("measurement").setAttribute("required", "");
+            document.getElementById("field").setAttribute("required", "");
+            document.getElementById("time_range").setAttribute("required", "");
+        }
+    });
+
+
+    // Configure queries for InfluxDB
+    window.configureQueries = () => {
+        resetForm();
+        typeSelect.value = "influxdb_query";
+        typeSelect.dispatchEvent(new Event("change"));
+        formTitle.textContent = "Configure InfluxDB Query";
+        formSubmit.innerHTML = '<i class="fas fa-plus mr-2"></i> Create';
+        window.scrollTo({ top: form.offsetTop, behavior: "smooth" });
+    };
+
+    // Edit resource
+    window.editResource = (id) => {
+        fetch(`/api/resources/${id}/edit`, {
+            headers: { "Authorization": `Bearer ${token}` }
+        })
+        .then(response => {
+            if (!response.ok) {
+                return response.json().then(err => { throw new Error(err.error || `HTTP error! status: ${response.status}`); });
+            }
+            return response.json();
+        })
+        .then(data => {
+            if (data.code === 200) {
+                resetForm();
+                formTitle.textContent = "Edit Resource";
+                formSubmit.innerHTML = '<i class="fas fa-save mr-2"></i> Save';
+                document.getElementById("resource_id").value = data.data.id;
+                document.getElementById("name").value = data.data.name;
+                typeSelect.value = data.data.type;
+                typeSelect.dispatchEvent(new Event("change"));
+
+                if (data.data.type === "rest_endpoint") {
+                    const details = data.data.details;
+                    document.getElementById("method").value = details.method;
+                    document.getElementById("path").value = details.path;
+                    document.getElementById("body").value = details.body || "";
+                    // Populate headers
+                    Object.entries(details.headers || {}).forEach(([key, value]) => {
+                        const container = document.getElementById("headers-container");
+                        const div = document.createElement("div");
+                        div.className = "flex space-x-2";
+                        div.innerHTML = `
+                            <input type="text" name="header_key_${headerIndex}" value="${key}" placeholder="Key" class="w-1/2 p-2 border border-gray-300 dark:border-gray-600 rounded-lg bg-white dark:bg-gray-700 text-gray-900 dark:text-gray-100 focus:outline-none focus:ring-2 focus:ring-blue-500">
+                            <input type="text" name="header_value_${headerIndex}" value="${value}" placeholder="Value" class="w-1/2 p-2 border border-gray-300 dark:border-gray-600 rounded-lg bg-white dark:bg-gray-700 text-gray-900 dark:text-gray-100 focus:outline-none focus:ring-2 focus:ring-blue-500">
+                            <button type="button" onclick="this.parentElement.remove()" class="text-red-500 dark:text-red-400 hover:text-red-700 dark:hover:text-red-300 transition-all duration-200"><i class="fas fa-trash"></i></button>
+                        `;
+                        container.appendChild(div);
+                        headerIndex++;
+                    });
+                    // Populate query parameters
+                    Object.entries(details.query_params || {}).forEach(([key, value]) => {
+                        const container = document.getElementById("query-params-container");
+                        const div = document.createElement("div");
+                        div.className = "flex space-x-2";
+                        div.innerHTML = `
+                            <input type="text" name="query_param_key_${queryParamIndex}" value="${key}" placeholder="Key" class="w-1/2 p-2 border border-gray-300 dark:border-gray-600 rounded-lg bg-white dark:bg-gray-700 text-gray-900 dark:text-gray-100 focus:outline-none focus:ring-2 focus:ring-blue-500">
+                            <input type="text" name="query_param_value_${queryParamIndex}" value="${value}" placeholder="Value" class="w-1/2 p-2 border border-gray-300 dark:border-gray-600 rounded-lg bg-white dark:bg-gray-700 text-gray-900 dark:text-gray-100 focus:outline-none focus:ring-2 focus:ring-blue-500">
+                            <button type="button" onclick="this.parentElement.remove()" class="text-red-500 dark:text-red-400 hover:text-red-700 dark:hover:text-red-300 transition-all duration-200"><i class="fas fa-trash"></i></button>
+                        `;
+                        container.appendChild(div);
+                        queryParamIndex++;
+                    });
+                } else if (data.data.type === "influxdb_query") {
+                    const details = data.data.details;
+                    document.getElementById("bucket").value = details.bucket;
+                    document.getElementById("measurement").value = details.measurement;
+                    document.getElementById("field").value = details.field;
+                    document.getElementById("time_range").value = details.time_range;
+                }
+                window.scrollTo({ top: form.offsetTop, behavior: "smooth" });
+            } else {
+                showError(data.error || "Failed to fetch resource for editing");
+            }
+        })
+        .catch(error => {
+            console.error("Error fetching resource for editing:", error);
+            showError("Error fetching resource: " + error.message);
+        });
+    };
+
+
+    // Create or update resource
+    form.addEventListener("submit", (e) => {
+        e.preventDefault();
+        if (!token) {
+            showError("User authentication token missing. Please generate an API key at /api_key.");
+            return;
+        }
+        const formData = new FormData(e.target);
+        const resource = {
+            name: formData.get("name"),
+            type: formData.get("type"),
+            details: {}
+        };
+        const resourceId = formData.get("resource_id");
+        const isEdit = resourceId !== "";
+
+        if (resource.type === "rest_endpoint") {
+            const details = {
+                method: formData.get("method"),
+                path: formData.get("path"),
+                headers: {},
+                query_params: {},
+                body: formData.get("body")
+            };
+            // Collect headers
+            for (let i = 0; formData.get(`header_key_${i}`); i++) {
+                const key = formData.get(`header_key_${i}`).trim();
+                const value = formData.get(`header_value_${i}`).trim();
+                if (key) details.headers[key] = value;
+            }
+            // Collect query parameters
+            for (let i = 0; formData.get(`query_param_key_${i}`); i++) {
+                const key = formData.get(`query_param_key_${i}`).trim();
+                const value = formData.get(`query_param_value_${i}`).trim();
+                if (key) details.query_params[key] = value;
+            }
+            // Validate details
+            if (!details.method) {
+                showError("Method is required for REST endpoint");
+                return;
+            }
+            if (!details.path) {
+                showError("Path is required for REST endpoint");
+                return;
+            }
+            if (details.path[0] !== "/") {
+                showError("Path must start with '/'");
+                return;
+            }
+            if (details.body) {
+                try {
+                    JSON.parse(details.body);
+                } catch (e) {
+                    showError("Body must be valid JSON");
+                    return;
+                }
+            }
+            resource.details = JSON.stringify(details);
+        } else if (resource.type === "influxdb_query") {
+            const details = {
+                bucket: formData.get("bucket"),
+                measurement: formData.get("measurement"),
+                field: formData.get("field"),
+                time_range: formData.get("time_range")
+            };
+            // Validate details
+            if (!details.bucket) {
+                showError("Bucket is required for InfluxDB query");
+                return;
+            }
+            if (!details.measurement) {
+                showError("Measurement is required for InfluxDB query");
+                return;
+            }
+            if (!details.field) {
+                showError("Field is required for InfluxDB query");
+                return;
+            }
+            if (!details.time_range) {
+                showError("Time range is required for InfluxDB query");
+                return;
+            }
+            if (!details.time_range.match(/^-[0-9]+[smhdwy]$/)) {
+                showError("Time range must be a negative duration (e.g., '-1h', '-30m', '-1d')");
+                return;
+            }
+            resource.details = JSON.stringify(details);
+        } else {
+            showError("Please select a valid resource type");
+            return;
+        }
+
+        console.log(`${isEdit ? "Updating" : "Creating"} resource:`, resource);
+        const url = isEdit ? `/api/resources/${resourceId}` : `/api/platforms/{{.Platform.ID}}/resources`;
+        const method = isEdit ? "PUT" : "POST";
+
+        fetch(url, {
+            method: method,
+            headers: {
+                "Content-Type": "application/json",
+                "Authorization": `Bearer ${token}`
+            },
+            body: JSON.stringify(resource)
+        })
+        .then(response => {
+            if (!response.ok) {
+                return response.json().then(err => { throw new Error(err.error || `HTTP error! status: ${response.status}`); });
+            }
+            return response.json();
+        })
+        .then(data => {
+            if (data.code === 200) {
+                fetchResources();
+                resetForm();
+            } else {
+                showError(data.error || `Failed to ${isEdit ? "update" : "create"} resource`);
+            }
+        })
+        .catch(error => {
+            console.error(`Error ${isEdit ? "updating" : "creating"} resource:`, error);
+            showError(`Error ${isEdit ? "updating" : "creating"} resource: ${error.message}`);
+        });
+    });
+
+
+    function closeTestResultModal() {
+        document.getElementById('test-result-modal').classList.add('hidden');
+    }
+
+
+    // Delete resource
+    window.deleteResource = (id) => {
+        if (!token) {
+            showError("User authentication token missing. Please generate an API key at /api_key.");
+            return;
+        }
+        if (!confirm("Are you sure you want to delete this resource?")) {
+            return;
+        }
+        console.log("Deleting resource:", id);
+        fetch(`/api/resources/${id}`, {
+            method: "DELETE",
+            headers: { "Authorization": `Bearer ${token}` }
+        })
+        .then(response => {
+            if (!response.ok) {
+                return response.json().then(err => { throw new Error(err.error || `HTTP error! status: ${response.status}`); });
+            }
+            return response.json();
+        })
+        .then(data => {
+            if (data.code === 200) {
+                fetchResources();
+            } else {
+                showError(data.error || "Failed to delete resource");
+            }
+        })
+        .catch(error => {
+            console.error("Error deleting resource:", error);
+            showError("Error deleting resource: " + error.message);
+        });
+    };
+});
+</script>
+<style>
+/* Custom styles for JSON display */
+pre#test-result-json {
+    white-space: pre-wrap;
+    word-wrap: break-word;
+    font-family: monospace;
+}
+/* Basic syntax highlighting */
+pre#test-result-json .string { color: #032f62; }
+pre#test-result-json .number { color: #116329; }
+pre#test-result-json .boolean { color: #2e95d3; }
+pre#test-result-json .null { color: #bc5e00; }
+pre#test-result-json .key { color: #881280; }
+
+/* Animation for status indicators */
+.animate-pulse {
+    animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+@keyframes pulse {
+    0%, 100% {
+        opacity: 1;
+    }
+    50% {
+        opacity: .5;
+    }
+}
+
+/* Scale animation for buttons */
+button:hover i, a:hover i {
+    transform: scale(1.2);
+    transition: transform 0.2s ease;
+}
+
+/* Custom scrollbar for pre elements */
+pre::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+}
+
+pre::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+pre::-webkit-scrollbar-thumb {
+    background-color: rgba(156, 163, 175, 0.5);
+    border-radius: 9999px;
+}
+
+.dark pre::-webkit-scrollbar-thumb {
+    background-color: rgba(75, 85, 99, 0.5);
+}
+
+/* Improved focus states */
+button:focus, a:focus, input:focus, select:focus, textarea:focus {
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.5);
+}
+
+.dark button:focus, .dark a:focus, .dark input:focus, .dark select:focus, .dark textarea:focus {
+    box-shadow: 0 0 0 3px rgba(96, 165, 250, 0.5);
+}
+
+/* Modal animation */
+#test-result-modal > div {
+    transition: all 0.3s ease-out;
+}
+
+#test-result-modal.hidden > div {
+    opacity: 0;
+    transform: scale(0.9);
+}
+</style>

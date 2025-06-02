@@ -1,0 +1,49 @@
+<div class="bg-white p-8 rounded-2xl shadow-xl">
+    <h2 class="text-3xl font-bold mb-6 text-gray-800 flex items-center">
+        <i class="fas fa-edit mr-2"></i> Edit Device
+    </h2>
+    {{if .Error}}
+        <div class="bg-red-100 text-red-700 p-4 rounded-lg mb-6 flex items-center animate-pulse">
+            <i class="fas fa-exclamation-circle mr-2"></i> {{.Error}}
+        </div>
+    {{end}}
+    <form action="/api/devices/{{.Device.ID}}" method="post">
+        <input type="hidden" name="_method" value="PUT">
+        <div class="mb-5">
+            <label for="name" class="block text-gray-700 font-medium mb-1 flex items-center">
+                <i class="fas fa-tag mr-1"></i> Name
+            </label>
+            <input type="text" id="name" name="name" value="{{.Device.Name}}" class="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 transition" required>
+        </div>
+        <div class="mb-5">
+            <label for="site_id" class="block text-gray-700 font-medium mb-1 flex items-center">
+                <i class="fas fa-map-marker-alt mr-1"></i> Site
+            </label>
+            <select id="site_id" name="site_id" class="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 transition">
+                <option value="">Select Site</option>
+                {{range .Sites}}
+                    <option value="{{.ID}}" {{if eq .ID $.Device.SiteID}}selected{{end}}>{{.Name}}</option>
+                {{end}}
+            </select>
+        </div>
+        <div class="mb-6">
+            <label for="value_stream_id" class="block text-gray-700 font-medium mb-1 flex items-center">
+                <i class="fas fa-stream mr-1"></i> Value Stream
+            </label>
+            <select id="value_stream_id" name="value_stream_id" class="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 transition">
+                <option value="">Select Value Stream</option>
+                {{range .ValueStreams}}
+                    <option value="{{.ID}}" {{if eq .ID $.Device.ValueStreamID}}selected{{end}}>{{.Name}}</option>
+                {{end}}
+            </select>
+        </div>
+        <div class="flex justify-end space-x-4">
+            <a href="/devices" class="bg-gray-500 text-white p-3 rounded-lg hover:bg-gray-600 transition flex items-center">
+                <i class="fas fa-arrow-left mr-2"></i> Cancel
+            </a>
+            <button type="submit" class="bg-blue-600 text-white p-3 rounded-lg hover:bg-blue-700 transition flex items-center">
+                <i class="fas fa-save mr-2"></i> Save
+            </button>
+        </div>
+    </form>
+</div>

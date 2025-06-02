@@ -1,0 +1,44 @@
+<div class="bg-white p-8 rounded-2xl shadow-xl">
+    <h2 class="text-3xl font-bold mb-6 text-gray-800 flex items-center">
+        <i class="fas fa-edit mr-2"></i> Edit Value Stream
+    </h2>
+    {{if .Error}}
+        <div class="bg-red-100 text-red-700 p-4 rounded-lg mb-6 flex items-center animate-pulse">
+            <i class="fas fa-exclamation-circle mr-2"></i> {{.Error}}
+        </div>
+    {{end}}
+    <form action="/api/value_streams/{{.ValueStream.ID}}" method="post">
+        <input type="hidden" name="_method" value="PUT">
+        <div class="mb-5">
+            <label for="name" class="block text-gray-700 font-medium mb-1 flex items-center">
+                <i class="fas fa-tag mr-1"></i> Name
+            </label>
+            <input type="text" id="name" name="name" value="{{.ValueStream.Name}}" class="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 transition" required>
+        </div>
+        <div class="mb-5">
+            <label for="type" class="block text-gray-700 font-medium mb-1 flex items-center">
+                <i class="fas fa-cogs mr-1"></i> Type
+            </label>
+            <select id="type" name="type" class="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 transition" required>
+                <option value="">Select Type</option>
+                <option value="Manufacturing" {{if eq .ValueStream.Type "Manufacturing"}}selected{{end}}>Manufacturing</option>
+                <option value="Packaging" {{if eq .ValueStream.Type "Packaging"}}selected{{end}}>Packaging</option>
+                <option value="Logistics" {{if eq .ValueStream.Type "Logistics"}}selected{{end}}>Logistics</option>
+            </select>
+        </div>
+        <div class="mb-6">
+            <label for="is_active" class="block text-gray-700 font-medium mb-1 flex items-center">
+                <i class="fas fa-toggle-on mr-1"></i> Active
+            </label>
+            <input type="checkbox" id="is_active" name="is_active" class="form-checkbox h-5 w-5 text-blue-600" {{if .ValueStream.IsActive}}checked{{end}}>
+        </div>
+        <div class="flex justify-end space-x-4">
+            <a href="/value_streams" class="bg-gray-500 text-white p-3 rounded-lg hover:bg-gray-600 transition flex items-center">
+                <i class="fas fa-arrow-left mr-2"></i> Cancel
+            </a>
+            <button type="submit" class="bg-blue-600 text-white p-3 rounded-lg hover:bg-blue-700 transition flex items-center">
+                <i class="fas fa-save mr-2"></i> Save
+            </button>
+        </div>
+    </form>
+</div>

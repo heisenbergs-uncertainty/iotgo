@@ -1,0 +1,60 @@
+<div class="flex items-center justify-center min-h-[70vh] py-12 px-4">
+  <div class="bg-white dark:bg-gray-800 p-8 md:p-10 rounded-2xl shadow-xl text-center w-full max-w-3xl transform transition-all duration-300 hover:shadow-2xl">
+    <div class="mb-8">
+      <div class="text-blue-600 dark:text-blue-400 text-6xl mb-6 flex justify-center">
+        <i class="fas fa-network-wired animate-pulse"></i>
+      </div>
+      <h1 class="text-4xl md:text-5xl font-bold mb-4 text-gray-800 dark:text-white flex items-center justify-center">
+        Welcome to IoTGo
+      </h1>
+      <p class="text-lg md:text-xl text-gray-600 dark:text-gray-300 mb-8">
+        Your gateway to managing IoT devices and platforms with ease.
+      </p>
+    </div>
+    
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
+      <div class="p-6 bg-blue-50 dark:bg-blue-900/30 rounded-xl">
+        <i class="fas fa-microchip text-3xl text-blue-500 dark:text-blue-400 mb-4"></i>
+        <h3 class="text-xl font-semibold text-gray-800 dark:text-white mb-2">Device Management</h3>
+        <p class="text-gray-600 dark:text-gray-300">Monitor and control your IoT devices from anywhere.</p>
+      </div>
+      
+      <div class="p-6 bg-green-50 dark:bg-green-900/30 rounded-xl">
+        <i class="fas fa-chart-line text-3xl text-green-500 dark:text-green-400 mb-4"></i>
+        <h3 class="text-xl font-semibold text-gray-800 dark:text-white mb-2">Real-time Analytics</h3>
+        <p class="text-gray-600 dark:text-gray-300">Gain insights from your data with powerful analytics.</p>
+      </div>
+    </div>
+    
+    <a href="/dashboard" class="inline-flex items-center bg-blue-600 text-white p-4 rounded-lg hover:bg-blue-700 dark:bg-blue-700 dark:hover:bg-blue-600 transition-all duration-300 transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-opacity-50">
+      <i class="fas fa-tachometer-alt mr-3"></i> Go to Dashboard
+    </a>
+  </div>
+</div>
+
+<!-- Add a subtle animation for icons -->
+<style>
+  .animate-pulse {
+    animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+  }
+  
+  @keyframes pulse {
+    0%, 100% {
+      opacity: 1;
+      transform: scale(1);
+    }
+    50% {
+      opacity: 0.8;
+      transform: scale(1.05);
+    }
+  }
+  
+  /* Enhanced hover effects */
+  .hover\:shadow-2xl:hover {
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+  }
+  
+  .dark .hover\:shadow-2xl:hover {
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+  }
+</style>

@@ -1,0 +1,26 @@
+<div class="bg-white p-8 rounded-2xl shadow-xl">
+    <h2 class="text-3xl font-bold mb-6 text-gray-800 flex items-center">
+        <i class="fas fa-eye mr-2"></i> View Site
+    </h2>
+    {{if .Error}}
+        <div class="bg-red-100 text-red-700 p-4 rounded-lg mb-6 flex items-center animate-pulse">
+            <i class="fas fa-exclamation-circle mr-2"></i> {{.Error}}
+        </div>
+    {{end}}
+    {{if .Site}}
+        <div class="mb-4">
+            <p class="text-gray-700"><strong>Name:</strong> {{.Site.Name}}</p>
+            <p class="text-gray-700"><strong>Address:</strong> {{.Site.Address}}</p>
+            <p class="text-gray-700"><strong>City:</strong> {{.Site.City}}</p>
+            <p class="text-gray-700"><strong>State:</strong> {{.Site.State}}</p>
+            <p class="text-gray-700"><strong>Country:</strong> {{.Site.Country}}</p>
+            <p class="text-gray-700"><strong>Description:</strong> {{if .Site.Description}}{{.Site.Description}}{{else}}N/A{{end}}</p>
+            <p class="text-gray-700"><strong>Metadata:</strong> <pre class="text-sm bg-gray-100 p-2 rounded">{{.Site.Metadata}}</pre></p>
+        </div>
+    {{end}}
+    <div class="flex justify-end">
+        <a href="/sites" class="bg-gray-500 text-white p-3 rounded-lg hover:bg-gray-600 transition flex items-center">
+            <i class="fas fa-arrow-left mr-2"></i> Back
+        </a>
+    </div>
+</div>
