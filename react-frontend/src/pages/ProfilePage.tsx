@@ -30,7 +30,7 @@ function ProfilePage() {
     data: apiKeys,
     isLoading: isApiKeysLoading,
     error: apiKeysError,
-  } = useApiKeys(user?.id as string); // Assuming useApiKeys expects a string, cast it if user.id is present
+  } = useApiKeys(String(user?.id)); // Assuming useApiKeys expects a string, cast it if user.id is present
 
   const generateApiKeyMutation = useGenerateApiKey();
   const revokeApiKeyMutation = useRevokeApiKey();
